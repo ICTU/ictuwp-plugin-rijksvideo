@@ -1,0 +1,640 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Rijksvideo\n"
+"POT-Creation-Date: 2016-09-30 13:22+0200\n"
+"PO-Revision-Date: 2016-09-30 13:22+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: rhswp-rijksvideo.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: cmb2/includes/CMB2.php:117
+msgid "Metabox configuration is required to have an ID parameter."
+msgstr ""
+
+#: cmb2/includes/CMB2.php:432
+msgid "Click to toggle"
+msgstr ""
+
+#: cmb2/includes/CMB2_Ajax.php:71
+msgid "Please Try Again"
+msgstr ""
+
+#: cmb2/includes/CMB2_Ajax.php:173 cmb2/tests/cmb-tests-base.php:59
+msgid "Remove Embed"
+msgstr ""
+
+#: cmb2/includes/CMB2_Ajax.php:181 cmb2/includes/helper-functions.php:95
+#: cmb2/tests/cmb-tests-base.php:68
+#, php-format
+msgid "No oEmbed Results Found for %1$s. View more info at %2$s."
+msgstr ""
+
+#: cmb2/includes/CMB2_Base.php:338
+#, php-format
+msgid ""
+"The \"%s\" field parameter has been deprecated in favor of the \"%s\" "
+"parameter."
+msgstr ""
+
+#: cmb2/includes/CMB2_Base.php:342
+#, php-format
+msgid ""
+"Using the \"%s\" field parameter as a callback has been deprecated in favor "
+"of the \"%s\" parameter."
+msgstr ""
+
+#: cmb2/includes/CMB2_Base.php:372
+#, php-format
+msgid ""
+"%1$s was called with a parameter that is <strong>deprecated</strong> since "
+"version %2$s! %3$s"
+msgstr ""
+
+#: cmb2/includes/CMB2_Base.php:375
+#, php-format
+msgid ""
+"%1$s was called with a parameter that is <strong>deprecated</strong> since "
+"version %2$s with no alternative available."
+msgstr ""
+
+#: cmb2/includes/CMB2_Base.php:408 cmb2/includes/types/CMB2_Type_Base.php:138
+#, php-format
+msgid "Invalid %1$s property: %2$s"
+msgstr ""
+
+#: cmb2/includes/CMB2_Base.php:422 cmb2/includes/types/CMB2_Type_Base.php:123
+#, php-format
+msgid "Invalid %1$s method: %2$s"
+msgstr ""
+
+#: cmb2/includes/CMB2_Field.php:1116
+msgid "Add Group"
+msgstr ""
+
+#: cmb2/includes/CMB2_Field.php:1117
+msgid "Remove Group"
+msgstr ""
+
+#: cmb2/includes/CMB2_Field.php:1139 cmb2/includes/CMB2_Field.php:1143
+#: cmb2/tests/test-cmb-field.php:234
+msgid "None"
+msgstr ""
+
+#: cmb2/includes/CMB2_Field.php:1204
+msgid "Sorry, this field does not have a cmb_id specified."
+msgstr ""
+
+#: cmb2/includes/CMB2_Field_Display.php:408 cmb2/includes/CMB2_JS.php:155
+#: cmb2/includes/types/CMB2_Type_File_Base.php:75
+#: cmb2/tests/test-cmb-types-base.php:143 cmb2/tests/test-cmb-types.php:700
+msgid "File:"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:96 cmb2/includes/CMB2_JS.php:135
+msgid "Clear"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:97
+msgid "Default"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:98
+msgid "Select Color"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:99
+msgid "Current Color"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:125
+msgctxt "Valid formatDate string for jquery-ui datepicker"
+msgid "mm/dd/yy"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:126
+msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:127
+msgid "Su, Mo, Tu, We, Th, Fr, Sa"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:128
+msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:129
+msgid ""
+"January, February, March, April, May, June, July, August, September, "
+"October, November, December"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:130
+msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:131
+msgid "Next"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:132
+msgid "Prev"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:133
+msgid "Today"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:134 cmb2/includes/CMB2_JS.php:144
+msgid "Done"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:138
+msgid "Choose Time"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:139
+msgid "Time"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:140
+msgid "Hour"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:141
+msgid "Minute"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:142
+msgid "Second"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:143
+msgid "Now"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:145
+msgctxt ""
+"Valid formatting string, as per http://trentrichardson.com/examples/"
+"timepicker/"
+msgid "hh:mm TT"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:151
+msgid "Use this file"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:152
+msgid "Use these files"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:153 cmb2/includes/types/CMB2_Type_File_Base.php:61
+msgid "Remove Image"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:154 cmb2/includes/CMB2_Types.php:303
+#: cmb2/includes/types/CMB2_Type_File_Base.php:80
+#: cmb2/tests/test-cmb-types-base.php:143 cmb2/tests/test-cmb-types.php:47
+#: cmb2/tests/test-cmb-types.php:55 cmb2/tests/test-cmb-types.php:700
+msgid "Remove"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:156 cmb2/includes/types/CMB2_Type_File_Base.php:78
+#: cmb2/tests/test-cmb-types-base.php:143 cmb2/tests/test-cmb-types.php:700
+msgid "Download"
+msgstr ""
+
+#: cmb2/includes/CMB2_JS.php:157
+msgid "Select / Deselect All"
+msgstr ""
+
+#: cmb2/includes/CMB2_Types.php:171
+#, php-format
+msgid ""
+"Custom field types require a Type object instantiation to use this method. "
+"This method was called by the '%s' field type."
+msgstr ""
+
+#: cmb2/includes/CMB2_Types.php:174
+msgid "That field type may not work as expected."
+msgstr ""
+
+#: cmb2/includes/CMB2_Types.php:175
+msgid "That field type will not work as expected."
+msgstr ""
+
+#: cmb2/includes/CMB2_Types.php:177
+msgid ""
+"For more information about this change see: https://github.com/mustardBees/"
+"cmb-field-select2/pull/34w"
+msgstr ""
+
+#: cmb2/includes/CMB2_Types.php:240
+msgid "Add Row"
+msgstr ""
+
+#: cmb2/includes/CMB2_hookup.php:128
+msgid ""
+"Term Metadata is a WordPress 4.4+ feature. Please upgrade your WordPress "
+"install."
+msgstr ""
+
+#: cmb2/includes/CMB2_hookup.php:132
+msgid "Term metaboxes configuration requires a \"taxonomies\" parameter."
+msgstr ""
+
+#: cmb2/includes/helper-functions.php:284
+msgid "Save"
+msgstr ""
+
+#: cmb2/includes/types/CMB2_Type_File.php:36 cmb2/tests/test-cmb-types.php:682
+#: cmb2/tests/test-cmb-types.php:700
+msgid "Add or Upload File"
+msgstr ""
+
+#: cmb2/includes/types/CMB2_Type_File_List.php:36
+#: cmb2/tests/test-cmb-types.php:638 cmb2/tests/test-cmb-types.php:662
+msgid "Add or Upload Files"
+msgstr ""
+
+#: cmb2/includes/types/CMB2_Type_Taxonomy_Multicheck.php:27
+#: cmb2/includes/types/CMB2_Type_Taxonomy_Radio.php:25
+msgid "No terms"
+msgstr ""
+
+#: cmb2/tests/test-cmb-field.php:260
+msgid "Test Metabox"
+msgstr ""
+
+#: cmb2/tests/test-cmb-field.php:271
+msgid "Test Multi Checkbox"
+msgstr ""
+
+#: cmb2/tests/test-cmb-field.php:272
+msgid "field description (optional)"
+msgstr ""
+
+#: cmb2/tests/test-cmb-field.php:277
+msgid "Check One"
+msgstr ""
+
+#: cmb2/tests/test-cmb-field.php:278
+msgid "Check Two"
+msgstr ""
+
+#: cmb2/tests/test-cmb-field.php:279
+msgid "Check Three"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+#: rhswp-rijksvideo.php:262
+msgid "Rijksvideo"
+msgstr ""
+
+#: rhswp-rijksvideo.php:351
+msgid "Documentatie"
+msgstr ""
+
+#: rhswp-rijksvideo.php:352
+msgid "Rijksvideo documentatie"
+msgstr ""
+
+#: rhswp-rijksvideo.php:404
+msgid "URL"
+msgstr ""
+
+#: rhswp-rijksvideo.php:405
+msgid "Caption"
+msgstr ""
+
+#: rhswp-rijksvideo.php:406
+msgid "New Window"
+msgstr ""
+
+#: rhswp-rijksvideo.php:407
+msgid "Weet je het zeker?"
+msgstr ""
+
+#: rhswp-rijksvideo.php:430
+msgctxt "Rijksvideo"
+msgid "Video Player"
+msgstr ""
+
+#: rhswp-rijksvideo.php:431
+msgctxt "Rijksvideo"
+msgid "Video"
+msgstr ""
+
+#: rhswp-rijksvideo.php:432
+msgctxt "Rijksvideo"
+msgid "Audio"
+msgstr ""
+
+#: rhswp-rijksvideo.php:433
+msgctxt "Rijksvideo"
+msgid "Caption"
+msgstr ""
+
+#: rhswp-rijksvideo.php:434
+msgctxt "Rijksvideo"
+msgid "Ondertitels"
+msgstr ""
+
+#: rhswp-rijksvideo.php:435
+msgctxt "Rijksvideo: voor welke taal heb je ondertitels geupload?"
+msgid "nl"
+msgstr ""
+
+#: rhswp-rijksvideo.php:438
+msgctxt "Rijksvideo"
+msgid "Afspelen"
+msgstr ""
+
+#: rhswp-rijksvideo.php:439
+msgctxt "Rijksvideo"
+msgid "Geluid uit"
+msgstr ""
+
+#: rhswp-rijksvideo.php:440
+msgctxt "Rijksvideo"
+msgid "Schermvullende weergave openen"
+msgstr ""
+
+#: rhswp-rijksvideo.php:441
+msgctxt "Rijksvideo"
+msgid "Schermvullende weergave sluiten"
+msgstr ""
+
+#: rhswp-rijksvideo.php:442
+msgctxt "Rijksvideo"
+msgid ""
+"Gebruik op- of neer-pijltjestoetsen om het volume harder of zachter te zetten"
+msgstr ""
+
+#: rhswp-rijksvideo.php:443
+msgctxt "Rijksvideo"
+msgid "Ondertiteling aan"
+msgstr ""
+
+#: rhswp-rijksvideo.php:444
+msgctxt "Rijksvideo"
+msgid "Download deze video"
+msgstr ""
+
+#: rhswp-rijksvideo.php:445
+msgctxt "Rijksvideo"
+msgid ""
+"Helaas kan deze video niet worden afgespeeld. Een mogelijk oplossing is de "
+"meest recente versie van uw browser te installeren."
+msgstr ""
+
+#: rhswp-rijksvideo.php:447
+msgctxt "Rijksvideo"
+msgid "Video voor Apple Quicktime Player"
+msgstr ""
+
+#: rhswp-rijksvideo.php:448
+msgctxt "Rijksvideo"
+msgid "mp4"
+msgstr ""
+
+#: rhswp-rijksvideo.php:449
+msgctxt "Rijksvideo"
+msgid " (hoge resolutie)"
+msgstr ""
+
+#: rhswp-rijksvideo.php:451
+msgctxt "Rijksvideo"
+msgid "Video voor Windows Media Player"
+msgstr ""
+
+#: rhswp-rijksvideo.php:452
+msgctxt "Rijksvideo"
+msgid "wmv"
+msgstr ""
+
+#: rhswp-rijksvideo.php:454
+msgctxt "Rijksvideo"
+msgid "Video voor mobiel gebruik"
+msgstr ""
+
+#: rhswp-rijksvideo.php:455
+msgctxt "Rijksvideo"
+msgid "3gp"
+msgstr ""
+
+#: rhswp-rijksvideo.php:457
+msgctxt "Rijksvideo"
+msgid "Audiospoor"
+msgstr ""
+
+#: rhswp-rijksvideo.php:458
+msgctxt "Rijksvideo"
+msgid "mp3"
+msgstr ""
+
+#: rhswp-rijksvideo.php:460
+msgctxt "Rijksvideo"
+msgid "Ondertitelingsbestand"
+msgstr ""
+
+#: rhswp-rijksvideo.php:461
+msgctxt "Rijksvideo"
+msgid "srt"
+msgstr ""
+
+#: rhswp-rijksvideo.php:737
+msgid "Metadata voor video"
+msgstr ""
+
+#: rhswp-rijksvideo.php:742
+msgid "Lengte van de video"
+msgstr ""
+
+#: rhswp-rijksvideo.php:743
+msgid "formaat: uu:mm:ss"
+msgstr ""
+
+#: rhswp-rijksvideo.php:749
+msgid "URL van thumbnail"
+msgstr ""
+
+#: rhswp-rijksvideo.php:750
+msgid "URL van het bijbehorende plaatje"
+msgstr ""
+
+#: rhswp-rijksvideo.php:757
+msgid "URL van audio-track"
+msgstr ""
+
+#: rhswp-rijksvideo.php:758
+msgid "Dit is meestal een bestand dat eindigt op .mp3"
+msgstr ""
+
+#: rhswp-rijksvideo.php:765
+msgid "URL van ondertitel"
+msgstr ""
+
+#: rhswp-rijksvideo.php:766
+msgid "Dit is meestal een bestand dat eindigt op .srt"
+msgstr ""
+
+#: rhswp-rijksvideo.php:773
+msgid "Volledige transcriptie"
+msgstr ""
+
+#: rhswp-rijksvideo.php:779
+msgid "URL van FLV-bestand"
+msgstr ""
+
+#: rhswp-rijksvideo.php:780
+msgid "Eindigt op .flv"
+msgstr ""
+
+#: rhswp-rijksvideo.php:787
+msgid "Bestandsgrootte van FLV-bestand"
+msgstr ""
+
+#: rhswp-rijksvideo.php:793
+msgid "URL van WMV-bestand"
+msgstr ""
+
+#: rhswp-rijksvideo.php:794
+msgid "Windows Media File. Eindigt vaak op .wmv"
+msgstr ""
+
+#: rhswp-rijksvideo.php:801
+msgid "Bestandsgrootte van WMV-bestand"
+msgstr ""
+
+#: rhswp-rijksvideo.php:807
+msgid "URL van MP4-bestand"
+msgstr ""
+
+#: rhswp-rijksvideo.php:808
+msgid "Apple Quicktime-bestand. Eindigt vaak op .mp4"
+msgstr ""
+
+#: rhswp-rijksvideo.php:815
+msgid "Bestandsgrootte van MP4-bestand"
+msgstr ""
+
+#: rhswp-rijksvideo.php:821
+msgid "URL van Hi-res MP4-bestand"
+msgstr ""
+
+#: rhswp-rijksvideo.php:822
+msgid "Versie van Quicktime-bestand in hoge resolutie."
+msgstr ""
+
+#: rhswp-rijksvideo.php:829
+msgid "Bestandsgrootte van hi-res MP4-bestand"
+msgstr ""
+
+#: rhswp-rijksvideo.php:835
+msgid "Url voor 3GP formaat"
+msgstr ""
+
+#: rhswp-rijksvideo.php:842
+msgid "Bestandsgrootte van 3GP-bestand"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1205
+msgid "Image"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1206
+msgid "Add to slider"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1456
+msgid "New Slider"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1762
+msgid "Switch to Dropdown view"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1762
+msgid "Dropdown"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1783
+msgid "New slideshow created. Click 'Add Slide' to get started!"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1787
+msgid "Switch to Tab view"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1787
+msgid "Tabs"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1789
+msgid "Selecteer video"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1808
+msgid "or"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1809
+msgid "Add New Slideshow"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1815
+msgid "Create your first slideshow"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1854
+msgid "Selecteer een rijksvideo om in dit bericht in te voegen."
+msgstr ""
+
+#: rhswp-rijksvideo.php:1856
+msgid "Voeg rijksvideo in"
+msgstr "Voeg rijksvideo in"
+
+#: rhswp-rijksvideo.php:1891
+msgid "Insert Rijksvideo"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1893
+msgid "Choose slideshow"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1898
+msgid "Insert slideshow"
+msgstr ""
+
+#: rhswp-rijksvideo.php:1900
+msgid "No videos found"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.metaslider.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Easy to use slideshow plugin. Create SEO optimised responsive slideshows "
+"with Nivo Slider, Flex Slider, Coin Slider and Responsive Slides."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Matcha Labs"
+msgstr ""
