@@ -14,7 +14,7 @@ class CMB2_Type_File_Base extends CMB2_Type_Text {
 
 	/**
 	 * Determines if a file has a valid image extension
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @param  string $file File url
 	 * @return bool         Whether file has a valid image extension
 	 */

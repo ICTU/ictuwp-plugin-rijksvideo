@@ -21,7 +21,7 @@ function cmb2_dir( $path = '' ) {
 
 /**
  * Autoloads files with CMB2 classes when needed
- * @since  1.0.0
+ * @since  0.0.10
  * @param  string $class_name Name of the class being requested
  */
 function cmb2_autoload_classes( $class_name ) {
@@ -264,7 +264,7 @@ function cmb2_get_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 
 /**
  * Display a metabox form & save it on submission
- * @since  1.0.0
+ * @since  0.0.10
  * @param  mixed   $meta_box  Metabox config array or Metabox ID
  * @param  int     $object_id Object ID
  * @param  array   $args      Optional arguments array
@@ -328,7 +328,7 @@ function cmb2_print_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 
 /**
  * Display a metabox form (or optionally return it) & save it on submission
- * @since  1.0.0
+ * @since  0.0.10
  * @param  mixed   $meta_box  Metabox config array or Metabox ID
  * @param  int     $object_id Object ID
  * @param  array   $args      Optional arguments array

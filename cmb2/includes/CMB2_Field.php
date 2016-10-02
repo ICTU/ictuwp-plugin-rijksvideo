@@ -680,7 +680,7 @@ class CMB2_Field extends CMB2_Base {
 
 	/**
 	 * Offset a time value based on timezone
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @return string Offset time string
 	 */
 	public function field_timezone_offset() {
@@ -689,7 +689,7 @@ class CMB2_Field extends CMB2_Base {
 
 	/**
 	 * Return timezone string
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @return string Timezone string
 	 */
 	public function field_timezone() {
@@ -750,7 +750,7 @@ class CMB2_Field extends CMB2_Base {
 
 	/**
 	 * Get field render callback and Render the field row
-	 * @since 1.0.0
+	 * @since 0.0.10
 	 */
 	public function render_field() {
 		$this->render_context = 'edit';

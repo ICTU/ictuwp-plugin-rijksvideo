@@ -2,7 +2,7 @@
 /**
  * CMB field type objects
  *
- * @since  1.0.0
+ * @since  0.0.10
  *
  * @category  WordPress_Plugin
  * @package   CMB2
@@ -15,14 +15,14 @@ class CMB2_Types {
 	/**
 	 * An iterator value for repeatable fields
 	 * @var   integer
-	 * @since 1.0.0
+	 * @since 0.0.10
 	 */
 	public $iterator = 0;
 
 	/**
 	 * Current CMB2_Field field object
 	 * @var   CMB2_Field object
-	 * @since 1.0.0
+	 * @since 0.0.10
 	 */
 	public $field;
 
@@ -39,7 +39,7 @@ class CMB2_Types {
 
 	/**
 	 * Default fallback. Allows rendering fields via "cmb2_render_$fieldtype" hook
-	 * @since 1.0.0
+	 * @since 0.0.10
 	 * @param string $fieldtype Non-existent field type name
 	 * @param array  $arguments All arguments passed to the method
 	 */
@@ -192,7 +192,7 @@ class CMB2_Types {
 
 	/**
 	 * Determine a file's extension
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @param  string       $file File url
 	 * @return string|false       File extension or false
 	 */
@@ -223,7 +223,7 @@ class CMB2_Types {
 
 	/**
 	 * Generates repeatable field table markup
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 */
 	public function render_repeatable_field() {
 		$table_id = $this->field->id() . '_repeat';
@@ -309,7 +309,7 @@ class CMB2_Types {
 
 	/**
 	 * Generates description markup
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @param  boolean $paragraph Paragraph tag or span
 	 * @param  boolean $echo      Whether to echo description or only return it
 	 * @return string             Field's description markup

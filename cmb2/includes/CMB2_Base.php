@@ -411,7 +411,7 @@ abstract class CMB2_Base {
 
 	/**
 	 * Allows overloading the object with methods... Whooaaa oooh it's magic, y'knoooow.
-	 * @since 1.0.0
+	 * @since 0.0.10
 	 * @param string $method Non-existent method.
 	 * @param array  $arguments All arguments passed to the method
 	 */

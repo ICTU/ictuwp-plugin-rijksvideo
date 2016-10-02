@@ -66,7 +66,7 @@ if ( ! class_exists( 'CMB2_Bootstrap_223_Trunk', false ) ) {
 		/**
 		 * Current version number
 		 * @var   string
-		 * @since 1.0.0
+		 * @since 0.0.10
 		 */
 		const VERSION = '2.2.3.beta';
 

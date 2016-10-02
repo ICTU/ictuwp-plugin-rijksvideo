@@ -19,7 +19,7 @@ class CMB2_Options {
 	/**
 	 * Array of all CMB2_Option instances
 	 * @var   array
-	 * @since 1.0.0
+	 * @since 0.0.10
 	 */
 	protected static $option_sets = array();
 

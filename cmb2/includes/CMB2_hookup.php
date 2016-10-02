@@ -202,7 +202,7 @@ class CMB2_hookup extends CMB2_Hookup_Base {
 
 	/**
 	 * Registers scripts and styles for CMB2
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 */
 	public static function register_scripts() {
 		self::register_styles();
@@ -211,7 +211,7 @@ class CMB2_hookup extends CMB2_Hookup_Base {
 
 	/**
 	 * Enqueues scripts and styles for CMB2 in admin_head.
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 */
 	public function do_scripts( $hook ) {
 		$hooks = array(
@@ -301,7 +301,7 @@ class CMB2_hookup extends CMB2_Hookup_Base {
 
 	/**
 	 * Add metaboxes (to 'post' or 'comment' object types)
-	 * @since 1.0.0
+	 * @since 0.0.10
 	 */
 	public function add_metaboxes() {
 
@@ -364,7 +364,7 @@ class CMB2_hookup extends CMB2_Hookup_Base {
 
 	/**
 	 * Display metaboxes for a post or comment object
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 */
 	public function metabox_callback() {
 		$object_id = 'comment' == $this->object_type ? get_comment_ID() : get_the_ID();
@@ -373,7 +373,7 @@ class CMB2_hookup extends CMB2_Hookup_Base {
 
 	/**
 	 * Display metaboxes for new user page
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 */
 	public function user_new_metabox( $section ) {
 		if ( $section == $this->cmb->prop( 'new_user_section' ) ) {
@@ -385,7 +385,7 @@ class CMB2_hookup extends CMB2_Hookup_Base {
 
 	/**
 	 * Display metaboxes for a user object
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 */
 	public function user_metabox() {
 		$this->show_form_for_type( 'user' );
@@ -476,7 +476,7 @@ class CMB2_hookup extends CMB2_Hookup_Base {
 
 	/**
 	 * Save data from post metabox
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @param  int    $post_id Post ID
 	 * @param  mixed  $post    Post object
 	 * @return null

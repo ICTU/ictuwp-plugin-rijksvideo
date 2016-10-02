@@ -28,7 +28,7 @@ class CMB2_Utils {
 
 	/**
 	 * Utility method that attempts to get an attachment's ID by it's url
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @param  string  $img_url Attachment url
 	 * @return int|false            Attachment ID or false
 	 */
@@ -77,7 +77,7 @@ class CMB2_Utils {
 
 	/**
 	 * Utility method that returns time string offset by timezone
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @param  string $tzstring Time string
 	 * @return string           Offset time string
 	 */
@@ -110,7 +110,7 @@ class CMB2_Utils {
 	 * A timezone string is required by the wp_timezone_choice() used by the
 	 * select_timezone field.
 	 *
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @return string Timezone string
 	 */
 	public static function timezone_string() {
@@ -396,7 +396,7 @@ class CMB2_Utils {
 
 	/**
 	 * Determine a file's extension
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @param  string       $file File url
 	 * @return string|false       File extension or false
 	 */

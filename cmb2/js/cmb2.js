@@ -883,7 +883,7 @@ window.CMB2 = window.CMB2 || {};
 
 	/**
 	 * Safely log things if query var is set
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 */
 	cmb.log = function() {
 		if ( l10n.script_debug && console && typeof console.log === 'function' ) {

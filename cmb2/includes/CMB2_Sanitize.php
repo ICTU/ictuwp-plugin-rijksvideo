@@ -39,7 +39,7 @@ class CMB2_Sanitize {
 
 	/**
 	 * Catchall method if field's 'sanitization_cb' is NOT defined, or field type does not have a corresponding validation method
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @param  string $name      Non-existent method name
 	 * @param  array  $arguments All arguments passed to the method
 	 */

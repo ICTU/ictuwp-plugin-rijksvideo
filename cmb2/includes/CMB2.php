@@ -33,7 +33,7 @@ class CMB2 extends CMB2_Base {
 	/**
 	 * Type of object registered for metabox. (e.g., post, user, or comment)
 	 * @var   string
-	 * @since 1.0.0
+	 * @since 0.0.10
 	 */
 	protected $mb_object_type = null;
 
@@ -142,7 +142,7 @@ class CMB2 extends CMB2_Base {
 
 	/**
 	 * Loops through and displays fields
-	 * @since 1.0.0
+	 * @since 0.0.10
 	 * @param int    $object_id   Object ID
 	 * @param string $object_type Type of object being saved. (e.g., post, user, or comment)
 	 */
@@ -533,7 +533,7 @@ class CMB2 extends CMB2_Base {
 
 	/**
 	 * Loops through and saves field data
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @param  int    $object_id    Object ID
 	 * @param  string $object_type  Type of object being saved. (e.g., post, user, or comment)
 	 * @param  array  $data_to_save Array of key => value data for saving. Likely $_POST data.
@@ -755,7 +755,7 @@ class CMB2 extends CMB2_Base {
 
 	/**
 	 * Get object id from global space if no id is provided
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @param  integer $object_id Object ID
 	 * @return integer $object_id Object ID
 	 */
@@ -801,7 +801,7 @@ class CMB2 extends CMB2_Base {
 
 	/**
 	 * Sets the $object_type based on metabox settings
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @return string Object type
 	 */
 	public function mb_object_type() {
@@ -870,7 +870,7 @@ class CMB2 extends CMB2_Base {
 
 	/**
 	 * Returns the object type
-	 * @since  1.0.0
+	 * @since  0.0.10
 	 * @return string Object type
 	 */
 	public function object_type( $object_type = '' ) {
