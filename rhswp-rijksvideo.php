@@ -153,11 +153,14 @@ class RijksvideoPlugin_v1 {
     /**
      * filter for when the CPT is previewed
      */
-    public function wbvb_cblocks_contentfilter($content = '') {
+    public function content_filter_for_preview($content = '') {
       global $post;
     
       if ( is_single() ) {
         if ( RHSWP_CPT_RIJKSVIDEO    == get_post_type() ) {
+
+          // lets go
+          $this->register_frontend_style_script();
           return $this->rhswp_makevideo( $post->ID );
         }
         else {
@@ -218,7 +221,7 @@ class RijksvideoPlugin_v1 {
         add_filter( 'media_buttons_context', array( $this, 'admin_insert_rijksvideo_button' ) );
 
       	// content filter
-        add_filter( 'the_content', array( $this, 'wbvb_cblocks_contentfilter' ) );
+        add_filter( 'the_content', array( $this, 'content_filter_for_preview' ) );
 
 
     }
@@ -401,8 +404,8 @@ class RijksvideoPlugin_v1 {
                 'confirm'           => __( "Weet je het zeker?", "rijksvideo-translate" ),
                 'ajaxurl'           => admin_url( 'admin-ajax.php' ),
                 'resize_nonce'      => wp_create_nonce( 'rijksvideo_resize' ),
-                'addslide_nonce'    => wp_create_nonce( 'rijksvideo_addslide' ),
-                'changeslide_nonce' => wp_create_nonce( 'rijksvideo_changeslide' ),
+                'add_video_nonce'   => wp_create_nonce( 'rijksvideo_add_video' ),
+                'change_video_nonce'=> wp_create_nonce( 'rijksvideo_change_video' ),
                 'iframeurl'         => admin_url( 'admin-post.php?action=rijksvideo_preview' ),
             )
         );
@@ -591,7 +594,7 @@ class RijksvideoPlugin_v1 {
         $returnstring = $defaultvalue;
       }
       else {
-        $returnstring = $defaultvalue;
+        $returnstring = '';
       }
 
       $temp = get_post_meta( $postid, $postkey, true );
@@ -649,10 +652,14 @@ class RijksvideoPlugin_v1 {
       	) );
       	 
       	$cmb2_metafields->add_field( array(
-      		'name' => __( 'Lengte van de video', "rijksvideo-translate" ),
-      		'desc' => __( 'formaat: uu:mm:ss', "rijksvideo-translate" ),
+      		'name' => __( 'Lengte van de video (*)', "rijksvideo-translate" ),
+      		'desc' => __( '(verplicht) formaat: uu:mm:ss', "rijksvideo-translate" ),
       		'id'   => RHSWP_CPT_VIDEO_PREFIX . 'video_time',
       		'type' => 'text_small',
+          'attributes' => array(
+              'data-validation' => 'required',
+              'required' => 'required'
+          ),      		
       	) );
 
       	$cmb2_metafields->add_field( array(
@@ -697,11 +704,15 @@ class RijksvideoPlugin_v1 {
       	) );
       
       	$cmb2_metafields->add_field( array(
-      		'name' => __( 'URL van ondertitel', "rijksvideo-translate" ),
-      		'desc' => __( 'Dit is meestal een bestand dat eindigt op .srt', "rijksvideo-translate" ),
+      		'name' => __( 'URL van ondertitel (*)', "rijksvideo-translate" ),
+      		'desc' => __( '(verplicht veld) Dit is meestal een bestand dat eindigt op .srt', "rijksvideo-translate" ),
       		'id'   => RHSWP_CPT_VIDEO_PREFIX . 'url_transcript_file',
       		'type' => 'text_url',
       		'protocols' => array('http', 'https', '//'), // Array of allowed protocols
+          'attributes' => array(
+              'data-validation' => 'required',
+              'required' => 'required'
+          ),      		
       	) );
       
       	$cmb2_metafields->add_field( array(
@@ -745,6 +756,10 @@ class RijksvideoPlugin_v1 {
       		'id'   => RHSWP_CPT_VIDEO_PREFIX . 'filesize_wmv',
       		'type' => 'text_small',
       	) );
+
+        require_once dirname( __FILE__ ) . '/inc/cmb2-check-required-fields.php';
+
+
 
       }
     
@@ -1110,20 +1125,20 @@ class RijksvideoPlugin_v1 {
         // update video title
         if ( isset( $_POST['title'] ) ) {
 
-            $slide = array(
+            $video = array(
                 'ID' => $rijksvideo_id,
                 'post_title' => esc_html( $_POST['title'] )
             );
 
-            wp_update_post( $slide );
+            wp_update_post( $video );
 
         }
 
-        // update individual slides
+        // update individual video
         if ( isset( $_POST['attachment'] ) ) {
 
-            foreach ( $_POST['attachment'] as $slide_id => $fields ) {
-                do_action( "rijksvideo_save_{$fields['type']}_slide", $slide_id, $rijksvideo_id, $fields );
+            foreach ( $_POST['attachment'] as $video_id => $fields ) {
+                do_action( "rijksvideo_save_{$fields['type']}_video", $video_id, $rijksvideo_id, $fields );
             }
 
         }
@@ -1194,11 +1209,23 @@ class RijksvideoPlugin_v1 {
         global $pagenow;
         $posttype = get_post_type( $_GET['post'] );
 
-        if ( ( in_array( $pagenow, array( 'post.php', 'page.php', 'post-new.php', 'post-edit.php' ) ) ) && ( in_array( $posttype, array( 'post',  'page' ) ) ) ) {
+
+        $available_post_types = get_post_types();
+        
+        $allowed_post_types = array();
+        
+        // to do: possibility to exclude some post types to allow for the insert video button
+        foreach ( $available_post_types as $available_post_type ) {
+          if ( $available_post_type !== RHSWP_CPT_RIJKSVIDEO ) {
+            array_push( $allowed_post_types, $available_post_type );
+          }
+        }
+
+        if ( ( in_array( $pagenow, array( 'post.php', 'page.php', 'post-new.php', 'post-edit.php' ) ) ) && ( in_array( $posttype, $allowed_post_types ) ) ) {
             $context .= '<a href="#TB_inline?&inlineId=choose-video-selector-screen" class="thickbox button" title="' .
                 __( "Selecteer een rijksvideo om in dit bericht in te voegen.", "rijksvideo-translate" ) .
                 '"><span class="wp-media-buttons-icon" style="background: url(' . RIJKSVIDEO_ASSETS_URL . 'images/icon-video.png); background-repeat: no-repeat; background-size: 16px 16px; background-position: center center;"></span> ' .
-                __( "Voeg rijksvideo in", "rijksvideo-translate" ) . ' (' . $posttype . ')</a>';
+                __( "Voeg rijksvideo in", "rijksvideo-translate" ) . '</a>';
         }
 
         return $context;
