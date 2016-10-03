@@ -20,3 +20,4 @@ wp-content/plugins/hello.php
 distribute.sh
 
 get_cmb2_files.sh
+get_mediaelement_files.sh

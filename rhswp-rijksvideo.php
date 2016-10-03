@@ -156,16 +156,14 @@ class RijksvideoPlugin_v1 {
     public function content_filter_for_preview($content = '') {
       global $post;
     
-      if ( is_single() ) {
-        if ( RHSWP_CPT_RIJKSVIDEO    == get_post_type() ) {
+      if ( ( RHSWP_CPT_RIJKSVIDEO == get_post_type() ) && ( is_single() ) ) {
 
-          // lets go
-          $this->register_frontend_style_script();
-          return $this->rhswp_makevideo( $post->ID );
-        }
-        else {
-          return $content;
-        }
+        // lets go
+        $this->register_frontend_style_script();
+        return $this->rhswp_makevideo( $post->ID );
+      }
+      else {
+        return $content;
       }
       
     }
@@ -1207,8 +1205,14 @@ class RijksvideoPlugin_v1 {
         }
 
         global $pagenow;
-        $posttype = get_post_type( $_GET['post'] );
 
+        $posttype = '';
+
+        if ( isset( $_GET['post'] ) ) {
+          
+          $posttype = get_post_type( $_GET['post'] );
+
+        }
 
         $available_post_types = get_post_types();
         
