@@ -1,5 +1,20 @@
 
 
+//**
+// Rijksvideo - rijksvideo.less
+// ----------------------------------------------------------------------------------
+// CSS for front-end
+// ----------------------------------------------------------------------------------
+// @author  Paul van Buuren
+// @license GPL-2.0+
+// @plugin: rhswp-rijksvideo
+// @version 0.0.11
+// @desc.   File size for MP3, line breaks for transscription, insert-button check for post type 
+// @link    https://wbvb.nl/plugins/rhswp-rijksvideo/
+// */
+
+
+
 @import "mediaelementplayer.less";        /* colors, sizes */
 
 
@@ -971,10 +986,7 @@
   .block-audio-video ul li li {
   //    font-size: 11px;
   }
-  li.transcription p, div#kolom2 li.transcription p {
-      font-size: 11px;
-      padding: 0 0 10px 0;
-  }
+
   .block-audio-video
   {
       width: 100%;
@@ -1106,12 +1118,19 @@
       background: #f3f3f3 url('../mediaplayer/sprite-topic-toggle.png') no-repeat 98% 6px;
   }
   .block-audio-video li.toggle h2 a:hover,
-  .block-audio-video li.toggle.open h2 a
-  {
+  .block-audio-video li.toggle.open h2 a {
       background-color: #e6e6e6;
-  }.block-audio-video li.toggle.open h2 a
-  {
+  }
+  .block-audio-video li.toggle.open {
+    ul, div {
+      border: 1px solid #e6e6e6;
+    }
+    div {
+      padding: 2px 9px 3px 9px;      
+    }
+    h2 a {
       background-position: 98% -96px;;
+    }  
   }  
 
 
