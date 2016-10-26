@@ -5,8 +5,8 @@
  * Plugin Name:         Rijksvideo
  * Plugin URI:          https://wbvb.nl/plugins/rhswp-rijksvideo/
  * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
- * Version:             0.0.11
- * Version description: File size for MP3, line breaks for transscription, insert-button check for post type
+ * Version:             0.0.12
+ * Version description: Translations updated
  * Author:              Paul van Buuren
  * Author URI:          https://wbvb.nl
  * License:             GPL-2.0+
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '0.0.11';
+    public $version = '0.0.12';
 
 
     /**
@@ -421,7 +421,7 @@ class RijksvideoPlugin_v1 {
           $video_id                       = 'movie-' . $postid;
           
           $videoplayer_aria_id            = 'mep_7';
-          $videoplayer_date               = 'DATUM';
+          $videoplayer_date               = get_the_date();
           
           $videoplayer_title              = _x( 'Video Player', 'Rijksvideo', "rijksvideo-translate" );
           $videoplayer_video_txt          = _x( 'Video', 'Rijksvideo', "rijksvideo-translate" );
