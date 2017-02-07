@@ -1,3 +1,17 @@
+/*
+ * Rijksvideo. 
+ *
+ * Plugin Name:         Rijksvideo
+ * Plugin URI:          https://wbvb.nl/plugins/rhswp-rijksvideo/
+ * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
+ * Version:             1.0.0
+ * Version description: Accessibility checks
+ * Author:              Paul van Buuren
+ * Author URI:          https://wbvb.nl
+ * License:             GPL-2.0+
+ */
+
+
 jQuery(function ($) {
     $.fn.createPlayer = function() {
         var t = {
@@ -114,15 +128,23 @@ jQuery(function ($) {
                     $this.settings.fullscreenButton.addClass("fullscreen"))
             }
             function toggleDownloads() {
+              var uniquecounter = 0;
                 $this.find(".toggle").each(function() {
+                  uniquecounter++;
+                    $(this).attr('aria-expanded','false');
+                    $(this).attr('aria-labelledby','label' + uniquecounter );
+                    
                     $(this).addClass("close");
                     var t = $(this).find("h2")
                         , e = t.text();
+                        t.attr('id','label' + uniquecounter );
                     t.html('<a href="#">' + e + "</a>")
                 }),
                     $this.find(".toggle h2 a").click(function(t) {
                         t.preventDefault(),
-                            $(this).parents("li").toggleClass("close").toggleClass("open")
+                          $(this).parents("li").toggleClass("close").toggleClass("open"),
+                          $(this).parents("li").attr('aria-expanded','true')
+                            
                     })
             }
             function d() {

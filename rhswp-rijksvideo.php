@@ -5,8 +5,8 @@
  * Plugin Name:         Rijksvideo
  * Plugin URI:          https://wbvb.nl/plugins/rhswp-rijksvideo/
  * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
- * Version:             0.0.13
- * Version description: Removed Verdana font
+ * Version:             1.0.0
+ * Version description: Accessibility checks
  * Author:              Paul van Buuren
  * Author URI:          https://wbvb.nl
  * License:             GPL-2.0+
@@ -351,7 +351,6 @@ class RijksvideoPlugin_v1 {
           wp_enqueue_style( 'rhswp-mediaelementplayer', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelementplayer.css', array(), RIJKSVIDEO_VERSION );
           wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/rijksvideo.css', array(), RIJKSVIDEO_VERSION );
       }
-      
 
     }
     
@@ -527,7 +526,7 @@ class RijksvideoPlugin_v1 {
               $returnstring .= '<source type="video/x-flv" src="' . $rhswp_video_flv_url . '">';
             }
             if ( $rhswp_video_url_transcript ) {
-              $returnstring .= '<track kind="subtitles" src="' . $rhswp_video_url_transcript . '" label="' . $videoplayer_subtitles . '" srclang="' . $videoplayer_subtitles_language . '"></track>';
+              $returnstring .= '<track kind="subtitles" src="' . $rhswp_video_url_transcript . '" label="' . $videoplayer_subtitles . '" srclang="' . $videoplayer_subtitles_language . '"  >';
             }
             
             $returnstring .= '</video>';
