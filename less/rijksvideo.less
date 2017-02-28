@@ -8,12 +8,14 @@
 // @author  Paul van Buuren
 // @license GPL-2.0+
 // @plugin: rhswp-rijksvideo
-// @version 0.0.13
-// @desc.   Removed Verdana font
+// Version:             1.0.1
+// Version description: Accessibility checks
 // @link    https://wbvb.nl/plugins/rhswp-rijksvideo/
 // */
 
-
+/*!
+// Version:             1.0.1
+*/
 
 @import "mediaelementplayer.less";        /* colors, sizes */
 
@@ -1121,7 +1123,7 @@
   .block-audio-video li.toggle h2 a {
       position: relative;
       padding: 5px 9px;
-      background: #f3f3f3 url('../mediaplayer/sprite-topic-toggle.png') no-repeat 98% 6px;
+      background: #f3f3f3 url('../mediaplayer/sprite-topic-toggle.png') no-repeat 98% 11px;
   }
   .block-audio-video li.toggle h2 a:hover,
   .block-audio-video li.toggle.open h2 a {
@@ -1135,10 +1137,19 @@
       padding: 2px 9px 3px 9px;      
     }
     h2 a {
-      background-position: 98% -96px;;
+      background-position: 98% -91px;
     }  
   }  
+/*
 
+  [aria-expanded="false"] {
+    border: 3px solid red !important;
+  }
+  [aria-expanded="true"] {
+    border: 3px solid green !important;
+  }
+
+*/
 
 }
 

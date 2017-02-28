@@ -5,7 +5,7 @@
  * Plugin Name:         Rijksvideo
  * Plugin URI:          https://wbvb.nl/plugins/rhswp-rijksvideo/
  * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
- * Version:             1.0.0
+ * Version:             1.0.1
  * Version description: Accessibility checks
  * Author:              Paul van Buuren
  * Author URI:          https://wbvb.nl
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '0.0.13';
+    public $version = '1.0.1';
 
 
     /**
@@ -345,11 +345,13 @@ class RijksvideoPlugin_v1 {
 
       if ( !is_admin() ) {
 
+          $infooter = false;
+
           // don't add to any admin pages
-          wp_enqueue_script( 'rhswp_video_js', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelement-and-player.min.js', array( 'jquery' ) );
-          wp_enqueue_script( 'rhswp_video_action_js', RIJKSVIDEO_ASSETS_URL . 'js/createPlayer.js', array( 'jquery' ) );
-          wp_enqueue_style( 'rhswp-mediaelementplayer', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelementplayer.css', array(), RIJKSVIDEO_VERSION );
-          wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/rijksvideo.css', array(), RIJKSVIDEO_VERSION );
+          wp_enqueue_script( 'rhswp_video_js', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelement-and-player.min.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
+          wp_enqueue_script( 'rhswp_video_action_js', RIJKSVIDEO_ASSETS_URL . 'js/createPlayer.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
+          wp_enqueue_style( 'rhswp-mediaelementplayer', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelementplayer.css', array(), RIJKSVIDEO_VERSION, $infooter );
+          wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/rijksvideo.css', array(), RIJKSVIDEO_VERSION, $infooter );
       }
 
     }
@@ -531,43 +533,39 @@ class RijksvideoPlugin_v1 {
             
             $returnstring .= '</video>';
       
-            $returnstring .= '<ul class="downloads"><li class="toggle downloads close">
-            <h2><a href="#">' . $videoplayer_download_label . '</a></h2><ul>';
+            $returnstring .= '<ul class="downloads">
+              <li class="toggle downloads close">
+              <h2><a href="#" aria-expanded="false" id="videoplayer_download_label">' . $videoplayer_download_label . '</a></h2>
+              <ul>';
             if ( $rhswp_video_mp4_url ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
+              $returnstring .= '<li class="download" aria-labelledby="videoplayer_download_label"><a href="' . $rhswp_video_mp4_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
             }
             if ( $rhswp_video_mp4_hr_url ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_hr_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . $videoplayer_quicktime_hr . ', ' . $rhswp_video_mp4_hr_filesize . '</span></a></li>';
+              $returnstring .= '<li class="download" aria-labelledby="videoplayer_download_label"><a href="' . $rhswp_video_mp4_hr_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . $videoplayer_quicktime_hr . ', ' . $rhswp_video_mp4_hr_filesize . '</span></a></li>';
             }
             if ( $rhswp_video_wmv_url ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_wmv_url . '">' . $videoplayer_wmv_label . '<span class="meta wmv">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_wmv_abbr . ', ' . $rhswp_video_filesize_wmv . '</span></a></li>';
+              $returnstring .= '<li class="download" aria-labelledby="videoplayer_download_label"><a href="' . $rhswp_video_wmv_url . '">' . $videoplayer_wmv_label . '<span class="meta wmv">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_wmv_abbr . ', ' . $rhswp_video_filesize_wmv . '</span></a></li>';
             }
             if ( $rhswp_video_3gp_url ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_3gp_url . '">' . $videoplayer_mobileformat_label . '<span class="meta 3gp">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mobileformat_abbr . ', ' . $rhswp_video_3gp_filesize . '</span></a></li>';
+              $returnstring .= '<li class="download" aria-labelledby="videoplayer_download_label"><a href="' . $rhswp_video_3gp_url . '">' . $videoplayer_mobileformat_label . '<span class="meta 3gp">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mobileformat_abbr . ', ' . $rhswp_video_3gp_filesize . '</span></a></li>';
             }
             if ( $rhswp_video_audio_url ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_audio_url . '">' . $videoplayer_audioformat_label . '<span class="meta mp3">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_audioformat_abbr . ', ' . $rhswp_video_mp3_filesize . ' </span></a></li>';
+              $returnstring .= '<li class="download" aria-labelledby="videoplayer_download_label"><a href="' . $rhswp_video_audio_url . '">' . $videoplayer_audioformat_label . '<span class="meta mp3">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_audioformat_abbr . ', ' . $rhswp_video_mp3_filesize . ' </span></a></li>';
             }
             if ( $rhswp_video_url_transcript ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_transcript . '">' . $videoplayer_subtitle_label . '<span class="meta srt">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_subtitle_abbr . ' </span></a></li>';
+              $returnstring .= '<li class="download" aria-labelledby="videoplayer_download_label"><a href="' . $rhswp_video_url_transcript . '">' . $videoplayer_subtitle_label . '<span class="meta srt">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_subtitle_abbr . ' </span></a></li>';
             }
-            $returnstring .= '</ul></li>';
+            $returnstring .= '
+              </ul>
+            </li>';
       
             if ( $rhswp_video_transcriptvlak ) {
               $rhswp_video_transcriptvlak =  wpautop( $rhswp_video_transcriptvlak, 'br' );
-              $returnstring .= '<li class="toggle transcription"><h2><a href="#">' . _x( 'Uitgeschreven tekst', 'Rijksvideo', "rijksvideo-translate" ) . '</a></h2><div><h3>' . get_the_title() . '</h3>' . $rhswp_video_transcriptvlak . '</div></li>';
+              $returnstring .= '<li class="toggle transcription" aria-labelledby="videoplayer_captions"><h2><a href="#" id="videoplayer_captions" aria-expanded="false">' . _x( 'Uitgeschreven tekst', 'Rijksvideo', "rijksvideo-translate" ) . '</a></h2><div><h3>' . get_the_title() . '</h3>' . $rhswp_video_transcriptvlak . '</div></li>';
             }
             
             $returnstring .= '</ul></div>';
   
-            $returnstring .= "\n<script>\n";
-            $returnstring .= "jQuery" . "('audio,video').mediaelementplayer({\n";
-            $returnstring .= "	//mode: 'shim',\n";
-            $returnstring .= "	success: function(player, node) {\n";
-            $returnstring .= "		jQuery('#' + node.id + '-mode').html('mode: ' + player.pluginType);\n";
-            $returnstring .= "	}\n";
-            $returnstring .= "});\n";
-            $returnstring .= "</script>";
 
           }
           else {
