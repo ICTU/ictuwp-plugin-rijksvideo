@@ -7,7 +7,7 @@
 		"uuidString": "773488B9-1A17-434E-BE21-3F2FFE819F3E"
 		}
 	],
-"creatorBuild": "25568",
+"creatorBuild": "25704",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -59,7 +59,8 @@
 		"oA": 0,
 		"oAP": "\/assets\/examples\/examples.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/examples\/examples.mp3": {
 		"ft": 8192,
@@ -100,18 +101,22 @@
 	"\/assets\/images\/icon-video-32x32.png": {
 		"ft": 32768,
 		"iS": 48673,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/icon-video-32x32.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/images\/icon-video.png": {
 		"ft": 32768,
 		"iS": 81072,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/icon-video.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/images\/index.php": {
 		"ft": 8192,
@@ -122,10 +127,12 @@
 	"\/assets\/images\/logo-rijksvideo.png": {
 		"ft": 32768,
 		"iS": 87220,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/images\/logo-rijksvideo.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/index.php": {
 		"ft": 8192,
@@ -154,18 +161,22 @@
 	"\/assets\/mediaplayer\/background.png": {
 		"ft": 32768,
 		"iS": 166,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/mediaplayer\/background.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/mediaplayer\/bigplay.png": {
 		"ft": 32768,
 		"iS": 3001,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/mediaplayer\/bigplay.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/mediaplayer\/bigplay.svg": {
 		"ft": 2097152,
@@ -180,10 +191,12 @@
 	"\/assets\/mediaplayer\/controls.png": {
 		"ft": 32768,
 		"iS": 1892,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/mediaplayer\/controls.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/mediaplayer\/controls.svg": {
 		"ft": 2097152,
@@ -206,18 +219,22 @@
 	"\/assets\/mediaplayer\/skipback.png": {
 		"ft": 32768,
 		"iS": 4245,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/mediaplayer\/skipback.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/assets\/mediaplayer\/sprite-topic-toggle.png": {
 		"ft": 32768,
 		"iS": 208,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/assets\/mediaplayer\/sprite-topic-toggle.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/bootstrap.php": {
 		"ft": 8192,
@@ -553,10 +570,12 @@
 	"\/cmb2\/images\/ico-delete.png": {
 		"ft": 32768,
 		"iS": 715,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ico-delete.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/index.php": {
 		"ft": 8192,
@@ -567,106 +586,132 @@
 	"\/cmb2\/images\/ui-bg_flat_0_aaaaaa_40x100.png": {
 		"ft": 32768,
 		"iS": 180,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-bg_flat_75_ffffff_40x100.png": {
 		"ft": 32768,
 		"iS": 178,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-bg_flat_75_ffffff_40x100.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-bg_glass_55_fbf9ee_1x400.png": {
 		"ft": 32768,
 		"iS": 120,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-bg_glass_55_fbf9ee_1x400.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-bg_glass_65_ffffff_1x400.png": {
 		"ft": 32768,
 		"iS": 105,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-bg_glass_65_ffffff_1x400.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-bg_glass_75_dadada_1x400.png": {
 		"ft": 32768,
 		"iS": 111,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-bg_glass_75_dadada_1x400.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-bg_glass_75_e6e6e6_1x400.png": {
 		"ft": 32768,
 		"iS": 110,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-bg_glass_75_e6e6e6_1x400.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-bg_glass_95_fef1ec_1x400.png": {
 		"ft": 32768,
 		"iS": 119,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-bg_glass_95_fef1ec_1x400.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png": {
 		"ft": 32768,
 		"iS": 101,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-icons_222222_256x240.png": {
 		"ft": 32768,
 		"iS": 4369,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-icons_222222_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-icons_2e83ff_256x240.png": {
 		"ft": 32768,
 		"iS": 4369,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-icons_2e83ff_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-icons_454545_256x240.png": {
 		"ft": 32768,
 		"iS": 4369,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-icons_454545_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-icons_888888_256x240.png": {
 		"ft": 32768,
 		"iS": 5355,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-icons_888888_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/images\/ui-icons_cd0a0a_256x240.png": {
 		"ft": 32768,
 		"iS": 4369,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/cmb2\/images\/ui-icons_cd0a0a_256x240.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/includes\/CMB2.php": {
 		"ft": 8192,
@@ -2453,7 +2498,8 @@
 		"oA": 0,
 		"oAP": "\/cmb2\/tests\/data\/images\/test-image.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/cmb2\/tests\/index.php": {
 		"ft": 8192,
@@ -2520,6 +2566,16 @@
 		"oA": 0,
 		"oAP": "\/cmb2\/tests\/test-cmb-utils.php",
 		"oF": 0
+		},
+	"\/css\/mediaelementplayer.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/mediaelementplayer-min.css",
+		"oF": 0,
+		"oS": 0
 		},
 	"\/distribute.sh": {
 		"ft": 8192,
@@ -2621,23 +2677,6 @@
 		"sM": 0,
 		"sU": 0
 		},
-	"\/less\/rijksvideo.less": {
-		"aP": 0,
-		"bl": 0,
-		"dJ": 0,
-		"ft": 1,
-		"ie": 1,
-		"iI": 0,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/assets\/css\/rijksvideo.css",
-		"oF": 2,
-		"oS": 1,
-		"rU": 0,
-		"sI": 0,
-		"sM": 0,
-		"sU": 0
-		},
 	"\/LICENSE": {
 		"ft": 8192,
 		"oA": 2,
@@ -2647,26 +2686,32 @@
 	"\/mediaelement\/build\/background.png": {
 		"ft": 32768,
 		"iS": 166,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/build\/background.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/build\/bigplay.fw.png": {
 		"ft": 32768,
 		"iS": 79426,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/build\/bigplay.fw.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/build\/bigplay.png": {
 		"ft": 32768,
 		"iS": 3001,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/build\/bigplay.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/build\/bigplay.svg": {
 		"ft": 2097152,
@@ -2681,42 +2726,52 @@
 	"\/mediaelement\/build\/controls-ted.png": {
 		"ft": 32768,
 		"iS": 1559,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/build\/controls-ted.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/build\/controls-wmp-bg.png": {
 		"ft": 32768,
 		"iS": 1960,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/build\/controls-wmp-bg.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/build\/controls-wmp.png": {
 		"ft": 32768,
 		"iS": 5511,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/build\/controls-wmp.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/build\/controls.fw.png": {
 		"ft": 32768,
 		"iS": 80753,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/build\/controls.fw.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/build\/controls.png": {
 		"ft": 32768,
 		"iS": 1892,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/build\/controls.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/build\/controls.svg": {
 		"ft": 2097152,
@@ -2764,10 +2819,12 @@
 	"\/mediaelement\/build\/jumpforward.png": {
 		"ft": 32768,
 		"iS": 1563,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/build\/jumpforward.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/build\/lang\/me-i18n-locale-cs.js": {
 		"ft": 64,
@@ -3023,10 +3080,12 @@
 	"\/mediaelement\/build\/skipback.png": {
 		"ft": 32768,
 		"iS": 4245,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/build\/skipback.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/media\/echo-hereweare.jpg": {
 		"ft": 16384,
@@ -3034,7 +3093,8 @@
 		"oA": 0,
 		"oAP": "\/mediaelement\/media\/echo-hereweare.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/media\/echo-hereweare.mp4": {
 		"ft": 8192,
@@ -3066,26 +3126,32 @@
 	"\/mediaelement\/src\/css\/background.png": {
 		"ft": 32768,
 		"iS": 166,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/src\/css\/background.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/src\/css\/bigplay.fw.png": {
 		"ft": 32768,
 		"iS": 79426,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/src\/css\/bigplay.fw.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/src\/css\/bigplay.png": {
 		"ft": 32768,
 		"iS": 3001,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/src\/css\/bigplay.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/src\/css\/bigplay.svg": {
 		"ft": 2097152,
@@ -3100,42 +3166,52 @@
 	"\/mediaelement\/src\/css\/controls-ted.png": {
 		"ft": 32768,
 		"iS": 1559,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/src\/css\/controls-ted.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/src\/css\/controls-wmp-bg.png": {
 		"ft": 32768,
 		"iS": 1960,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/src\/css\/controls-wmp-bg.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/src\/css\/controls-wmp.png": {
 		"ft": 32768,
 		"iS": 5511,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/src\/css\/controls-wmp.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/src\/css\/controls.fw.png": {
 		"ft": 32768,
 		"iS": 80753,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/src\/css\/controls.fw.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/src\/css\/controls.png": {
 		"ft": 32768,
 		"iS": 1892,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/src\/css\/controls.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/src\/css\/controls.svg": {
 		"ft": 2097152,
@@ -3150,10 +3226,12 @@
 	"\/mediaelement\/src\/css\/jumpforward.png": {
 		"ft": 32768,
 		"iS": 1563,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/src\/css\/jumpforward.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/src\/css\/loading.gif": {
 		"ft": 4194304,
@@ -3186,10 +3264,12 @@
 	"\/mediaelement\/src\/css\/skipback.png": {
 		"ft": 32768,
 		"iS": 4245,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/mediaelement\/src\/css\/skipback.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/mediaelement\/src\/flash\/flashls.swc": {
 		"ft": 8192,
@@ -4590,6 +4670,10 @@
 			"active": 1,
 			"optionString": ""
 			},
+		"no-compare-neg-zero": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-cond-assign": {
 			"active": 1,
 			"optionString": "'except-parens'"
@@ -5069,6 +5153,10 @@
 		"no-with": {
 			"active": 0,
 			"optionString": ""
+			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
 			},
 		"object-curly-newline": {
 			"active": 0,
@@ -5669,7 +5757,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"quality": 100
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
@@ -5762,7 +5851,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"enableLossy": 1,
+		"quality": 100
 		},
 	"languageDefaultsPUG": {
 		"autoOutputAction": 0,
