@@ -2677,6 +2677,23 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/less\/rijksvideo.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/css\/rijksvideo.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
 	"\/LICENSE": {
 		"ft": 8192,
 		"oA": 2,
@@ -3996,7 +4013,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 509963567,
-	"displayValue": "ICTU - WP-Rijksvideoplugin",
+	"displayValue": "ICTU Rijksvideoplugin",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "\/assets\/images\/logo-rijksvideo.png"
 	},

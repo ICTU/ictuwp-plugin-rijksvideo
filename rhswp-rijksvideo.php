@@ -3,7 +3,7 @@
  * Rijksvideo. 
  *
  * Plugin Name:         Rijksvideo
- * Plugin URI:          https://wbvb.nl/plugins/rhswp-rijksvideo/
+ * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
  * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
  * Version:             1.0.1
  * Version description: Accessibility checks
@@ -332,7 +332,7 @@ class RijksvideoPlugin_v1 {
       $screen->add_help_tab( array(
         'id'      => 'documentation',
         'title'   => __( 'Documentatie', "rijksvideo-translate" ),
-        'content' => "<p><a href='https://wbvb.nl/plugins/rhswp-rijksvideo/documentation/' target='blank'>" . __( 'Rijksvideo documentatie', "rijksvideo-translate" ) . "</a></p>",
+        'content' => "<p><a href='https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/documentation/' target='blank'>" . __( 'Rijksvideo documentatie', "rijksvideo-translate" ) . "</a></p>",
         )
       );
     }

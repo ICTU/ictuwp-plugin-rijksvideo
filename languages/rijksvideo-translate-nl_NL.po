@@ -610,7 +610,7 @@ msgid "No videos found"
 msgstr "Geen videos gevonden"
 
 #. Plugin URI of the plugin/theme
-msgid "https://wbvb.nl/plugins/rhswp-rijksvideo/"
+msgid "https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/"
 msgstr ""
 
 #. Description of the plugin/theme
