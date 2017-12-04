@@ -458,7 +458,7 @@ class RijksvideoPlugin_v1 {
           $videoplayer_subtitle_abbr      = _x( 'srt', 'Rijksvideo', "rijksvideo-translate" );
           
           
-          $uniqueid                       = $this->getuniqueid();    
+          $uniqueid                       = $this->getuniqueid( $postid );    
     
           $rhswp_video_duur               = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'video_time', '-' );
 
@@ -536,7 +536,7 @@ class RijksvideoPlugin_v1 {
       
             $returnstring .= '<ul class="downloads">
               <li class="toggle downloads close">
-              <h2><a href="#" aria-expanded="false" id="videoplayer_download_label' . $uniqueid . '">' . $videoplayer_download_label . '</a></h2>
+              <h2 id="videoplayer_download_label' . $uniqueid . '"><a href="#" aria-expanded="false">' . $videoplayer_download_label . '</a></h2>
               <ul aria-labelledby="videoplayer_download_label' . $uniqueid . '">';
             if ( $rhswp_video_mp4_url ) {
               $returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
@@ -562,7 +562,7 @@ class RijksvideoPlugin_v1 {
       
             if ( $rhswp_video_transcriptvlak ) {
               $rhswp_video_transcriptvlak =  wpautop( $rhswp_video_transcriptvlak, 'br' );
-              $returnstring .= '<li class="toggle transcription"><h2><a href="#" id="videoplayer_captions" aria-expanded="false">' . _x( 'Uitgeschreven tekst', 'Rijksvideo', "rijksvideo-translate" ) . '</a></h2><div aria-labelledby="videoplayer_captions"><h3>' . get_the_title() . '</h3>' . $rhswp_video_transcriptvlak . '</div></li>';
+              $returnstring .= '<li class="toggle transcription"><h2 id="videoplayer_captions' . $uniqueid . '"><a href="#" aria-expanded="false">' . _x( 'Uitgeschreven tekst', 'Rijksvideo', "rijksvideo-translate" ) . '</a></h2><div aria-labelledby="videoplayer_captions' . $uniqueid . '"><h3>' . get_the_title() . '</h3>' . $rhswp_video_transcriptvlak . '</div></li>';
             }
             
             $returnstring .= '</ul></div>';
@@ -607,11 +607,11 @@ class RijksvideoPlugin_v1 {
 
     //========================================================================================================
     
-    public function getuniqueid() {
+    public function getuniqueid( $video_id ) {
       
       global $post;
       
-      return '-video' . $post->ID;    
+      return '_video' . $video_id . '_post' . $post->ID;    
     
     }
 
