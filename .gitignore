@@ -21,3 +21,6 @@ distribute.sh
 
 get_cmb2_files.sh
 get_mediaelement_files.sh
+*.map
+
+*.codekit3

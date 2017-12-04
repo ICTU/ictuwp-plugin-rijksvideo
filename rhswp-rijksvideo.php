@@ -5,7 +5,7 @@
  * Plugin Name:         Rijksvideo
  * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
  * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
- * Version:             1.0.1
+ * Version:             1.0.2
  * Version description: Accessibility checks
  * Author:              Paul van Buuren
  * Author URI:          https://wbvb.nl
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '1.0.1';
+    public $version = '1.0.2';
 
 
     /**
@@ -457,7 +457,8 @@ class RijksvideoPlugin_v1 {
           $videoplayer_subtitle_label     = _x( 'Ondertitelingsbestand', 'Rijksvideo', "rijksvideo-translate" );
           $videoplayer_subtitle_abbr      = _x( 'srt', 'Rijksvideo', "rijksvideo-translate" );
           
-    
+          
+          $uniqueid                       = $this->getuniqueid();    
     
           $rhswp_video_duur               = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'video_time', '-' );
 
@@ -535,8 +536,8 @@ class RijksvideoPlugin_v1 {
       
             $returnstring .= '<ul class="downloads">
               <li class="toggle downloads close">
-              <h2><a href="#" aria-expanded="false" id="videoplayer_download_label">' . $videoplayer_download_label . '</a></h2>
-              <ul aria-labelledby="videoplayer_download_label">';
+              <h2><a href="#" aria-expanded="false" id="videoplayer_download_label' . $uniqueid . '">' . $videoplayer_download_label . '</a></h2>
+              <ul aria-labelledby="videoplayer_download_label' . $uniqueid . '">';
             if ( $rhswp_video_mp4_url ) {
               $returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
             }
@@ -606,7 +607,15 @@ class RijksvideoPlugin_v1 {
 
     //========================================================================================================
     
+    public function getuniqueid() {
+      
+      global $post;
+      
+      return '-video' . $post->ID;    
     
+    }
+
+    //========================================================================================================
     
     public function append_comboboxes() {
     
