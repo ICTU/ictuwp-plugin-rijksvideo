@@ -1,3 +1,18 @@
+
+//**
+// Rijksvideo - mediaelement-and-player.js
+// ----------------------------------------------------------------------------------
+// js for player and download files
+// ----------------------------------------------------------------------------------
+// @author  Paul van Buuren
+// @license GPL-2.0+
+// @plugin: rhswp-rijksvideo
+// Version: 1.0.3
+// Version description: Translations, a11y checks, unique IDs
+// @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
+// */
+
+
 /*!
  *
  * MediaElement.js
@@ -12,6 +27,7 @@
  * License: MIT
  *
  */
+ 
 // Namespace
 var mejs = mejs || {};
 
@@ -2130,56 +2146,56 @@ window.MediaElement = mejs.MediaElement;
     if (typeof exports.en === 'undefined') {
         exports.en = {
             // me-shim
-            'mejs.download-file': 'Download File',
+            'mejs.download-file': 'Download bestand',
 
             // mep-feature-contextmenu
-            'mejs.fullscreen-off': 'Turn off Fullscreen',
-            'mejs.fullscreen-on' : 'Go Fullscreen',
+            'mejs.fullscreen-off': 'Sluit volledig scherm',
+            'mejs.fullscreen-on' : 'Gebruik volledig scherm',
             // Duplicated from mep-feature-volume
             // 'mejs.unmute' : 'Unmute',
             // 'mejs.mute' : 'Mute',
-            'mejs.download-video' : 'Download Video',
+            'mejs.download-video' : 'Download video',
 
             // mep-feature-fullscreen
-            'mejs.fullscreen' : 'Fullscreen',
+            'mejs.fullscreen' : 'Volledig scherm',
 
             // mep-feature-jumpforward
-            'mejs.time-jump-forward': 'Jump forward %1 seconds',
+            'mejs.time-jump-forward': 'Sla %1 seconde over',
 
             // mep-feature-playpause
-            'mejs.play': 'Play',
-            'mejs.pause': 'Pause',
+            'mejs.play': 'Afspelen',
+            'mejs.pause': 'Pauzeren',
 
             // mep-feature-postroll
-            'mejs.close' : 'Close',
+            'mejs.close' : 'Sluiten',
 
             // mep-feature-progress
-            'mejs.time-slider': 'Time Slider',
-            'mejs.time-help-text': 'Use Left/Right Arrow keys to advance one second, Up/Down arrows to advance ten seconds.',
+            'mejs.time-slider': 'Schuifbalk om vooruit of terug te spoelen',
+            'mejs.time-help-text': 'Gebruik linker- of rechterpijltjestoetsen om 1 seconde vooruit te spoelen; gebruik omhoog- of omlaagpijltjestoetsen om 10 seconde vooruit te spoelen.',
 
             // mep-feature-skipback
-            'mejs.time-skip-back': 'Skip back %1 seconds',
+            'mejs.time-skip-back': 'Ga %1 seconde terug',
 
             // mep-feature-tracks
-            'mejs.captions-subtitles' : 'Captions/Subtitles',
-            'mejs.none' : 'None',
+            'mejs.captions-subtitles' : 'Ondertitels',
+            'mejs.none' : 'Geen',
 
             // mep-feature-volume
-            'mejs.mute-toggle' : 'Mute Toggle',
-            'mejs.volume-help-text': 'Use Up/Down Arrow keys to increase or decrease volume.',
-            'mejs.unmute' : 'Unmute',
-            'mejs.mute' : 'Mute',
-            'mejs.volume-slider': 'Volume Slider',
+            'mejs.mute-toggle' : 'Geluid aan of uit',
+            'mejs.volume-help-text': 'gebruik omhoog- of omlaagpijltjestoetsen om volume te wijzigen.',
+            'mejs.unmute' : 'Geluid aan',
+            'mejs.mute' : 'Geluid uit',
+            'mejs.volume-slider': 'Volume-knop',
 
             // mep-player
-            'mejs.video-player': 'Video Player',
-            'mejs.audio-player': 'Audio Player',
+            'mejs.video-player': 'Video player',
+            'mejs.audio-player': 'Audio player',
             	
             // mep-feature-ads
-            'mejs.ad-skip': 'Skip ad',
-            'mejs.ad-skip-info': 'Skip in %1 seconds',
+            'mejs.ad-skip': 'Sla advertentie over',
+            'mejs.ad-skip-info': 'Sla over in %1 seconde',
 
-            'mejs.source-chooser': 'Source Chooser'
+            'mejs.source-chooser': 'Keuze-optie voor bron'
         };
     }
 
