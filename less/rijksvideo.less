@@ -1,4 +1,5 @@
 
+/*!
 
 //**
 // Rijksvideo - rijksvideo.less
@@ -8,14 +9,10 @@
 // @author  Paul van Buuren
 // @license GPL-2.0+
 // @plugin: rhswp-rijksvideo
-// Version: 1.0.3
-// Version description: Translations, a11y checks, unique IDs
+// Version: 1.0.4
+// Version desc: CSS validation check
 // @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
-// */
 
-/*!
-  
-// Version:             1.0.3
 
 <!--                                                            -->
 <!-- ========================================================   -->
@@ -92,14 +89,16 @@
   .mejs-offscreen{
 
     
-  /* Accessibility: hide screen reader texts (and prefer "top" for RTL languages).  Reference: http://blog.rrwd.nl/2015/04/04/the-screen-reader-text-class-why-and-how/ */
-  	clip: rect(1px 1px 1px 1px); /* IE6, IE7 - no likey commas */
-  	clip: rect(1px, 1px, 1px, 1px); /* IE8-IE11 - we likey commas, no support for clip-path */
-  	clip-path: polygon(0px 0px, 0px 0px,0px 0px, 0px 0px);
-  	position: absolute !important;
-  	height: 1px;
-  	width: 1px;
-  	overflow: hidden;
+  /* Accessibility: hide screen reader texts (and prefer "top" for RTL languages).  Reference: http://rianrietveld.com/2015/04/04/the-screen-reader-text-class-why-and-how/ */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+
   }
 
   .mejs-container {
@@ -228,7 +227,6 @@
       background: #333;
       background: url('../mediaplayer/background.png');
       background: rgba(0,0,0,0.9);
-      background: -webkit-gradient(linear,0% 0,0% 100%,from(rgba(50,50,50,0.9)),to(rgba(0,0,0,0.9)));
       background: -webkit-linear-gradient(top,rgba(50,50,50,0.9),rgba(0,0,0,0.9));
       background: -moz-linear-gradient(top,rgba(50,50,50,0.9),rgba(0,0,0,0.9));
       background: -o-linear-gradient(top,rgba(50,50,50,0.9),rgba(0,0,0,0.9));
@@ -320,8 +318,6 @@
       padding: 9px 3px 7px 3px;
       overflow: hidden;
       text-align: center;
-      -moz-box-sizing: content-box;
-      -webkit-box-sizing: content-box;
       box-sizing: content-box;
   }
   
@@ -367,7 +363,6 @@
       margin: 10px 5px 5px 5px;
       background: #333;
       background: rgba(50,50,50,0.8);
-      background: -webkit-gradient(linear,0% 0,0% 100%,from(rgba(30,30,30,0.8)),to(rgba(60,60,60,0.8)));
       background: -webkit-linear-gradient(top,rgba(30,30,30,0.8),rgba(60,60,60,0.8));
       background: -moz-linear-gradient(top,rgba(30,30,30,0.8),rgba(60,60,60,0.8));
       background: -o-linear-gradient(top,rgba(30,30,30,0.8),rgba(60,60,60,0.8));
@@ -378,7 +373,6 @@
   .mejs-controls .mejs-time-rail .mejs-time-buffering {
       width: 100%;
       background-image: -o-linear-gradient(-45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
-      background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(0.25,rgba(255,255,255,0.15)),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,rgba(255,255,255,0.15)),color-stop(0.75,rgba(255,255,255,0.15)),color-stop(0.75,transparent),to(transparent));
       background-image: -webkit-linear-gradient(-45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
       background-image: -moz-linear-gradient(-45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
       background-image: -ms-linear-gradient(-45deg,rgba(255,255,255,0.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,0.15) 50%,rgba(255,255,255,0.15) 75%,transparent 75%,transparent);
@@ -570,7 +564,6 @@
       border-radius: 2px;
       background: #333;
       background: rgba(50,50,50,0.8);
-      background: -webkit-gradient(linear,0% 0,0% 100%,from(rgba(30,30,30,0.8)),to(rgba(60,60,60,0.8)));
       background: -webkit-linear-gradient(top,rgba(30,30,30,0.8),rgba(60,60,60,0.8));
       background: -moz-linear-gradient(top,rgba(30,30,30,0.8),rgba(60,60,60,0.8));
       background: -o-linear-gradient(top,rgba(30,30,30,0.8),rgba(60,60,60,0.8));
@@ -592,7 +585,6 @@
       border-radius: 2px;
       background: #fff;
       background: rgba(255,255,255,0.8);
-      background: -webkit-gradient(linear,0% 0,0% 100%,from(rgba(255,255,255,0.9)),to(rgba(200,200,200,0.8)));
       background: -webkit-linear-gradient(top,rgba(255,255,255,0.9),rgba(200,200,200,0.8));
       background: -moz-linear-gradient(top,rgba(255,255,255,0.9),rgba(200,200,200,0.8));
       background: -o-linear-gradient(top,rgba(255,255,255,0.9),rgba(200,200,200,0.8));
