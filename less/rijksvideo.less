@@ -10,7 +10,7 @@
 // @license GPL-2.0+
 // @plugin: rhswp-rijksvideo
 // Version: 1.0.4
-// Version desc: CSS validation check
+// Version desc: CSS validation check & styling verbeterd
 // @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 
 
@@ -251,7 +251,6 @@
       left: 0;
       height: 30px;
       width: 100%;
-      background: #f3f3f3;
   }
   
   .flash .mejs-container .mejs-controls {
@@ -1153,7 +1152,10 @@
   .block-audio-video li.toggle h2 a {
       position: relative;
       padding: 5px 9px;
-      background: #f3f3f3 url('../mediaplayer/sprite-topic-toggle.png') no-repeat 98% 11px;
+      background-image: url('../mediaplayer/sprite-topic-toggle.png') !important;
+      background-repeat: no-repeat !important;
+      background-position: 98% 7px !important;
+      
   }
   .block-audio-video li.toggle h2 a:hover,
   .block-audio-video li.toggle.open h2 a {
@@ -1167,7 +1169,7 @@
       padding: 2px 9px 3px 9px;      
     }
     h2 a {
-      background-position: 98% -91px;
+      background-position: 98% -95px !important;
     }  
   }  
 /*

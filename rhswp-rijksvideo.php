@@ -6,7 +6,7 @@
  * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
  * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
  * Version:             1.0.4
- * Version description: CSS validation check
+ * Version description: CSS validation check & styling verbeterd
  * Author:              Paul van Buuren
  * Author URI:          https://wbvb.nl
  * License:             GPL-2.0+

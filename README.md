@@ -5,10 +5,10 @@ ICTU - Digitale Overheid WP - rijksvideoplugin
 Paul van Buuren (paul@wbvb.nl)
 
 ## Current version
-* 1.0.3
+* 1.0.4
 
 ## Version history
-* 1.0.3 - Translations, a11y checks, unique IDs
+* 1.0.4 - CSS validation check & styling verbeterd
 * 1.0.2 - Accessibility checks
 * 1.0.1 - Accessibility checks
 * 1.0.0 - Accessibility checks
