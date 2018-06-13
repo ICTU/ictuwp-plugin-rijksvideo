@@ -5,8 +5,8 @@
  * Plugin Name:         Rijksvideo
  * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
  * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
- * Version:             1.0.4
- * Version description: CSS validation check & styling verbeterd
+ * Version:             1.0.5
+ * Version description: Posttype RHSWP_CPT_TIMELINE (voor tijdlijn) uitgesloten van RV-buttons; CMB2 updates.
  * Author:              Paul van Buuren
  * Author URI:          https://wbvb.nl
  * License:             GPL-2.0+
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '1.0.4';
+    public $version = '1.0.5';
 
 
     /**
@@ -205,7 +205,7 @@ class RijksvideoPlugin_v1 {
     private function setup_actions() {
 
         add_action( 'init', array( $this, 'register_post_type' ) );
-        add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+        add_action( 'plugins_loaded', array( $this, 'load_plugin_textdomain' ) );
         add_action( 'admin_footer', array( $this, 'admin_footer' ), 11 );
 
 
@@ -1242,20 +1242,23 @@ class RijksvideoPlugin_v1 {
         $allowed_post_types = array();
         
         // to do: possibility to exclude some post types to allow for the insert video button
-        foreach ( $available_post_types as $available_post_type ) {
-          if ( $available_post_type !== RHSWP_CPT_RIJKSVIDEO ) {
-            array_push( $allowed_post_types, $available_post_type );
-          }
-        }
+				foreach ( $available_post_types as $available_post_type ) {
+					if ( defined( 'RHSWP_CPT_TIMELINE' ) && $available_post_type === RHSWP_CPT_TIMELINE ) {
+						continue;
+					}
+					if ( $available_post_type !== RHSWP_CPT_RIJKSVIDEO ) {
+						array_push( $allowed_post_types, $available_post_type );
+					}
+				}
 
-        if ( ( in_array( $pagenow, array( 'post.php', 'page.php', 'post-new.php', 'post-edit.php' ) ) ) && ( in_array( $posttype, $allowed_post_types ) ) ) {
-            $context .= '<a href="#TB_inline?&inlineId=choose-video-selector-screen" class="thickbox button" title="' .
-                __( "Selecteer een rijksvideo om in dit bericht in te voegen.", "rijksvideo-translate" ) .
-                '"><span class="wp-media-buttons-icon" style="background: url(' . RIJKSVIDEO_ASSETS_URL . 'images/icon-video.png); background-repeat: no-repeat; background-size: 16px 16px; background-position: center center;"></span> ' .
-                __( "Voeg rijksvideo in", "rijksvideo-translate" ) . '</a>';
-        }
-
-        return $context;
+				if ( ( in_array( $pagenow, array( 'post.php', 'page.php', 'post-new.php', 'post-edit.php' ) ) ) && ( in_array( $posttype, $allowed_post_types ) ) ) {
+					$context .= '<a href="#TB_inline?&inlineId=choose-video-selector-screen" class="thickbox button" title="' .
+										__( "Selecteer een rijksvideo om in dit bericht in te voegen.", "rijksvideo-translate" ) .
+										'"><span class="wp-media-buttons-icon" style="background: url(' . RIJKSVIDEO_ASSETS_URL . 'images/icon-video.png); background-repeat: no-repeat; background-size: 16px 16px; background-position: center center;"></span> ' .
+										__( "Voeg rijksvideo in", "rijksvideo-translate" ) . '</a>';
+				}
+				
+				return $context;
 
     }
 
@@ -1305,10 +1308,8 @@ class RijksvideoPlugin_v1 {
             <?php
         }
     }
-
-
-
 }
+
 
 endif;
 

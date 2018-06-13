@@ -5,9 +5,10 @@ ICTU - Digitale Overheid WP - rijksvideoplugin
 Paul van Buuren (paul@wbvb.nl)
 
 ## Current version
-* 1.0.4
+* 1.0.5
 
 ## Version history
+* 1.0.5 - Posttype RHSWP_CPT_TIMELINE (voor tijdlijn) uitgesloten van RV-buttons; CMB2 updates.
 * 1.0.4 - CSS validation check & styling verbeterd
 * 1.0.2 - Accessibility checks
 * 1.0.1 - Accessibility checks

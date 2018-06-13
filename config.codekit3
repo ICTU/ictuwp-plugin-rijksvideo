@@ -7,7 +7,7 @@
 		"uuidString": "773488B9-1A17-434E-BE21-3F2FFE819F3E"
 		}
 	],
-"creatorBuild": "26268",
+"creatorBuild": "26680",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
@@ -67,6 +67,7 @@
 	"\/assets\/examples\/examples.jpg": {
 		"ft": 16384,
 		"iS": 34461,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/assets\/examples\/examples.jpg",
 		"oF": 0,
@@ -480,6 +481,19 @@
 		"oS": 0,
 		"uL": 1
 		},
+	"\/cmb2\/css\/sass\/partials\/_context_metaboxes.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/cmb2\/css\/sass\/css\/_context_metaboxes.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/cmb2\/css\/sass\/partials\/_display.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -554,6 +568,32 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/cmb2\/css\/sass\/css\/_mixins.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/cmb2\/css\/sass\/partials\/_new_term.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/cmb2\/css\/sass\/css\/_new_term.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/cmb2\/css\/sass\/partials\/_options-page.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/cmb2\/css\/sass\/css\/_options-page.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -835,6 +875,13 @@
 		"oAP": "\/cmb2\/includes\/CMB2_Options.php",
 		"oF": 0
 		},
+	"\/cmb2\/includes\/CMB2_Options_Hookup.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/includes\/CMB2_Options_Hookup.php",
+		"oF": 0
+		},
 	"\/cmb2\/includes\/CMB2_Sanitize.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -875,6 +922,41 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/cmb2\/includes\/index.php",
+		"oF": 0
+		},
+	"\/cmb2\/includes\/rest-api\/CMB2_REST.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/includes\/rest-api\/CMB2_REST.php",
+		"oF": 0
+		},
+	"\/cmb2\/includes\/rest-api\/CMB2_REST_Controller.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/includes\/rest-api\/CMB2_REST_Controller.php",
+		"oF": 0
+		},
+	"\/cmb2\/includes\/rest-api\/CMB2_REST_Controller_Boxes.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/includes\/rest-api\/CMB2_REST_Controller_Boxes.php",
+		"oF": 0
+		},
+	"\/cmb2\/includes\/rest-api\/CMB2_REST_Controller_Fields.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/includes\/rest-api\/CMB2_REST_Controller_Fields.php",
+		"oF": 0
+		},
+	"\/cmb2\/includes\/shim\/WP_REST_Controller.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/includes\/shim\/WP_REST_Controller.php",
 		"oF": 0
 		},
 	"\/cmb2\/includes\/types\/CMB2_Type_Base.php": {
@@ -982,11 +1064,25 @@
 		"oAP": "\/cmb2\/includes\/types\/CMB2_Type_Taxonomy_Multicheck.php",
 		"oF": 0
 		},
+	"\/cmb2\/includes\/types\/CMB2_Type_Taxonomy_Multicheck_Hierarchical.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/includes\/types\/CMB2_Type_Taxonomy_Multicheck_Hierarchical.php",
+		"oF": 0
+		},
 	"\/cmb2\/includes\/types\/CMB2_Type_Taxonomy_Radio.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/cmb2\/includes\/types\/CMB2_Type_Taxonomy_Radio.php",
+		"oF": 0
+		},
+	"\/cmb2\/includes\/types\/CMB2_Type_Taxonomy_Radio_Hierarchical.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/includes\/types\/CMB2_Type_Taxonomy_Radio_Hierarchical.php",
 		"oF": 0
 		},
 	"\/cmb2\/includes\/types\/CMB2_Type_Taxonomy_Select.php": {
@@ -1120,12 +1216,22 @@
 		"sC": 1,
 		"tS": 0
 		},
-	"\/cmb2\/js\/min\/cmb2-min.js": {
+	"\/cmb2\/js\/wp-color-picker-alpha.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 1,
-		"oAP": "\/cmb2\/js\/min\/min\/cmb2-min-min.js",
+		"oA": 0,
+		"oAP": "\/cmb2\/js\/min\/wp-color-picker-alpha-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/cmb2\/js\/wp-color-picker-alpha.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/cmb2\/js\/min\/wp-color-picker-alpha.min-min.js",
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
@@ -2817,6 +2923,20 @@
 		"oAP": "\/cmb2\/languages\/cmb2.pot",
 		"oF": 0
 		},
+	"\/cmb2\/tests\/bin\/after-run-wp-unit-tests.sh": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/tests\/bin\/after-run-wp-unit-tests.sh",
+		"oF": 0
+		},
+	"\/cmb2\/tests\/bin\/install-php-phpunit.sh": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/tests\/bin\/install-php-phpunit.sh",
+		"oF": 0
+		},
 	"\/cmb2\/tests\/bin\/install-wp-tests.sh": {
 		"cB": 0,
 		"ft": 8192,
@@ -2824,11 +2944,57 @@
 		"oAP": "\/cmb2\/tests\/bin\/install-wp-tests.sh",
 		"oF": 0
 		},
+	"\/cmb2\/tests\/bin\/patches\/node.patch": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/tests\/bin\/patches\/node.patch",
+		"oF": 0
+		},
+	"\/cmb2\/tests\/bin\/patches\/openssl.patch": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/tests\/bin\/patches\/openssl.patch",
+		"oF": 0
+		},
+	"\/cmb2\/tests\/bin\/patches\/README.md": {
+		"cB": 0,
+		"cS": 0,
+		"eF": 1,
+		"eL": 1,
+		"ema": 1,
+		"eSQ": 1,
+		"ft": 4096,
+		"oA": 0,
+		"oAP": "\/cmb2\/tests\/bin\/patches\/README.html",
+		"oF": 0,
+		"oFM": 0,
+		"oS": 0,
+		"pHT": 0,
+		"pME": 1,
+		"rFN": 0,
+		"uCM": 0
+		},
+	"\/cmb2\/tests\/bin\/run-wp-unit-tests.sh": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/tests\/bin\/run-wp-unit-tests.sh",
+		"oF": 0
+		},
 	"\/cmb2\/tests\/bootstrap.php": {
 		"cB": 0,
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/cmb2\/tests\/bootstrap.php",
+		"oF": 0
+		},
+	"\/cmb2\/tests\/cmb-rest-tests-base.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/tests\/cmb-rest-tests-base.php",
 		"oF": 0
 		},
 	"\/cmb2\/tests\/cmb-tests-base.php": {
@@ -2841,6 +3007,7 @@
 	"\/cmb2\/tests\/data\/images\/test-image.jpg": {
 		"ft": 16384,
 		"iS": 2028,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/cmb2\/tests\/data\/images\/test-image.jpg",
 		"oF": 0,
@@ -2892,6 +3059,34 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/cmb2\/tests\/test-cmb-field.php",
+		"oF": 0
+		},
+	"\/cmb2\/tests\/test-cmb-options.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/tests\/test-cmb-options.php",
+		"oF": 0
+		},
+	"\/cmb2\/tests\/test-cmb-rest-controllers.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/tests\/test-cmb-rest-controllers.php",
+		"oF": 0
+		},
+	"\/cmb2\/tests\/test-cmb-rest-registered-fields.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/tests\/test-cmb-rest-registered-fields.php",
+		"oF": 0
+		},
+	"\/cmb2\/tests\/test-cmb-rest.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/cmb2\/tests\/test-cmb-rest.php",
 		"oF": 0
 		},
 	"\/cmb2\/tests\/test-cmb-types-base.php": {
@@ -3540,6 +3735,7 @@
 	"\/mediaelement\/media\/echo-hereweare.jpg": {
 		"ft": 16384,
 		"iS": 19675,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/mediaelement\/media\/echo-hereweare.jpg",
 		"oF": 0,
@@ -4565,7 +4761,8 @@
 	"creationDate": 509963567,
 	"displayValue": "ICTU Rijksvideoplugin",
 	"displayValueWasSetByUser": 1,
-	"iconImageName": "\/assets\/images\/logo-rijksvideo.png"
+	"iconImageName": "\/assets\/images\/logo-rijksvideo.png",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -6368,6 +6565,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
