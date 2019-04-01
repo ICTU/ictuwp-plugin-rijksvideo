@@ -1,18 +1,18 @@
 <?php
 /*
- * Rijksvideo. 
- *
- * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
- * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
- * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
- * Version:             1.0.5
- * Version description: Posttype RHSWP_CPT_TIMELINE (voor tijdlijn) uitgesloten van RV-buttons; CMB2 updates.
- * Author:              Paul van Buuren
- * Author URI:          https://wbvb.nl
- * License:             GPL-2.0+
- *
- * Text Domain:         rijksvideo-translate
- * Domain Path:         /languages
+// * Rijksvideo. 
+// *
+// * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
+// * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
+// * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
+// * Version:             1.0.6
+// * Version description: CMB2 updates. ALT-attributen van thumbail. Thumbnail verplicht veld gemaakt.
+// * Author:              Paul van Buuren
+// * Author URI:          https://wbvb.nl
+// * License:             GPL-2.0+
+// *
+// * Text Domain:         rijksvideo-translate
+// * Domain Path:         /languages
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '1.0.5';
+    public $version = '1.0.6';
 
 
     /**
@@ -652,11 +652,16 @@ class RijksvideoPlugin_v1 {
 
     
       	$cmb2_metafields->add_field( array(
-      		'name' => __( 'URL van thumbnail', "rijksvideo-translate" ),
-      		'desc' => __( 'Als caption van de video wordt eerst gekeken of je een uitgelichte afbeelding hebt toegevoegd aan deze video. Als die er niet is, kun je hier de URL van het bijbehorende plaatje invoeren.', "rijksvideo-translate" ),
-      		'id'   => RHSWP_CPT_VIDEO_PREFIX . 'url_video_thumb',
-      		'type' => 'text_url',
-      		'protocols' => array('http', 'https', '//'), // Array of allowed protocols
+        'name'        => __( 'URL van thumbnail', "rijksvideo-translate" ),
+        'desc'        => __( 'Als caption van de video wordt eerst gekeken of je een uitgelichte afbeelding hebt toegevoegd aan deze video. Als die er niet is, kun je hier de URL van het bijbehorende plaatje invoeren.', "rijksvideo-translate" ),
+        'id'          => RHSWP_CPT_VIDEO_PREFIX . 'url_video_thumb',
+        'type'        => 'text_url',
+        'protocols'   => array('http', 'https', '//'), // Array of allowed protocols
+        'attributes'  => array(
+          'data-validation' => 'required',
+          'required'        => 'required'
+        ),      		
+      		
       	) );
       	 
       	$cmb2_metafields->add_field( array(
@@ -664,10 +669,10 @@ class RijksvideoPlugin_v1 {
       		'desc' => __( '(verplicht) formaat: uu:mm:ss', "rijksvideo-translate" ),
       		'id'   => RHSWP_CPT_VIDEO_PREFIX . 'video_time',
       		'type' => 'text_small',
-          'attributes' => array(
-              'data-validation' => 'required',
-              'required' => 'required'
-          ),      		
+        'attributes'  => array(
+          'data-validation' => 'required',
+          'required'        => 'required'
+        ),      		
       	) );
 
       	$cmb2_metafields->add_field( array(
@@ -712,14 +717,14 @@ class RijksvideoPlugin_v1 {
       	) );
       
       	$cmb2_metafields->add_field( array(
-      		'name' => __( 'URL van ondertitel (*)', "rijksvideo-translate" ),
-      		'desc' => __( '(verplicht veld) Dit is meestal een bestand dat eindigt op .srt', "rijksvideo-translate" ),
-      		'id'   => RHSWP_CPT_VIDEO_PREFIX . 'url_transcript_file',
-      		'type' => 'text_url',
-      		'protocols' => array('http', 'https', '//'), // Array of allowed protocols
-          'attributes' => array(
-              'data-validation' => 'required',
-              'required' => 'required'
+        'name'        => __( 'URL van ondertitel (*)', "rijksvideo-translate" ),
+        'desc'        => __( '(verplicht veld) Dit is meestal een bestand dat eindigt op .srt', "rijksvideo-translate" ),
+        'id'          => RHSWP_CPT_VIDEO_PREFIX . 'url_transcript_file',
+        'type'        => 'text_url',
+        'protocols'   => array('http', 'https', '//'), // Array of allowed protocols
+        'attributes'  => array(
+            'data-validation' => 'required',
+            'required' => 'required'
           ),      		
       	) );
       

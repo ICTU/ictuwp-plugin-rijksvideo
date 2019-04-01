@@ -12,11 +12,15 @@
  * License: MIT
  *
  */
+
+// * Version:             1.0.6
+// * Version description: CMB2 updates. ALT-attributen van thumbail. Thumbnail verplicht veld gemaakt. 
+ 
 // Namespace
 var mejs = mejs || {};
 
 // version number
-mejs.version = '2.23.1';
+mejs.version = '1.0.6';
 
 
 // player number (for missing, same id attr)
@@ -1274,7 +1278,7 @@ mejs.HtmlMediaElementShim = {
 			errorContent = '<a href="' + playback.url + '">';
 
 			if (poster !== '') {
-				errorContent += '<img src="' + poster + '" width="100%" height="100%" alt="" />';
+				errorContent += '<img src="' + poster + '" width="100%" height="100%" alt="Screenshot uit de video" />';
 			}
 
 			errorContent += '<span>' + mejs.i18n.t('mejs.download-file') + '</span></a>';

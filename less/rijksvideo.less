@@ -9,8 +9,8 @@
 // @author  Paul van Buuren
 // @license GPL-2.0+
 // @plugin: rhswp-rijksvideo
-// Version: 1.0.5
-// Version desc: Posttype RHSWP_CPT_TIMELINE (voor tijdlijn) uitgesloten van RV-buttons; CMB2 updates.
+// Version: 1.0.6
+// Version desc: CMB2 updates. ALT-attributen van thumbail. Thumbnail verplicht veld gemaakt.
 // @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 
 
@@ -51,6 +51,9 @@
  
  */
 
+@wit: #ffffff;
+@txt: #000000;
+
 
 @import "mediaelementplayer.less";        /* colors, sizes */
 
@@ -87,8 +90,6 @@
     
   
   .mejs-offscreen{
-
-    
   /* Accessibility: hide screen reader texts (and prefer "top" for RTL languages).  Reference: http://rianrietveld.com/2015/04/04/the-screen-reader-text-class-why-and-how/ */
     border: 0;
     clip: rect(0 0 0 0);
@@ -103,7 +104,8 @@
 
   .mejs-container {
       position: relative;
-      background: #000;
+      background: #ffffff;
+      color: #000000;
       text-align: left;
       vertical-align: top;
       text-indent: 0;
@@ -238,19 +240,20 @@
     display: block;
     width: 80px;
     height: 80px;
-    background: transparent url('../mediaplayer/loading.gif') 50% 50% no-repeat
-      ;
+    background: transparent url('../mediaplayer/loading.gif') 50% 50% no-repeat;
   }
   
   .mejs-container .mejs-controls {
-      position: absolute;
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      bottom: -30px;
-      left: 0;
-      height: 30px;
-      width: 100%;
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    bottom: -30px;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    background: @wit;
+    color: @txt;
   }
   
   .flash .mejs-container .mejs-controls {

@@ -10,6 +10,10 @@
  * License: MIT
  *
  */
+
+// * Version:             1.0.6
+// * Version description: CMB2 updates. ALT-attributen van thumbail. Thumbnail verplicht veld gemaakt.
+ 
 if (typeof jQuery != 'undefined') {
 	mejs.$ = jQuery;
 } else if (typeof Zepto != 'undefined') {
@@ -1200,7 +1204,7 @@ if (typeof jQuery != 'undefined') {
 				posterImg = posterDiv.find('img');
 
 			if (posterImg.length === 0) {
-				posterImg = $('<img width="100%" height="100%" alt="" />').appendTo(posterDiv);
+				posterImg = $('<img width="100%" height="100%" alt="Screenshot uit de video" />').appendTo(posterDiv); 
 			}
 
 			posterImg.attr('src', url);
