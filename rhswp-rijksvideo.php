@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.6
-// * Version description: CMB2 updates. ALT-attributen van thumbail. Thumbnail verplicht veld gemaakt.
+// * Version:             1.0.7
+// * Version description: Ondertitelingsbestand (SRT) niet langer een verplicht veld.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '1.0.6';
+    public $version = '1.0.7';
 
 
     /**
@@ -717,15 +717,11 @@ class RijksvideoPlugin_v1 {
       	) );
       
       	$cmb2_metafields->add_field( array(
-        'name'        => __( 'URL van ondertitel (*)', "rijksvideo-translate" ),
-        'desc'        => __( '(verplicht veld) Dit is meestal een bestand dat eindigt op .srt', "rijksvideo-translate" ),
+        'name'        => __( 'URL van ondertitel', "rijksvideo-translate" ),
+        'desc'        => __( 'Dit is meestal een bestand dat eindigt op .srt', "rijksvideo-translate" ),
         'id'          => RHSWP_CPT_VIDEO_PREFIX . 'url_transcript_file',
         'type'        => 'text_url',
         'protocols'   => array('http', 'https', '//'), // Array of allowed protocols
-        'attributes'  => array(
-            'data-validation' => 'required',
-            'required' => 'required'
-          ),      		
       	) );
       
       	$cmb2_metafields->add_field( array(
