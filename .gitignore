@@ -26,4 +26,5 @@ get_mediaelement_files.sh
 *.codekit3
 
 *.codekit3
-*.codekit3
+cmb2/
+
