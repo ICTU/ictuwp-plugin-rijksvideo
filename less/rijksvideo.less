@@ -9,8 +9,8 @@
 // @author  Paul van Buuren
 // @license GPL-2.0+
 // @plugin: rhswp-rijksvideo
-// Version: 1.0.6
-// Version desc: CMB2 updates. ALT-attributen van thumbail. Thumbnail verplicht veld gemaakt.
+// Version: 1.0.8
+// Version desc: a11y checks. Restyling collapsible panel.
 // @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 
 
@@ -488,6 +488,7 @@
       height: 115px;
       width: 25px;
       background: url('../mediaplayer/background.png');
+      background-image: none !important;
       background: rgba(50,50,50,0.7);
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
@@ -1027,15 +1028,13 @@
   //    font-size: 11px;
   }
 
-  .block-audio-video
-  {
+  .block-audio-video {
       width: 100%;
-  //    max-width: 400px;
       clear: left;
       padding-bottom: 1.64em;
-  }.block-audio-video #movie,
-  .block-audio-video #audio
-  {
+  }
+  .block-audio-video #movie,
+  .block-audio-video #audio {
       margin-bottom: 1em;
   }
   #page .block-audio-video ul,
@@ -1046,8 +1045,7 @@
       padding: 0;
   }
   #page .block-audio-video ul,
-  #content .block-audio-video ul
-  {
+  #content .block-audio-video ul {
       overflow: hidden;
       margin: 0;
       padding: 0;
@@ -1056,19 +1054,16 @@
   #page .block-audio-video li ul,
   #content .block-audio-video li ul,
   #page .block-audio-video li div,
-  #content .block-audio-video li div
-  {
+  #content .block-audio-video li div {
       background-color: #f3f3f3;
       border-bottom: none;
   }
   #page .block-audio-video li div,
-  #content .block-audio-video li div
-  {
+  #content .block-audio-video li div {
       padding: 9px;
   }
   #page .block-audio-video li,
-  #content .block-audio-video li
-  {
+  #content .block-audio-video li {
       background-image: none;
       padding: 0;
       margin: 0;
@@ -1076,19 +1071,17 @@
       border-bottom: none;
   }
   #page .block-audio-video li .list-common,
-  #content .block-audio-video li .list-common
-  {
+  #content .block-audio-video li .list-common {
       margin: 0;
       padding: 0;
   }
   #page .block-audio-video li li,
-  #content .block-audio-video li li
-  {
+  #content .block-audio-video li li {
       padding: 0;
       border: none;
-  }.block-audio-video li h2,
-  .block-audio-video li h3
-  {
+  }
+  .block-audio-video li h2,
+  .block-audio-video li h3 {
       margin: 0;
       padding: 0;
       color: #000000;
@@ -1096,60 +1089,49 @@
   .block-audio-video li h2 a,
   .block-audio-video li h3 a,
   .block-audio-video li h2 a:hover,
-  .block-audio-video li h3 a:hover
-  {
+  .block-audio-video li h3 a:hover {
       color: #000000;
-  }.block-audio-video li a
-  {
+  }
+  .block-audio-video li a {
       display: block;
       position: relative;
       padding: .2em 20px .3em 10px;
       font-weight: normal;
       text-decoration: none;
-  }.block-audio-video li li a,
-  .block-audio-video li li a:hover
-  {
+  }
+  .block-audio-video li li a,
+  .block-audio-video li li a:hover {
       font-weight: normal;
       padding: 2px 9px 3px 9px;
       background-image: none;
       color: #000000;
-  }.block-audio-video .download a:hover
-  {
-      background-color: #E5F0F9;
-  }.block-audio-video .download .meta
-  {
+  }
+  .block-audio-video .download .meta {
       display: block;
   }
-  span.meta {
-      color: #535353;
-  }
-  .block-audio-video li img
-  {
+  .block-audio-video li img {
       margin-bottom: -4px;
-  }.block-audio-video li a.open:hover
-  {
-      background-color: #E5F0F9;
-  }.block-audio-video .open
-  {
+  }
+  .block-audio-video .open {
       display: block;
       border: none;
-  }.block-audio-video li.toggle.close ul,
+  }
+  .block-audio-video li.toggle.close ul,
   .block-audio-video li.toggle.close div,
   .block-audio-video ul.close,
   .block-audio-video div.close,
-  .block-audio-video p.close
-  {
+  .block-audio-video p.close {
       display: none;
-  }#content .block-audio-video div.open
-  {
+  }
+  #content .block-audio-video div.open {
       padding: 0 9px 10px;
-  }.block-audio-video .transcription h3
-  {
+  }
+  .block-audio-video .transcription h3 {
       margin-top: .82em;
       color: #000000;
       font-weight: bold;
-  }.block-audio-video .transcription p
-  {
+  }
+  .block-audio-video .transcription p {
       margin-bottom: .82em;
   }
   .block-audio-video li.toggle h2 a {

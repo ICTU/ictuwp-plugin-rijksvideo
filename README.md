@@ -5,9 +5,10 @@ ICTU - Digitale Overheid WP - rijksvideoplugin
 Paul van Buuren (paul@wbvb.nl)
 
 ## Current version
-* 1.0.7 - Ondertitelingsbestand (SRT) niet langer een verplicht veld.
+* 1.0.8 - a11y checks. Restyling collapsible panel.
 
 ## Version history
+* 1.0.8 - a11y checks. Restyling collapsible panel.
 * 1.0.7 - Ondertitelingsbestand (SRT) niet langer een verplicht veld.
 * 1.0.6 - CMB2 updates. ALT-attributen van thumbail. Thumbnail verplicht veld gemaakt.
 * 1.0.5 - Posttype RHSWP_CPT_TIMELINE (voor tijdlijn) uitgesloten van RV-buttons; CMB2 updates.

@@ -7,8 +7,8 @@
 // @author  Paul van Buuren
 // @license GPL-2.0+
 // @plugin: rhswp-rijksvideo
-// Version: 1.0.3
-// Version description: Translations, a11y checks, unique IDs
+// Version: 1.0.8
+// Version desc: a11y checks. Restyling collapsible panel.
 // @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // */
 
@@ -2551,11 +2551,11 @@ if (typeof jQuery != 'undefined') {
 				var videoPlayerTitle = t.isVideo ?
 					mejs.i18n.t('mejs.video-player') : mejs.i18n.t('mejs.audio-player');
 				// insert description for screen readers
-				$('<span class="mejs-offscreen">' + videoPlayerTitle + '</span>').insertBefore(t.$media);
+//				$('<span class="mejs-offscreen">' + videoPlayerTitle + '</span>').insertBefore(t.$media);
 				// build container
 				t.container =
 					$('<div id="' + t.id + '" class="mejs-container ' + (mejs.MediaFeatures.svgAsImg ? 'svg' : 'no-svg') +
-					  '" tabindex="0" role="application" aria-label="' + videoPlayerTitle + '">'+
+					  '" tabindex="0" role="application">'+
 						'<div class="mejs-inner">'+
 							'<div class="mejs-mediaelement"></div>'+
 							'<div class="mejs-layers"></div>'+

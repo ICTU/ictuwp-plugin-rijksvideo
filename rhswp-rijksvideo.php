@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.7
-// * Version description: Ondertitelingsbestand (SRT) niet langer een verplicht veld.
+// * Version:             1.0.8
+// * Version description: a11y checks. Restyling collapsible panel.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '1.0.7';
+    public $version = '1.0.8';
 
 
     /**
@@ -83,6 +83,7 @@ class RijksvideoPlugin_v1 {
       define( 'RIJKSVIDEO_CT',         "rijksvideo_custom_taxonomy" );
       
       define( 'RHSWP_CPT_VIDEO_PREFIX', RHSWP_CPT_RIJKSVIDEO . '_pf_' ); // prefix for rijksvideo metadata fields
+//      define( 'RHSWP_RV_DO_DEBUG',      true );
       define( 'RHSWP_RV_DO_DEBUG',      false );
       define( 'RHSWP_RV_USE_CMB2',      true ); 
       define( 'RHSWP_DEFAULT_EXAMPLES', RIJKSVIDEO_ASSETS_URL . 'examples/' ); // slug for custom post type 'rijksvideo'
@@ -348,7 +349,8 @@ class RijksvideoPlugin_v1 {
           $infooter = false;
 
           // don't add to any admin pages
-          wp_enqueue_script( 'rhswp_video_js', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelement-and-player.min.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
+//          wp_enqueue_script( 'rhswp_video_js', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelement-and-player.min.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
+          wp_enqueue_script( 'rhswp_video_js', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelement-and-player.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
           wp_enqueue_script( 'rhswp_video_action_js', RIJKSVIDEO_ASSETS_URL . 'js/createPlayer.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
           wp_enqueue_style( 'rhswp-mediaelementplayer', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelementplayer.css', array(), RIJKSVIDEO_VERSION, $infooter );
           wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/rijksvideo.css', array(), RIJKSVIDEO_VERSION, $infooter );
@@ -412,55 +414,59 @@ class RijksvideoPlugin_v1 {
 
     }
 
-    //========================================================================================================
-    /**
-     * Output the HTML
-     */
-    public function rhswp_makevideo($postid) {
-          $videoplayer_width              = '500';
-          $videoplayer_height             = '412';
-          $video_id                       = 'movie-' . $postid;
-          
-          $videoplayer_aria_id            = 'mep_7';
-          $videoplayer_date               = get_the_date();
-          
-          $videoplayer_title              = _x( 'Video Player', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_video_txt          = _x( 'Video', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_audio_txt          = _x( 'Audio', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_subtitle_txt       = _x( 'Caption', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_subtitles          = _x( 'Ondertitels', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_subtitles_language = _x( 'nl', 'Rijksvideo: voor welke taal heb je ondertitels geupload?', "rijksvideo-translate" );
-          
-          
-          $videoplayer_play               = _x( 'Afspelen', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_mute_label         = _x( 'Geluid uit', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_fullscreen_open    = _x( 'Schermvullende weergave openen', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_fullscreen_close   = _x( 'Schermvullende weergave sluiten', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_volume_label       = _x( 'Gebruik op- of neer-pijltjestoetsen om het volume harder of zachter te zetten', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_subtitle_on        = _x( 'Ondertiteling aan', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_download_label     = _x( 'Download deze video', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_noplugin_label     = _x( 'Helaas kan deze video niet worden afgespeeld. Een mogelijk oplossing is de meest recente versie van uw browser te installeren.', 'Rijksvideo', "rijksvideo-translate" );
-          
-          $videoplayer_quicktime_label    = _x( 'Video voor Apple Quicktime Player', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_quicktime_abbr     = _x( 'mp4', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_quicktime_hr       = _x( ' (hoge resolutie)', 'Rijksvideo', "rijksvideo-translate" );
-          
-          $videoplayer_wmv_label          = _x( 'Video voor Windows Media Player', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_wmv_abbr           = _x( 'wmv', 'Rijksvideo', "rijksvideo-translate" );
-          
-          $videoplayer_mobileformat_label = _x( 'Video voor mobiel gebruik', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_mobileformat_abbr  = _x( '3gp', 'Rijksvideo', "rijksvideo-translate" );
-          
-          $videoplayer_audioformat_label  = _x( 'Audiospoor', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_audioformat_abbr   = _x( 'mp3', 'Rijksvideo', "rijksvideo-translate" );
-          
-          $videoplayer_subtitle_label     = _x( 'Ondertitelingsbestand', 'Rijksvideo', "rijksvideo-translate" );
-          $videoplayer_subtitle_abbr      = _x( 'srt', 'Rijksvideo', "rijksvideo-translate" );
-          
-          
-          $uniqueid                       = $this->getuniqueid( $postid );    
-    
-          $rhswp_video_duur               = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'video_time', '-' );
+	//========================================================================================================
+	/**
+	* Output the HTML
+	*/
+	public function rhswp_makevideo( $postid ) {
+
+		$videotitle 					= get_the_title( $postid );		
+
+		$videoplayer_width              = '500';
+		$videoplayer_height             = '412';
+		$video_id                       = 'movie-' . $postid;
+		
+		$videoplayer_aria_id            = 'mep_7';
+		$videoplayer_date               = get_the_date();
+		
+		$videoplayer_title              = _x( 'Video Player', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_video_txt          = _x( 'Video', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_audio_txt          = _x( 'Audio', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_subtitle_txt       = _x( 'Caption', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_subtitles          = _x( 'Ondertitels', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_subtitles_language = _x( 'nl', 'Rijksvideo: voor welke taal heb je ondertitels geupload?', "rijksvideo-translate" );
+		
+		
+		$videoplayer_play               = _x( 'Afspelen', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_mute_label         = _x( 'Geluid uit', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_fullscreen_open    = _x( 'Schermvullende weergave openen', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_fullscreen_close   = _x( 'Schermvullende weergave sluiten', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_volume_label       = _x( 'Gebruik op- of neer-pijltjestoetsen om het volume harder of zachter te zetten', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_subtitle_on        = _x( 'Ondertiteling aan', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_download_label 	= sprintf( _x( 'Download <span class="visuallyhidden">%s</span>', 'Rijksvideo', "rijksvideo-translate" ), $videotitle );
+		
+		$videoplayer_noplugin_label     = _x( 'Helaas kan deze video niet worden afgespeeld. Een mogelijk oplossing is de meest recente versie van uw browser te installeren.', 'Rijksvideo', "rijksvideo-translate" );
+		
+		$videoplayer_quicktime_label    = _x( 'Video voor Apple Quicktime Player', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_quicktime_abbr     = _x( 'mp4', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_quicktime_hr       = _x( ' (hoge resolutie)', 'Rijksvideo', "rijksvideo-translate" );
+		
+		$videoplayer_wmv_label          = _x( 'Video voor Windows Media Player', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_wmv_abbr           = _x( 'wmv', 'Rijksvideo', "rijksvideo-translate" );
+		
+		$videoplayer_mobileformat_label = _x( 'Video voor mobiel gebruik', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_mobileformat_abbr  = _x( '3gp', 'Rijksvideo', "rijksvideo-translate" );
+		
+		$videoplayer_audioformat_label  = _x( 'Audiospoor', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_audioformat_abbr   = _x( 'mp3', 'Rijksvideo', "rijksvideo-translate" );
+		
+		$videoplayer_subtitle_label     = _x( 'Ondertitelingsbestand', 'Rijksvideo', "rijksvideo-translate" );
+		$videoplayer_subtitle_abbr      = _x( 'srt', 'Rijksvideo', "rijksvideo-translate" );
+		
+		
+		$uniqueid                       = $this->getuniqueid( $postid );    
+		
+		$rhswp_video_duur               = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'video_time', '-' );
 
           // to do: check featured image
           if ( has_post_thumbnail( $postid ) ) {
@@ -470,19 +476,22 @@ class RijksvideoPlugin_v1 {
           else {
             $rhswp_video_url_video_thumb  = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'url_video_thumb', '' );
           }
-          $rhswp_video_url_transcript     = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'url_transcript_file', '' );
+
+        $rhswp_video_url_video_thumb		= rovidcheck( $rhswp_video_url_video_thumb );
+          
+          $rhswp_video_url_transcript     = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'url_transcript_file', '' ) );
           $rhswp_video_transcriptvlak     = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'transcriptvlak', '' );
-          $rhswp_video_flv_url            = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'flv_url', '' );
+          $rhswp_video_url_flv            = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'flv_url', '' );
           $rhswp_video_flv_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'flv_filesize', '-' );
-          $rhswp_video_wmv_url            = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'wmv_url', '' );
+          $rhswp_video_url_wmv            = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'wmv_url', '' );
           $rhswp_video_filesize_wmv       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'filesize_wmv', '-' );
-          $rhswp_video_mp4_url            = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_url', RHSWP_DEFAULT_EXAMPLES . 'examples.mp4' );
+          $rhswp_video_url_mp4            = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_url', RHSWP_DEFAULT_EXAMPLES . 'examples.mp4' ) );
           $rhswp_video_mp4_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_filesize', '-' );
-          $rhswp_video_mp4_hr_url         = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_url_hires', RHSWP_DEFAULT_EXAMPLES . 'examples_hd.mp4' );
+          $rhswp_video_mp4_hr_url         = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_url_hires', RHSWP_DEFAULT_EXAMPLES . 'examples_hd.mp4' ) );
           $rhswp_video_mp4_hr_filesize    = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_filesize_hires', '-' );
-          $rhswp_video_3gp_url            = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . '3gp_url', RHSWP_DEFAULT_EXAMPLES . 'examples.3gp' );
+          $rhswp_video_3gp_url            = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . '3gp_url', RHSWP_DEFAULT_EXAMPLES . 'examples.3gp' ) );
           $rhswp_video_3gp_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . '3gp_filesize', '-' );
-          $rhswp_video_audio_url          = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'audio_url', '' );
+          $rhswp_video_audio_url          = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'audio_url', '' ) );
           $rhswp_video_mp3_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp3_filesize', '' );
           
           $returnstring = '';
@@ -497,11 +506,11 @@ class RijksvideoPlugin_v1 {
             $returnstring .= '$rhswp_video_audio_url: "' . $rhswp_video_audio_url . '"<br>';
             $returnstring .= '$rhswp_video_audio_filesize: "' . $rhswp_video_mp3_filesize . '"<br>';
             
-            $returnstring .= '$rhswp_video_flv_url: "' . $rhswp_video_flv_url . '"<br>';
+            $returnstring .= '$rhswp_video_url_flv: "' . $rhswp_video_url_flv . '"<br>';
             $returnstring .= '$rhswp_video_flv_filesize: "' . $rhswp_video_flv_filesize . '"<br>';
-            $returnstring .= '$rhswp_video_wmv_url: "' . $rhswp_video_wmv_url . '"<br>';
+            $returnstring .= '$rhswp_video_url_wmv: "' . $rhswp_video_url_wmv . '"<br>';
             $returnstring .= '$rhswp_video_filesize_wmv: "' . $rhswp_video_filesize_wmv . '"<br>';
-            $returnstring .= '$rhswp_video_mp4_url: "' . $rhswp_video_mp4_url . '"<br>';
+            $returnstring .= '$rhswp_video_url_mp4: "' . $rhswp_video_url_mp4 . '"<br>';
             $returnstring .= '$rhswp_video_mp4_filesize: "' . $rhswp_video_mp4_filesize . '"<br>';
             $returnstring .= '$rhswp_video_mp4_hr_url: "' . $rhswp_video_mp4_hr_url . '"<br>';
             $returnstring .= '$rhswp_video_mp4_hr_filesize: "' . $rhswp_video_mp4_hr_filesize . '"<br>';
@@ -513,20 +522,19 @@ class RijksvideoPlugin_v1 {
     //      $returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '"><video id="' . $video_id . '" width="' . $videoplayer_width . '" height="' . $videoplayer_height . '" poster="' . $rhswp_video_url_video_thumb . '" preload="metadata" data-playtxt="Play" data-pauzetxt="Pauzeren" data-enablead="Audio descriptie afspelen" data-disablead="Audio descriptie stoppen" data-enablevolume="Geluid aan" data-disablevolume="Geluid uit" data-enablecc="Ondertiteling aan" data-disablecc="Ondertiteling uit" data-enablefullscreen="Schermvullende weergave openen" data-disablefullscreen="Schervullende weergave sluiten" data-noplugintxt="' . $videoplayer_noplugin_label . '">';
           
 
-          if ( $rhswp_video_url_video_thumb && ( ( $rhswp_video_mp4_url ) || ( $rhswp_video_wmv_url ) || ( $rhswp_video_flv_url ) ) ) {
+          if ( $rhswp_video_url_video_thumb && ( ( $rhswp_video_url_mp4 ) || ( $rhswp_video_url_wmv ) || ( $rhswp_video_url_flv ) ) ) {
     
-            $returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '">
+            $returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '" aria-label="' . wp_strip_all_tags( sprintf( _x( 'Video getiteld: \'%s\'', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) ) . '">
             <video id="' . $video_id . '" width="' . $videoplayer_width . '" height="' . $videoplayer_height . '" poster="' . $rhswp_video_url_video_thumb . '" data-noplugintxt="' . $videoplayer_noplugin_label . '">';
-            
-      
-            if ( $rhswp_video_mp4_url ) {
-              $returnstring .= '<source type="video/mp4" src="' . $rhswp_video_mp4_url . '">';
+
+            if ( $rhswp_video_url_mp4 ) {
+              $returnstring .= '<source type="video/mp4" src="' . $rhswp_video_url_mp4 . '">';
             }
-            if ( $rhswp_video_wmv_url ) {
-              $returnstring .= '<source type="video/wmv" src="' . $rhswp_video_wmv_url . '">';
+            if ( $rhswp_video_url_wmv ) {
+              $returnstring .= '<source type="video/wmv" src="' . $rhswp_video_url_wmv . '">';
             }
-            if ( $rhswp_video_flv_url ) {
-              $returnstring .= '<source type="video/x-flv" src="' . $rhswp_video_flv_url . '">';
+            if ( $rhswp_video_url_flv ) {
+              $returnstring .= '<source type="video/x-flv" src="' . $rhswp_video_url_flv . '">';
             }
             if ( $rhswp_video_url_transcript ) {
               $returnstring .= '<track kind="subtitles" src="' . $rhswp_video_url_transcript . '" label="' . $videoplayer_subtitles . '" srclang="' . $videoplayer_subtitles_language . '"  >';
@@ -534,18 +542,20 @@ class RijksvideoPlugin_v1 {
             
             $returnstring .= '</video>';
       
-            $returnstring .= '<ul class="downloads">
-              <li class="toggle downloads close">
-              <h2 id="videoplayer_download_label' . $uniqueid . '"><a href="#" aria-expanded="false">' . $videoplayer_download_label . '</a></h2>
+            $returnstring .= '<div class="downloads">
+
+              <h2 id="videoplayer_download_label' . $uniqueid . '" class="collapsetoggle"><button aria-expanded="false">' . $videoplayer_download_label . '</button></h2>
+<div class="collapsible"  hidden>
               <ul aria-labelledby="videoplayer_download_label' . $uniqueid . '">';
-            if ( $rhswp_video_mp4_url ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
+              
+            if ( $rhswp_video_url_mp4 ) {
+              $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_mp4 . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
             }
             if ( $rhswp_video_mp4_hr_url ) {
               $returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_hr_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . $videoplayer_quicktime_hr . ', ' . $rhswp_video_mp4_hr_filesize . '</span></a></li>';
             }
-            if ( $rhswp_video_wmv_url ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_wmv_url . '">' . $videoplayer_wmv_label . '<span class="meta wmv">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_wmv_abbr . ', ' . $rhswp_video_filesize_wmv . '</span></a></li>';
+            if ( $rhswp_video_url_wmv ) {
+              $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_wmv . '">' . $videoplayer_wmv_label . '<span class="meta wmv">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_wmv_abbr . ', ' . $rhswp_video_filesize_wmv . '</span></a></li>';
             }
             if ( $rhswp_video_3gp_url ) {
               $returnstring .= '<li class="download"><a href="' . $rhswp_video_3gp_url . '">' . $videoplayer_mobileformat_label . '<span class="meta 3gp">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mobileformat_abbr . ', ' . $rhswp_video_3gp_filesize . '</span></a></li>';
@@ -558,14 +568,19 @@ class RijksvideoPlugin_v1 {
             }
             $returnstring .= '
               </ul>
-            </li>';
+            </div> '; //class="collapsible"  hidden
       
             if ( $rhswp_video_transcriptvlak ) {
               $rhswp_video_transcriptvlak =  wpautop( $rhswp_video_transcriptvlak, 'br' );
-              $returnstring .= '<li class="toggle transcription"><h2 id="videoplayer_captions' . $uniqueid . '"><a href="#" aria-expanded="false">' . _x( 'Uitgeschreven tekst', 'Rijksvideo', "rijksvideo-translate" ) . '</a></h2><div aria-labelledby="videoplayer_captions' . $uniqueid . '"><h3>' . get_the_title() . '</h3>' . $rhswp_video_transcriptvlak . '</div></li>';
+              $returnstring .= '
+<h2 id="videoplayer_captions' . $uniqueid . '" class="collapsetoggle"><button aria-expanded="false">' . sprintf( _x( 'Uitgeschreven tekst <span class="visuallyhidden">voor \'%s\'</span>', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) . '</button>
+</h2>
+<div class="collapsible"  hidden>
+	<div aria-labelledby="videoplayer_captions' . $uniqueid . '">' . $rhswp_video_transcriptvlak . '</div>
+</div>';
             }
             
-            $returnstring .= '</ul></div>';
+            $returnstring .= '</div>'; // class="downloads"
   
 
           }
@@ -574,7 +589,7 @@ class RijksvideoPlugin_v1 {
             if ( ! $rhswp_video_url_video_thumb ) {
               $returnstring .= '<p>' . _x( 'Er is geen caption gevonden voor deze video. Je kunt een uitgelichte afbeelding gebruiken of een extern beeld-bestand.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
             }
-            elseif ( ( ! $rhswp_video_mp4_url ) && ( ! $rhswp_video_wmv_url ) || ( ! $rhswp_video_flv_url ) ) {
+            elseif ( ( ! $rhswp_video_url_mp4 ) && ( ! $rhswp_video_url_wmv ) || ( ! $rhswp_video_url_flv ) ) {
               $returnstring .= '<p>' . _x( 'Er is geen video-stream gevonden voor deze video.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
             }
             else {
@@ -1315,3 +1330,9 @@ class RijksvideoPlugin_v1 {
 endif;
 
 add_action( 'plugins_loaded', array( 'RijksvideoPlugin_v1', 'init' ), 10 );
+
+
+function rovidcheck( $inputstring = '' ) {
+	$inputstring = preg_replace("|^http://www.rovid.nl|i", "https://www.rovid.nl", $inputstring);	
+	return $inputstring;
+}
