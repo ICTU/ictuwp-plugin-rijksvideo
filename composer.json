@@ -1,0 +1,14 @@
+{
+  "name": "ictu/ictuwp-plugin-rijksvideo",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0",
+  "description": "Mogelijkheid om video's in te voegen op een toegankelijke, maar dwingene manier ",
+  "homepage": "https://www.digitaleoverheid.nl",
+  "authors": [
+    {
+      "name": "Paul van Buuren",
+      "email": "paul@wbvb.nl",
+      "homepage": "https://wbvb.nl"
+    }
+  ]
+}
