@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.8
-// * Version description: a11y checks. Restyling collapsible panel.
+// * Version:             1.0.9.a
+// * Version description: Code check: unclosed DIV.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '1.0.8';
+    public $version = '1.0.9.a';
 
 
     /**
@@ -421,7 +421,7 @@ class RijksvideoPlugin_v1 {
 	public function rhswp_makevideo( $postid ) {
 
 		$videotitle 					= get_the_title( $postid );		
-
+		
 		$videoplayer_width              = '500';
 		$videoplayer_height             = '412';
 		$video_id                       = 'movie-' . $postid;
@@ -468,135 +468,140 @@ class RijksvideoPlugin_v1 {
 		
 		$rhswp_video_duur               = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'video_time', '-' );
 
-          // to do: check featured image
-          if ( has_post_thumbnail( $postid ) ) {
-            $rhswp_video_url_video_thumb_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $postid ), "large" );
-            $rhswp_video_url_video_thumb = $rhswp_video_url_video_thumb_arr[0];
-          } 
-          else {
-            $rhswp_video_url_video_thumb  = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'url_video_thumb', '' );
-          }
-
-        $rhswp_video_url_video_thumb		= rovidcheck( $rhswp_video_url_video_thumb );
+		// to do: check featured image
+		if ( has_post_thumbnail( $postid ) ) {
+			$rhswp_video_url_video_thumb_arr = wp_get_attachment_image_src( get_post_thumbnail_id( $postid ), "large" );
+			$rhswp_video_url_video_thumb = $rhswp_video_url_video_thumb_arr[0];
+		} 
+		else {
+			$rhswp_video_url_video_thumb  = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'url_video_thumb', '' );
+		}
+		
+		$rhswp_video_url_video_thumb		= rovidcheck( $rhswp_video_url_video_thumb );
           
-          $rhswp_video_url_transcript     = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'url_transcript_file', '' ) );
-          $rhswp_video_transcriptvlak     = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'transcriptvlak', '' );
-          $rhswp_video_url_flv            = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'flv_url', '' );
-          $rhswp_video_flv_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'flv_filesize', '-' );
-          $rhswp_video_url_wmv            = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'wmv_url', '' );
-          $rhswp_video_filesize_wmv       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'filesize_wmv', '-' );
-          $rhswp_video_url_mp4            = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_url', RHSWP_DEFAULT_EXAMPLES . 'examples.mp4' ) );
-          $rhswp_video_mp4_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_filesize', '-' );
-          $rhswp_video_mp4_hr_url         = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_url_hires', RHSWP_DEFAULT_EXAMPLES . 'examples_hd.mp4' ) );
-          $rhswp_video_mp4_hr_filesize    = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_filesize_hires', '-' );
-          $rhswp_video_3gp_url            = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . '3gp_url', RHSWP_DEFAULT_EXAMPLES . 'examples.3gp' ) );
-          $rhswp_video_3gp_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . '3gp_filesize', '-' );
-          $rhswp_video_audio_url          = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'audio_url', '' ) );
-          $rhswp_video_mp3_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp3_filesize', '' );
+		$rhswp_video_url_transcript     = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'url_transcript_file', '' ) );
+		$rhswp_video_transcriptvlak     = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'transcriptvlak', '' );
+		$rhswp_video_url_flv            = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'flv_url', '' );
+		$rhswp_video_flv_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'flv_filesize', '-' );
+		$rhswp_video_url_wmv            = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'wmv_url', '' );
+		$rhswp_video_filesize_wmv       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'filesize_wmv', '-' );
+		$rhswp_video_url_mp4            = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_url', RHSWP_DEFAULT_EXAMPLES . 'examples.mp4' ) );
+		$rhswp_video_mp4_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_filesize', '-' );
+		$rhswp_video_mp4_hr_url         = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_url_hires', RHSWP_DEFAULT_EXAMPLES . 'examples_hd.mp4' ) );
+		$rhswp_video_mp4_hr_filesize    = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp4_filesize_hires', '-' );
+		$rhswp_video_3gp_url            = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . '3gp_url', RHSWP_DEFAULT_EXAMPLES . 'examples.3gp' ) );
+		$rhswp_video_3gp_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . '3gp_filesize', '-' );
+		$rhswp_video_audio_url          = rovidcheck( $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'audio_url', '' ) );
+		$rhswp_video_mp3_filesize       = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'mp3_filesize', '' );
+		
+		$returnstring = '';
           
-          $returnstring = '';
-          
-          if ( RHSWP_RV_DO_DEBUG && WP_DEBUG ) {
-    
-            $returnstring .= 'RHSWP_RV_USE_CMB2: "' . RHSWP_RV_USE_CMB2 . '"<br>';
-            $returnstring .= '$rhswp_video_duur: "' . $rhswp_video_duur . '"<br>';
-            $returnstring .= '$rhswp_video_url_video_thumb: "' . $rhswp_video_url_video_thumb . '"<br>';
-            $returnstring .= '$rhswp_video_url_transcript: "' . $rhswp_video_url_transcript . '"<br>';
-            $returnstring .= '$rhswp_video_transcriptvlak: "' . $rhswp_video_transcriptvlak . '"<br>';
-            $returnstring .= '$rhswp_video_audio_url: "' . $rhswp_video_audio_url . '"<br>';
-            $returnstring .= '$rhswp_video_audio_filesize: "' . $rhswp_video_mp3_filesize . '"<br>';
-            
-            $returnstring .= '$rhswp_video_url_flv: "' . $rhswp_video_url_flv . '"<br>';
-            $returnstring .= '$rhswp_video_flv_filesize: "' . $rhswp_video_flv_filesize . '"<br>';
-            $returnstring .= '$rhswp_video_url_wmv: "' . $rhswp_video_url_wmv . '"<br>';
-            $returnstring .= '$rhswp_video_filesize_wmv: "' . $rhswp_video_filesize_wmv . '"<br>';
-            $returnstring .= '$rhswp_video_url_mp4: "' . $rhswp_video_url_mp4 . '"<br>';
-            $returnstring .= '$rhswp_video_mp4_filesize: "' . $rhswp_video_mp4_filesize . '"<br>';
-            $returnstring .= '$rhswp_video_mp4_hr_url: "' . $rhswp_video_mp4_hr_url . '"<br>';
-            $returnstring .= '$rhswp_video_mp4_hr_filesize: "' . $rhswp_video_mp4_hr_filesize . '"<br>';
-            $returnstring .= '$rhswp_video_3gp_url: "' . $rhswp_video_3gp_url . '"<br>';
-            $returnstring .= '$rhswp_video_3gp_filesize: "' . $rhswp_video_3gp_filesize . '"<br>';
-            
-          }
-    
-    //      $returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '"><video id="' . $video_id . '" width="' . $videoplayer_width . '" height="' . $videoplayer_height . '" poster="' . $rhswp_video_url_video_thumb . '" preload="metadata" data-playtxt="Play" data-pauzetxt="Pauzeren" data-enablead="Audio descriptie afspelen" data-disablead="Audio descriptie stoppen" data-enablevolume="Geluid aan" data-disablevolume="Geluid uit" data-enablecc="Ondertiteling aan" data-disablecc="Ondertiteling uit" data-enablefullscreen="Schermvullende weergave openen" data-disablefullscreen="Schervullende weergave sluiten" data-noplugintxt="' . $videoplayer_noplugin_label . '">';
-          
+		if ( RHSWP_RV_DO_DEBUG && WP_DEBUG ) {
+			
+			$returnstring .= 'RHSWP_RV_USE_CMB2: "' . RHSWP_RV_USE_CMB2 . '"<br>';
+			$returnstring .= '$rhswp_video_duur: "' . $rhswp_video_duur . '"<br>';
+			$returnstring .= '$rhswp_video_url_video_thumb: "' . $rhswp_video_url_video_thumb . '"<br>';
+			$returnstring .= '$rhswp_video_url_transcript: "' . $rhswp_video_url_transcript . '"<br>';
+			$returnstring .= '$rhswp_video_transcriptvlak: "' . $rhswp_video_transcriptvlak . '"<br>';
+			$returnstring .= '$rhswp_video_audio_url: "' . $rhswp_video_audio_url . '"<br>';
+			$returnstring .= '$rhswp_video_audio_filesize: "' . $rhswp_video_mp3_filesize . '"<br>';
+			
+			$returnstring .= '$rhswp_video_url_flv: "' . $rhswp_video_url_flv . '"<br>';
+			$returnstring .= '$rhswp_video_flv_filesize: "' . $rhswp_video_flv_filesize . '"<br>';
+			$returnstring .= '$rhswp_video_url_wmv: "' . $rhswp_video_url_wmv . '"<br>';
+			$returnstring .= '$rhswp_video_filesize_wmv: "' . $rhswp_video_filesize_wmv . '"<br>';
+			$returnstring .= '$rhswp_video_url_mp4: "' . $rhswp_video_url_mp4 . '"<br>';
+			$returnstring .= '$rhswp_video_mp4_filesize: "' . $rhswp_video_mp4_filesize . '"<br>';
+			$returnstring .= '$rhswp_video_mp4_hr_url: "' . $rhswp_video_mp4_hr_url . '"<br>';
+			$returnstring .= '$rhswp_video_mp4_hr_filesize: "' . $rhswp_video_mp4_hr_filesize . '"<br>';
+			$returnstring .= '$rhswp_video_3gp_url: "' . $rhswp_video_3gp_url . '"<br>';
+			$returnstring .= '$rhswp_video_3gp_filesize: "' . $rhswp_video_3gp_filesize . '"<br>';
+			
+		}
+		
+		$returnstring .= "\n\n\n";    
 
-          if ( $rhswp_video_url_video_thumb && ( ( $rhswp_video_url_mp4 ) || ( $rhswp_video_url_wmv ) || ( $rhswp_video_url_flv ) ) ) {
-    
-            $returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '" aria-label="' . wp_strip_all_tags( sprintf( _x( 'Video getiteld: \'%s\'', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) ) . '">
-            <video id="' . $video_id . '" width="' . $videoplayer_width . '" height="' . $videoplayer_height . '" poster="' . $rhswp_video_url_video_thumb . '" data-noplugintxt="' . $videoplayer_noplugin_label . '">';
-
-            if ( $rhswp_video_url_mp4 ) {
-              $returnstring .= '<source type="video/mp4" src="' . $rhswp_video_url_mp4 . '">';
-            }
-            if ( $rhswp_video_url_wmv ) {
-              $returnstring .= '<source type="video/wmv" src="' . $rhswp_video_url_wmv . '">';
-            }
-            if ( $rhswp_video_url_flv ) {
-              $returnstring .= '<source type="video/x-flv" src="' . $rhswp_video_url_flv . '">';
-            }
-            if ( $rhswp_video_url_transcript ) {
-              $returnstring .= '<track kind="subtitles" src="' . $rhswp_video_url_transcript . '" label="' . $videoplayer_subtitles . '" srclang="' . $videoplayer_subtitles_language . '"  >';
-            }
-            
-            $returnstring .= '</video>';
-      
-            $returnstring .= '<div class="downloads">
-
-              <h2 id="videoplayer_download_label' . $uniqueid . '" class="collapsetoggle"><button aria-expanded="false">' . $videoplayer_download_label . '</button></h2>
-<div class="collapsible"  hidden>
-              <ul aria-labelledby="videoplayer_download_label' . $uniqueid . '">';
-              
-            if ( $rhswp_video_url_mp4 ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_mp4 . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
-            }
-            if ( $rhswp_video_mp4_hr_url ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_hr_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . $videoplayer_quicktime_hr . ', ' . $rhswp_video_mp4_hr_filesize . '</span></a></li>';
-            }
-            if ( $rhswp_video_url_wmv ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_wmv . '">' . $videoplayer_wmv_label . '<span class="meta wmv">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_wmv_abbr . ', ' . $rhswp_video_filesize_wmv . '</span></a></li>';
-            }
-            if ( $rhswp_video_3gp_url ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_3gp_url . '">' . $videoplayer_mobileformat_label . '<span class="meta 3gp">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mobileformat_abbr . ', ' . $rhswp_video_3gp_filesize . '</span></a></li>';
-            }
-            if ( $rhswp_video_audio_url ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_audio_url . '">' . $videoplayer_audioformat_label . '<span class="meta mp3">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_audioformat_abbr . ', ' . $rhswp_video_mp3_filesize . ' </span></a></li>';
-            }
-            if ( $rhswp_video_url_transcript ) {
-              $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_transcript . '">' . $videoplayer_subtitle_label . '<span class="meta srt">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_subtitle_abbr . ' </span></a></li>';
-            }
-            $returnstring .= '
-              </ul>
-            </div> '; //class="collapsible"  hidden
-      
-            if ( $rhswp_video_transcriptvlak ) {
-              $rhswp_video_transcriptvlak =  wpautop( $rhswp_video_transcriptvlak, 'br' );
-              $returnstring .= '
-<h2 id="videoplayer_captions' . $uniqueid . '" class="collapsetoggle"><button aria-expanded="false">' . sprintf( _x( 'Uitgeschreven tekst <span class="visuallyhidden">voor \'%s\'</span>', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) . '</button>
-</h2>
-<div class="collapsible"  hidden>
-	<div aria-labelledby="videoplayer_captions' . $uniqueid . '">' . $rhswp_video_transcriptvlak . '</div>
-</div>';
-            }
-            
-            $returnstring .= '</div>'; // class="downloads"
-  
-
-          }
-          else {
-
-            if ( ! $rhswp_video_url_video_thumb ) {
-              $returnstring .= '<p>' . _x( 'Er is geen caption gevonden voor deze video. Je kunt een uitgelichte afbeelding gebruiken of een extern beeld-bestand.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
-            }
-            elseif ( ( ! $rhswp_video_url_mp4 ) && ( ! $rhswp_video_url_wmv ) || ( ! $rhswp_video_url_flv ) ) {
-              $returnstring .= '<p>' . _x( 'Er is geen video-stream gevonden voor deze video.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
-            }
-            else {
-              $returnstring .= '<p>' . _x( 'Er is onvoldoende ingevoerd om deze video goed weer te geven.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
-            }
-          }
-
+		if ( $rhswp_video_url_video_thumb && ( ( $rhswp_video_url_mp4 ) || ( $rhswp_video_url_wmv ) || ( $rhswp_video_url_flv ) ) ) {
+			// wel of geen arialabel, that is the question
+			// omdat de HTML-validator erover klaagt, vanaf nu geen aria-label meer.
+			// $arialabel = ' aria-label="' . wp_strip_all_tags( sprintf( _x( 'Video getiteld: \'%s\'', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) ) . '"';
+			$arialabel = '';
+			
+			$returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '"' . $arialabel . '>
+			<video id="' . $video_id . '" width="' . $videoplayer_width . '" height="' . $videoplayer_height . '" poster="' . $rhswp_video_url_video_thumb . '" data-noplugintxt="' . $videoplayer_noplugin_label . '">';
+			
+			if ( $rhswp_video_url_mp4 ) {
+				$returnstring .= '<source type="video/mp4" src="' . $rhswp_video_url_mp4 . '">';
+			}
+			if ( $rhswp_video_url_wmv ) {
+				$returnstring .= '<source type="video/wmv" src="' . $rhswp_video_url_wmv . '">';
+			}
+			if ( $rhswp_video_url_flv ) {
+				$returnstring .= '<source type="video/x-flv" src="' . $rhswp_video_url_flv . '">';
+			}
+			if ( $rhswp_video_url_transcript ) {
+				$returnstring .= '<track kind="subtitles" src="' . $rhswp_video_url_transcript . '" label="' . $videoplayer_subtitles . '" srclang="' . $videoplayer_subtitles_language . '"  >';
+			}
+			
+			$returnstring .= '</video>' . "\n";
+			
+			$returnstring .= '<div class="downloads">
+			
+			<h2 id="videoplayer_download_label' . $uniqueid . '" class="collapsetoggle"><button aria-expanded="false">' . $videoplayer_download_label . '</button></h2>
+			<div class="collapsible"  hidden>
+			<ul aria-labelledby="videoplayer_download_label' . $uniqueid . '">';
+			
+			if ( $rhswp_video_url_mp4 ) {
+				$returnstring .= '<li class="download"><a href="' . $rhswp_video_url_mp4 . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
+			}
+			if ( $rhswp_video_mp4_hr_url ) {
+				$returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_hr_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . $videoplayer_quicktime_hr . ', ' . $rhswp_video_mp4_hr_filesize . '</span></a></li>';
+			}
+			if ( $rhswp_video_url_wmv ) {
+				$returnstring .= '<li class="download"><a href="' . $rhswp_video_url_wmv . '">' . $videoplayer_wmv_label . '<span class="meta wmv">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_wmv_abbr . ', ' . $rhswp_video_filesize_wmv . '</span></a></li>';
+			}
+			if ( $rhswp_video_3gp_url ) {
+				$returnstring .= '<li class="download"><a href="' . $rhswp_video_3gp_url . '">' . $videoplayer_mobileformat_label . '<span class="meta 3gp">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mobileformat_abbr . ', ' . $rhswp_video_3gp_filesize . '</span></a></li>';
+			}
+			if ( $rhswp_video_audio_url ) {
+				$returnstring .= '<li class="download"><a href="' . $rhswp_video_audio_url . '">' . $videoplayer_audioformat_label . '<span class="meta mp3">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_audioformat_abbr . ', ' . $rhswp_video_mp3_filesize . ' </span></a></li>';
+			}
+			if ( $rhswp_video_url_transcript ) {
+				$returnstring .= '<li class="download"><a href="' . $rhswp_video_url_transcript . '">' . $videoplayer_subtitle_label . '<span class="meta srt">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_subtitle_abbr . ' </span></a></li>';
+			}
+			
+			$returnstring .= '
+			</ul>
+			</div><!-- div class="collapsible"  hidden> -->' . 
+			'</div><!-- .downloads -->' . "\n"; // .downloads
+			
+			if ( $rhswp_video_transcriptvlak ) {
+				$rhswp_video_transcriptvlak =  wpautop( $rhswp_video_transcriptvlak, 'br' );
+				$returnstring .= '
+				<h2 id="videoplayer_captions' . $uniqueid . '" class="collapsetoggle">
+				<button aria-expanded="false">' . sprintf( _x( 'Uitgeschreven tekst <span class="visuallyhidden">voor \'%s\'</span>', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) . '</button>
+				</h2>
+				<div class="collapsible"  hidden>
+					<div aria-labelledby="videoplayer_captions' . $uniqueid . '">' . $rhswp_video_transcriptvlak . '</div>
+				</div>' . "\n";
+			}
+			
+			$returnstring .= '</div><!-- .block-audio-video -->' . "\n"; // class="block-audio-video"
+			
+			
+		}
+		else {
+			
+			if ( ! $rhswp_video_url_video_thumb ) {
+				$returnstring .= '<p>' . _x( 'Er is geen caption gevonden voor deze video. Je kunt een uitgelichte afbeelding gebruiken of een extern beeld-bestand.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
+			}
+			elseif ( ( ! $rhswp_video_url_mp4 ) && ( ! $rhswp_video_url_wmv ) || ( ! $rhswp_video_url_flv ) ) {
+				$returnstring .= '<p>' . _x( 'Er is geen video-stream gevonden voor deze video.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
+			}
+			else {
+				$returnstring .= '<p>' . _x( 'Er is onvoldoende ingevoerd om deze video goed weer te geven.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
+			}
+		}
 
         return $returnstring;
     }
