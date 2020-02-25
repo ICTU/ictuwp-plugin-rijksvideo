@@ -5,7 +5,7 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.9.a
+// * Version:             1.0.9
 // * Version description: Code check: unclosed DIV.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '1.0.9.a';
+    public $version = '1.0.9';
 
 
     /**
