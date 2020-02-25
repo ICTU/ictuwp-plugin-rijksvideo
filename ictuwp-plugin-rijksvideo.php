@@ -443,7 +443,8 @@ class RijksvideoPlugin_v1 {
 		$videoplayer_fullscreen_close   = _x( 'Schermvullende weergave sluiten', 'Rijksvideo', "rijksvideo-translate" );
 		$videoplayer_volume_label       = _x( 'Gebruik op- of neer-pijltjestoetsen om het volume harder of zachter te zetten', 'Rijksvideo', "rijksvideo-translate" );
 		$videoplayer_subtitle_on        = _x( 'Ondertiteling aan', 'Rijksvideo', "rijksvideo-translate" );
-		$videoplayer_download_label 	= sprintf( _x( 'Download <span class="visuallyhidden">%s</span>', 'Rijksvideo', "rijksvideo-translate" ), $videotitle );
+		$videoplayer_download_label 	= sprintf( _x( 'Downloads %s bij %s %s', 'Titel boven downloads', "rijksvideo-translate" ), '<span class="visuallyhidden">', $videotitle, '</span>' );
+
 		
 		$videoplayer_noplugin_label     = _x( 'Helaas kan deze video niet worden afgespeeld. Een mogelijk oplossing is de meest recente versie van uw browser te installeren.', 'Rijksvideo', "rijksvideo-translate" );
 		
@@ -577,9 +578,13 @@ class RijksvideoPlugin_v1 {
 			
 			if ( $rhswp_video_transcriptvlak ) {
 				$rhswp_video_transcriptvlak =  wpautop( $rhswp_video_transcriptvlak, 'br' );
+
+				$uitgeschreventekst_label 	= sprintf( _x( 'Uitgeschreven tekst %s bij %s %s', 'Titel boven uitgeschreven tekst', "rijksvideo-translate" ), '<span class="visuallyhidden">', $videotitle, '</span>' );
+
+				
 				$returnstring .= '
 				<h2 id="videoplayer_captions' . $uniqueid . '" class="collapsetoggle">
-				<button aria-expanded="false">' . sprintf( _x( 'Uitgeschreven tekst <span class="visuallyhidden">voor \'%s\'</span>', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) . '</button>
+				<button aria-expanded="false">' . $uitgeschreventekst_label . '</button>
 				</h2>
 				<div class="collapsible"  hidden>
 					<div aria-labelledby="videoplayer_captions' . $uniqueid . '">' . $rhswp_video_transcriptvlak . '</div>
