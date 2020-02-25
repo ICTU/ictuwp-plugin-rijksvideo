@@ -17,10 +17,6 @@ wp-content/plugins/hello.php
 /sitemap.xml.gz
 
 
-distribute.sh
-
-get_cmb2_files.sh
-get_mediaelement_files.sh
 *.map
 
 *.codekit3
