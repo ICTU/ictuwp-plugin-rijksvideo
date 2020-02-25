@@ -5,9 +5,10 @@ ICTU - Digitale Overheid WP - rijksvideoplugin
 Paul van Buuren (paul@wbvb.nl)
 
 ## Current version
-* 1.0.9 - Code check: unclosed DIV.
+* 1.0.10 - Vertalingen bijgewerkt. En 'RIJKSVIDEO_FOLDER' veranderd (jeetje Paul, dat moet beter).
 
 ## Version history
+* 1.0.10 - Vertalingen bijgewerkt. En 'RIJKSVIDEO_FOLDER' veranderd (jeetje Paul, dat moet beter).
 * 1.0.9 - Code check: unclosed DIV.
 * 1.0.8 - a11y checks. Restyling collapsible panel.
 * 1.0.7 - Ondertitelingsbestand (SRT) niet langer een verplicht veld.

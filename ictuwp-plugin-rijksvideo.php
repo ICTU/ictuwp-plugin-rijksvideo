@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.9
-// * Version description: Code check: unclosed DIV.
+// * Version:             1.0.10
+// * Version description: Vertalingen bijgewerkt. En 'RIJKSVIDEO_FOLDER' veranderd (jeetje Paul, dat moet beter).
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '1.0.9';
+    public $version = '1.0.10';
 
 
     /**
@@ -74,7 +74,7 @@ class RijksvideoPlugin_v1 {
       $protocol = strtolower(substr($_SERVER["SERVER_PROTOCOL"],0,strpos( $_SERVER["SERVER_PROTOCOL"],'/'))).'://';
 
       define( 'RIJKSVIDEO_VERSION',    $this->version );
-      define( 'RIJKSVIDEO_FOLDER',     'rhswp-rijksvideo' );
+      define( 'RIJKSVIDEO_FOLDER',     'ictuwp-plugin-rijksvideo' );
       define( 'RIJKSVIDEO_BASE_URL',   trailingslashit( plugins_url( RIJKSVIDEO_FOLDER ) ) );
       define( 'RIJKSVIDEO_ASSETS_URL', trailingslashit( RIJKSVIDEO_BASE_URL . 'assets' ) );
       define( 'RIJKSVIDEO_MEDIAELEMENT_URL', trailingslashit( RIJKSVIDEO_BASE_URL . 'mediaelement' ) );

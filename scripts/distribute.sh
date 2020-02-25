@@ -53,8 +53,7 @@ rsync -ah '/Users/paul/shared-paul-files/Webs/temp-lang/' '/Users/paul/shared-pa
 rsync -ah '/Users/paul/shared-paul-files/Webs/temp-lang/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/live/www/wp-content/languages/plugins/'
 
 # remove temp dir
-#rm -rf '/Users/paul/shared-paul-files/Webs/temp-lang/'
-#rmdir '/Users/paul/shared-paul-files/Webs/temp-lang/'
+rm -rf '/Users/paul/shared-paul-files/Webs/temp-lang/'
 
 # ------------------
 
@@ -67,4 +66,4 @@ rsync -r -a --delete '/Users/paul/shared-paul-files/Webs/temp/' '/Users/paul/sha
 rsync -r -a --delete '/Users/paul/shared-paul-files/Webs/temp/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/live/www/wp-content/plugins/ictuwp-plugin-rijksvideo/'
 
 # remove temp dir
-#rm -rf '/Users/paul/shared-paul-files/Webs/temp/'
+rm -rf '/Users/paul/shared-paul-files/Webs/temp/'
