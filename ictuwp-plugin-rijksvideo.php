@@ -347,24 +347,25 @@ class RijksvideoPlugin_v1 {
       if ( !is_admin() ) {
 
 
-		$theme_options = get_option( 'gc2020_theme_options' );
 
 
           $infooter = false;
 
           // don't add to any admin pages
-//          wp_enqueue_script( 'rhswp_video_js', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelement-and-player.min.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
           wp_enqueue_script( 'rhswp_video_js', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelement-and-player.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
           wp_enqueue_script( 'rhswp_video_action_js', RIJKSVIDEO_ASSETS_URL . 'js/createPlayer.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
           wp_enqueue_style( 'rhswp-mediaelementplayer', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelementplayer.css', array(), RIJKSVIDEO_VERSION, $infooter );
 
-if ( $theme_options ) {
-	// dit is blijkbaar de een of andere GC-site
-          wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/video-gebruiker-centraal.css', array(), RIJKSVIDEO_VERSION, $infooter );
-}
-else {
-          wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/rijksvideo.css', array(), RIJKSVIDEO_VERSION, $infooter );
-}
+		$theme_options = get_option( 'gc2020_theme_options' );
+		if ( $theme_options ) {
+			// dit is blijkbaar de een of andere GC-site
+			wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/video-gebruiker-centraal.css', array(), RIJKSVIDEO_VERSION, $infooter );
+			wp_enqueue_script( 'rhswp_video_collapsible', RIJKSVIDEO_ASSETS_URL . 'js/gc-collapsible-min.js', '', RIJKSVIDEO_VERSION, $infooter );
+			
+		}
+		else {
+			wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/rijksvideo.css', array(), RIJKSVIDEO_VERSION, $infooter );
+		}
 
       }
 
@@ -434,8 +435,17 @@ else {
 
 		$videotitle 					= get_the_title( $postid );		
 		
-		$videoplayer_width              = '100%';
-		$videoplayer_height             = '412';
+		$theme_options = get_option( 'gc2020_theme_options' );
+		if ( $theme_options ) {
+			// voor GC-sites
+			$videoplayer_width              = '100%';
+			$videoplayer_height             = '428';
+		}
+		else {
+			// anders dan GC-sites
+			$videoplayer_width              = '500';
+			$videoplayer_height             = '412';
+		}
 		$video_id                       = 'movie-' . $postid;
 		
 		$videoplayer_aria_id            = 'mep_7';

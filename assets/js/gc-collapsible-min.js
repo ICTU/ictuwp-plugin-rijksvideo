@@ -1,0 +1,1 @@
+!function(){for(var e=document.querySelectorAll(".collapsetoggle"),t=0;t<e.length;t++){e[t].querySelector("button").onclick=function(e){var t="true"===this.getAttribute("aria-expanded")||!1,i=this.parentElement.nextElementSibling;t?(this.setAttribute("aria-expanded",!1),i.setAttribute("hidden","hidden")):(this.setAttribute("aria-expanded",!0),i.removeAttribute("hidden"))}}}();
