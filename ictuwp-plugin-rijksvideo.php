@@ -346,6 +346,10 @@ class RijksvideoPlugin_v1 {
 
       if ( !is_admin() ) {
 
+
+		$theme_options = get_option( 'gc2020_theme_options' );
+
+
           $infooter = false;
 
           // don't add to any admin pages
@@ -353,7 +357,15 @@ class RijksvideoPlugin_v1 {
           wp_enqueue_script( 'rhswp_video_js', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelement-and-player.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
           wp_enqueue_script( 'rhswp_video_action_js', RIJKSVIDEO_ASSETS_URL . 'js/createPlayer.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
           wp_enqueue_style( 'rhswp-mediaelementplayer', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelementplayer.css', array(), RIJKSVIDEO_VERSION, $infooter );
+
+if ( $theme_options ) {
+	// dit is blijkbaar de een of andere GC-site
+          wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/video-gebruiker-centraal.css', array(), RIJKSVIDEO_VERSION, $infooter );
+}
+else {
           wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/rijksvideo.css', array(), RIJKSVIDEO_VERSION, $infooter );
+}
+
       }
 
     }
