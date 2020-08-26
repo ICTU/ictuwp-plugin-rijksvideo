@@ -422,7 +422,7 @@ class RijksvideoPlugin_v1 {
 
 		$videotitle 					= get_the_title( $postid );		
 		
-		$videoplayer_width              = '500';
+		$videoplayer_width              = '100%';
 		$videoplayer_height             = '412';
 		$video_id                       = 'movie-' . $postid;
 		
