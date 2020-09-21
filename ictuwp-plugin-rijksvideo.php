@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.10
-// * Version description: Vertalingen bijgewerkt. En 'RIJKSVIDEO_FOLDER' veranderd (jeetje Paul, dat moet beter).
+// * Version:             1.0.11.a
+// * Version description: HTML check.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -31,7 +31,7 @@ class RijksvideoPlugin_v1 {
     /**
      * @var string
      */
-    public $version = '1.0.10';
+    public $version = '1.0.11.a';
 
 
     /**
@@ -438,7 +438,7 @@ class RijksvideoPlugin_v1 {
 		$theme_options = get_option( 'gc2020_theme_options' );
 		if ( $theme_options ) {
 			// voor GC-sites
-			$videoplayer_width              = '100%';
+			$videoplayer_width              = '760';
 			$videoplayer_height             = '428';
 		}
 		else {
@@ -550,8 +550,12 @@ class RijksvideoPlugin_v1 {
 			// $arialabel = ' aria-label="' . wp_strip_all_tags( sprintf( _x( 'Video getiteld: \'%s\'', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) ) . '"';
 			$arialabel = '';
 			
-			$returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '"' . $arialabel . '>
-			<video id="' . $video_id . '" width="' . $videoplayer_width . '" height="' . $videoplayer_height . '" poster="' . $rhswp_video_url_video_thumb . '" data-noplugintxt="' . $videoplayer_noplugin_label . '">';
+						
+			$returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '"' . $arialabel . '>';
+
+			$returnstring .= '<p style="border: 5px solid red; background: white; color: black; padding: .5rem;">version ' . $this->version . ', block-' . $video_id . '</p>';
+
+			$returnstring .= '<video id="' . $video_id . '" width="' . $videoplayer_width . '" height="' . $videoplayer_height . '" poster="' . $rhswp_video_url_video_thumb . '" data-noplugintxt="' . $videoplayer_noplugin_label . '">';
 			
 			if ( $rhswp_video_url_mp4 ) {
 				$returnstring .= '<source type="video/mp4" src="' . $rhswp_video_url_mp4 . '">';
@@ -567,7 +571,9 @@ class RijksvideoPlugin_v1 {
 			}
 			
 			$returnstring .= '</video>' . "\n";
-			
+
+if ( 22 == 33 ) {
+	
 			$returnstring .= '<div class="downloads">
 			
 			<h2 id="videoplayer_download_label' . $uniqueid . '" class="collapsetoggle"><button aria-expanded="false">' . $videoplayer_download_label . '</button></h2>
@@ -597,6 +603,10 @@ class RijksvideoPlugin_v1 {
 			</ul>
 			</div><!-- div class="collapsible"  hidden> -->' . 
 			'</div><!-- .downloads -->' . "\n"; // .downloads
+
+}			
+
+if ( 22 == 44 ) {
 			
 			if ( $rhswp_video_transcriptvlak ) {
 				$rhswp_video_transcriptvlak =  wpautop( $rhswp_video_transcriptvlak, 'br' );
@@ -612,6 +622,9 @@ class RijksvideoPlugin_v1 {
 					<div aria-labelledby="videoplayer_captions' . $uniqueid . '">' . $rhswp_video_transcriptvlak . '</div>
 				</div>' . "\n";
 			}
+
+}			
+
 			
 			$returnstring .= '</div><!-- .block-audio-video -->' . "\n"; // class="block-audio-video"
 			
