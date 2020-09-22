@@ -5,7 +5,7 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.11.a
+// * Version:             1.0.11
 // * Version description: HTML check.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
@@ -31,7 +31,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.11.a';
+		public $version = '1.0.11';
 
 
 		/**
@@ -538,19 +538,19 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
 				$returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '"' . $arialabel . '>';
 
-				$returnstring .= '<video id="' . $video_id . '" width="' . $videoplayer_width . '" height="' . $videoplayer_height . '" poster="' . $rhswp_video_url_video_thumb . '" data-noplugintxt="' . $videoplayer_noplugin_label . '">';
+				$returnstring .= '<video id="' . $video_id . '" width="' . $videoplayer_width . '" height="' . $videoplayer_height . '" poster="' . esc_url( $rhswp_video_url_video_thumb ) . '" data-noplugintxt="' . $videoplayer_noplugin_label . '">';
 
 				if ( $rhswp_video_url_mp4 ) {
-					$returnstring .= '<source type="video/mp4" src="' . $rhswp_video_url_mp4 . '">';
+					$returnstring .= '<source type="video/mp4" src="' . esc_url( $rhswp_video_url_mp4 ) . '">';
 				}
 				if ( $rhswp_video_url_wmv ) {
-					$returnstring .= '<source type="video/wmv" src="' . $rhswp_video_url_wmv . '">';
+					$returnstring .= '<source type="video/wmv" src="' . esc_url( $rhswp_video_url_wmv ) . '">';
 				}
 				if ( $rhswp_video_url_flv ) {
-					$returnstring .= '<source type="video/x-flv" src="' . $rhswp_video_url_flv . '">';
+					$returnstring .= '<source type="video/x-flv" src="' . esc_url( $rhswp_video_url_flv ) . '">';
 				}
 				if ( $rhswp_video_url_transcript ) {
-					$returnstring .= '<track kind="subtitles" src="' . $rhswp_video_url_transcript . '" label="' . $videoplayer_subtitles . '" srclang="' . $videoplayer_subtitles_language . '"  >';
+					$returnstring .= '<track kind="subtitles" src="' . esc_url( $rhswp_video_url_transcript ) . '" label="' . $videoplayer_subtitles . '" srclang="' . $videoplayer_subtitles_language . '">';
 				}
 
 				$returnstring .= '</video>' . "\n";
