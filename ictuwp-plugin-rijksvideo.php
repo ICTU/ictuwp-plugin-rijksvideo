@@ -609,7 +609,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 			} else {
 
 				if ( ! $rhswp_video_url_video_thumb ) {
-					$returnstring .= '<p>' . _x( 'Er is geen caption gevonden voor deze video. Je kunt een uitgelichte afbeelding gebruiken of een extern beeld-bestand.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
+					$returnstring .= '<p>' . _x( 'Er is geen plaatje gevonden voor deze video. Je kunt een uitgelichte afbeelding gebruiken of een extern beeld-bestand.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
 				} elseif ( ( ! $rhswp_video_url_mp4 ) && ( ! $rhswp_video_url_wmv ) || ( ! $rhswp_video_url_flv ) ) {
 					$returnstring .= '<p>' . _x( 'Er is geen video-stream gevonden voor deze video.', 'Rijksvideo', "rijksvideo-translate" ) . '</p>';
 				} else {
@@ -697,7 +697,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 					) );
 
 					$cmb2_metafields->add_field( array(
-						'name'       => __( 'Lengte van de video (*)', "rijksvideo-translate" ),
+						'name'       => __( 'Lengte (*)', "rijksvideo-translate" ),
 						'desc'       => __( '(verplicht) formaat: uu:mm:ss', "rijksvideo-translate" ),
 						'id'         => RHSWP_CPT_VIDEO_PREFIX . 'video_time',
 						'type'       => 'text_small',

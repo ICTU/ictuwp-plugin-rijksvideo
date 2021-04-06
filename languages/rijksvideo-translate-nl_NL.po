@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ICTU / Rijksvideo digitaleoverheid.nl\n"
-"POT-Creation-Date: 2020-02-25 13:35+0100\n"
-"PO-Revision-Date: 2020-02-25 13:35+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2021-04-06 12:21+0200\n"
+"PO-Revision-Date: 2021-04-06 12:21+0200\n"
+"Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Metabox configuration is required to have an ID parameter."
 msgstr ""
 
-#: cmb2/includes/CMB2.php:601
+#: cmb2/includes/CMB2.php:609
 msgid "Click to toggle"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgid ""
 msgstr ""
 
 #: cmb2/includes/CMB2_Base.php:491 cmb2/includes/CMB2_Hookup_Base.php:102
-#: cmb2/includes/CMB2_Options_Hookup.php:357
+#: cmb2/includes/CMB2_Options.php:247 cmb2/includes/CMB2_Options_Hookup.php:357
 #: cmb2/includes/types/CMB2_Type_Base.php:173
 #, php-format
 msgid "Invalid %1$s property: %2$s"
@@ -84,26 +84,26 @@ msgstr ""
 msgid "Invalid %1$s method: %2$s"
 msgstr ""
 
-#: cmb2/includes/CMB2_Field.php:1348
+#: cmb2/includes/CMB2_Field.php:1438
 msgid "Add Group"
 msgstr ""
 
-#: cmb2/includes/CMB2_Field.php:1349
+#: cmb2/includes/CMB2_Field.php:1439
 msgid "Remove Group"
 msgstr ""
 
-#: cmb2/includes/CMB2_Field.php:1380 cmb2/includes/CMB2_Field.php:1384
+#: cmb2/includes/CMB2_Field.php:1471 cmb2/includes/CMB2_Field.php:1475
 #: cmb2/tests/test-cmb-field.php:237
 msgid "None"
 msgstr ""
 
-#: cmb2/includes/CMB2_Field.php:1495
+#: cmb2/includes/CMB2_Field.php:1589
 msgid "Sorry, this field does not have a cmb_id specified."
 msgstr ""
 
-#: cmb2/includes/CMB2_Field_Display.php:432 cmb2/includes/CMB2_JS.php:230
+#: cmb2/includes/CMB2_Field_Display.php:453 cmb2/includes/CMB2_JS.php:242
 #: cmb2/includes/types/CMB2_Type_File_Base.php:79
-#: cmb2/tests/test-cmb-types-base.php:149 cmb2/tests/test-cmb-types.php:956
+#: cmb2/tests/test-cmb-types-base.php:149 cmb2/tests/test-cmb-types.php:959
 msgid "File:"
 msgstr ""
 
@@ -112,121 +112,121 @@ msgstr ""
 msgid "%1$s should be implemented by the extended class."
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:165 cmb2/includes/CMB2_JS.php:210
+#: cmb2/includes/CMB2_JS.php:177 cmb2/includes/CMB2_JS.php:222
 msgid "Clear"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:166
+#: cmb2/includes/CMB2_JS.php:178
 msgid "Default"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:167
+#: cmb2/includes/CMB2_JS.php:179
 msgid "Select Color"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:168
+#: cmb2/includes/CMB2_JS.php:180
 msgid "Current Color"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:200
+#: cmb2/includes/CMB2_JS.php:212
 msgctxt "Valid formatDate string for jquery-ui datepicker"
 msgid "mm/dd/yy"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:201
+#: cmb2/includes/CMB2_JS.php:213
 msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:202
+#: cmb2/includes/CMB2_JS.php:214
 msgid "Su, Mo, Tu, We, Th, Fr, Sa"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:203
+#: cmb2/includes/CMB2_JS.php:215
 msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:204
+#: cmb2/includes/CMB2_JS.php:216
 msgid ""
 "January, February, March, April, May, June, July, August, September, "
 "October, November, December"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:205
+#: cmb2/includes/CMB2_JS.php:217
 msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:206
+#: cmb2/includes/CMB2_JS.php:218
 msgid "Next"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:207
+#: cmb2/includes/CMB2_JS.php:219
 msgid "Prev"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:208
+#: cmb2/includes/CMB2_JS.php:220
 msgid "Today"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:209 cmb2/includes/CMB2_JS.php:219
+#: cmb2/includes/CMB2_JS.php:221 cmb2/includes/CMB2_JS.php:231
 msgid "Done"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:213
+#: cmb2/includes/CMB2_JS.php:225
 msgid "Choose Time"
 msgstr "Kies een tijd"
 
-#: cmb2/includes/CMB2_JS.php:214
+#: cmb2/includes/CMB2_JS.php:226
 msgid "Time"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:215
+#: cmb2/includes/CMB2_JS.php:227
 msgid "Hour"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:216
+#: cmb2/includes/CMB2_JS.php:228
 msgid "Minute"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:217
+#: cmb2/includes/CMB2_JS.php:229
 msgid "Second"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:218
+#: cmb2/includes/CMB2_JS.php:230
 msgid "Now"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:220
+#: cmb2/includes/CMB2_JS.php:232
 msgctxt ""
 "Valid formatting string, as per http://trentrichardson.com/examples/"
 "timepicker/"
 msgid "hh:mm TT"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:226
+#: cmb2/includes/CMB2_JS.php:238
 msgid "Use this file"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:227
+#: cmb2/includes/CMB2_JS.php:239
 msgid "Use these files"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:228 cmb2/includes/types/CMB2_Type_File_Base.php:64
+#: cmb2/includes/CMB2_JS.php:240 cmb2/includes/types/CMB2_Type_File_Base.php:64
 msgid "Remove Image"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:229 cmb2/includes/CMB2_Types.php:413
+#: cmb2/includes/CMB2_JS.php:241 cmb2/includes/CMB2_Types.php:408
 #: cmb2/includes/types/CMB2_Type_File_Base.php:84
 #: cmb2/tests/test-cmb-types-base.php:149 cmb2/tests/test-cmb-types.php:47
-#: cmb2/tests/test-cmb-types.php:55 cmb2/tests/test-cmb-types.php:956
+#: cmb2/tests/test-cmb-types.php:55 cmb2/tests/test-cmb-types.php:959
 msgid "Remove"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:231 cmb2/includes/types/CMB2_Type_File_Base.php:82
-#: cmb2/tests/test-cmb-types-base.php:149 cmb2/tests/test-cmb-types.php:956
+#: cmb2/includes/CMB2_JS.php:243 cmb2/includes/types/CMB2_Type_File_Base.php:82
+#: cmb2/tests/test-cmb-types-base.php:149 cmb2/tests/test-cmb-types.php:959
 msgid "Download"
 msgstr ""
 
-#: cmb2/includes/CMB2_JS.php:232
+#: cmb2/includes/CMB2_JS.php:244
 msgid "Select / Deselect All"
 msgstr ""
 
@@ -238,30 +238,30 @@ msgstr ""
 msgid "Settings updated."
 msgstr ""
 
-#: cmb2/includes/CMB2_Types.php:232
+#: cmb2/includes/CMB2_Types.php:226
 msgid "Custom CMB2 field type classes must extend CMB2_Type_Base."
 msgstr ""
 
-#: cmb2/includes/CMB2_Types.php:350
+#: cmb2/includes/CMB2_Types.php:344
 msgid "Add Row"
 msgstr ""
 
-#: cmb2/includes/CMB2_Types.php:413 cmb2/tests/test-cmb-types.php:47
+#: cmb2/includes/CMB2_Types.php:408 cmb2/tests/test-cmb-types.php:47
 #: cmb2/tests/test-cmb-types.php:55
 msgid "Remove Row"
 msgstr ""
 
-#: cmb2/includes/CMB2_hookup.php:182
+#: cmb2/includes/CMB2_hookup.php:188
 msgid ""
 "Term Metadata is a WordPress 4.4+ feature. Please upgrade your WordPress "
 "install."
 msgstr ""
 
-#: cmb2/includes/CMB2_hookup.php:186
+#: cmb2/includes/CMB2_hookup.php:192
 msgid "Term metaboxes configuration requires a \"taxonomies\" parameter."
 msgstr ""
 
-#: cmb2/includes/CMB2_hookup.php:466
+#: cmb2/includes/CMB2_hookup.php:550
 #, php-format
 msgid "Toggle panel: %s"
 msgstr ""
@@ -393,13 +393,13 @@ msgid ""
 "Scope under which the request is made; determines fields present in response."
 msgstr ""
 
-#: cmb2/includes/types/CMB2_Type_File.php:76 cmb2/tests/test-cmb-types.php:932
-#: cmb2/tests/test-cmb-types.php:956
+#: cmb2/includes/types/CMB2_Type_File.php:76 cmb2/tests/test-cmb-types.php:935
+#: cmb2/tests/test-cmb-types.php:959
 msgid "Add or Upload File"
 msgstr ""
 
 #: cmb2/includes/types/CMB2_Type_File_List.php:41
-#: cmb2/tests/test-cmb-types.php:881 cmb2/tests/test-cmb-types.php:912
+#: cmb2/tests/test-cmb-types.php:882 cmb2/tests/test-cmb-types.php:915
 msgid "Add or Upload Files"
 msgstr ""
 
@@ -431,310 +431,310 @@ msgstr ""
 msgid "Check Three"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:256
+#: ictuwp-plugin-rijksvideo.php:246
 msgid "Rijksvideo"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:335
+#: ictuwp-plugin-rijksvideo.php:325
 msgid "Documentatie"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:336
+#: ictuwp-plugin-rijksvideo.php:326
 msgid "Rijksvideo documentatie"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:403
+#: ictuwp-plugin-rijksvideo.php:402
 msgid "URL"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:404
+#: ictuwp-plugin-rijksvideo.php:403
 msgid "Caption"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:405
+#: ictuwp-plugin-rijksvideo.php:404
 msgid "New Window"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:406
+#: ictuwp-plugin-rijksvideo.php:405
 msgid "Weet je het zeker?"
-msgstr ""
-
-#: ictuwp-plugin-rijksvideo.php:432
-msgctxt "Rijksvideo"
-msgid "Video Player"
-msgstr ""
-
-#: ictuwp-plugin-rijksvideo.php:433
-msgctxt "Rijksvideo"
-msgid "Video"
-msgstr ""
-
-#: ictuwp-plugin-rijksvideo.php:434
-msgctxt "Rijksvideo"
-msgid "Audio"
-msgstr ""
-
-#: ictuwp-plugin-rijksvideo.php:435
-msgctxt "Rijksvideo"
-msgid "Caption"
-msgstr ""
-
-#: ictuwp-plugin-rijksvideo.php:436
-msgctxt "Rijksvideo"
-msgid "Ondertitels"
-msgstr ""
-
-#: ictuwp-plugin-rijksvideo.php:437
-msgctxt "Rijksvideo: voor welke taal heb je ondertitels geupload?"
-msgid "nl"
 msgstr ""
 
 #: ictuwp-plugin-rijksvideo.php:440
 msgctxt "Rijksvideo"
-msgid "Afspelen"
+msgid "Video Player"
 msgstr ""
 
 #: ictuwp-plugin-rijksvideo.php:441
 msgctxt "Rijksvideo"
-msgid "Geluid uit"
+msgid "Video"
 msgstr ""
 
 #: ictuwp-plugin-rijksvideo.php:442
 msgctxt "Rijksvideo"
-msgid "Schermvullende weergave openen"
+msgid "Audio"
 msgstr ""
 
 #: ictuwp-plugin-rijksvideo.php:443
 msgctxt "Rijksvideo"
-msgid "Schermvullende weergave sluiten"
+msgid "Caption"
 msgstr ""
 
 #: ictuwp-plugin-rijksvideo.php:444
+msgctxt "Rijksvideo"
+msgid "Ondertitels"
+msgstr ""
+
+#: ictuwp-plugin-rijksvideo.php:445
+msgctxt "Rijksvideo: voor welke taal heb je ondertitels geupload?"
+msgid "nl"
+msgstr ""
+
+#: ictuwp-plugin-rijksvideo.php:448
+msgctxt "Rijksvideo"
+msgid "Afspelen"
+msgstr ""
+
+#: ictuwp-plugin-rijksvideo.php:449
+msgctxt "Rijksvideo"
+msgid "Geluid uit"
+msgstr ""
+
+#: ictuwp-plugin-rijksvideo.php:450
+msgctxt "Rijksvideo"
+msgid "Schermvullende weergave openen"
+msgstr ""
+
+#: ictuwp-plugin-rijksvideo.php:451
+msgctxt "Rijksvideo"
+msgid "Schermvullende weergave sluiten"
+msgstr ""
+
+#: ictuwp-plugin-rijksvideo.php:452
 msgctxt "Rijksvideo"
 msgid ""
 "Gebruik op- of neer-pijltjestoetsen om het volume harder of zachter te zetten"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:445
+#: ictuwp-plugin-rijksvideo.php:453
 msgctxt "Rijksvideo"
 msgid "Ondertiteling aan"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:446
+#: ictuwp-plugin-rijksvideo.php:454
 #, php-format
 msgctxt "Titel boven downloads"
 msgid "Downloads %s bij %s %s"
 msgstr "Downloads %s bij %s %s"
 
-#: ictuwp-plugin-rijksvideo.php:449
+#: ictuwp-plugin-rijksvideo.php:457
 msgctxt "Rijksvideo"
 msgid ""
 "Helaas kan deze video niet worden afgespeeld. Een mogelijk oplossing is de "
 "meest recente versie van uw browser te installeren."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:451
+#: ictuwp-plugin-rijksvideo.php:459
 msgctxt "Rijksvideo"
 msgid "Video voor Apple Quicktime Player"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:452
+#: ictuwp-plugin-rijksvideo.php:460
 msgctxt "Rijksvideo"
 msgid "mp4"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:453
+#: ictuwp-plugin-rijksvideo.php:461
 msgctxt "Rijksvideo"
 msgid " (hoge resolutie)"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:455
+#: ictuwp-plugin-rijksvideo.php:463
 msgctxt "Rijksvideo"
 msgid "Video voor Windows Media Player"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:456
+#: ictuwp-plugin-rijksvideo.php:464
 msgctxt "Rijksvideo"
 msgid "wmv"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:458
+#: ictuwp-plugin-rijksvideo.php:466
 msgctxt "Rijksvideo"
 msgid "Video voor mobiel gebruik"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:459
+#: ictuwp-plugin-rijksvideo.php:467
 msgctxt "Rijksvideo"
 msgid "3gp"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:461
+#: ictuwp-plugin-rijksvideo.php:469
 msgctxt "Rijksvideo"
 msgid "Audiospoor"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:462
+#: ictuwp-plugin-rijksvideo.php:470
 msgctxt "Rijksvideo"
 msgid "mp3"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:464
+#: ictuwp-plugin-rijksvideo.php:472
 msgctxt "Rijksvideo"
 msgid "Ondertitelingsbestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:465
+#: ictuwp-plugin-rijksvideo.php:473
 msgctxt "Rijksvideo"
 msgid "srt"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:582
+#: ictuwp-plugin-rijksvideo.php:593
 #, php-format
 msgctxt "Titel boven uitgeschreven tekst"
 msgid "Uitgeschreven tekst %s bij %s %s"
 msgstr "Uitgeschreven tekst %s bij %s %s"
 
-#: ictuwp-plugin-rijksvideo.php:601
+#: ictuwp-plugin-rijksvideo.php:612
 msgctxt "Rijksvideo"
 msgid ""
-"Er is geen caption gevonden voor deze video. Je kunt een uitgelichte "
+"Er is geen plaatje gevonden voor deze video. Je kunt een uitgelichte "
 "afbeelding gebruiken of een extern beeld-bestand."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:604
+#: ictuwp-plugin-rijksvideo.php:614
 msgctxt "Rijksvideo"
 msgid "Er is geen video-stream gevonden voor deze video."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:607
+#: ictuwp-plugin-rijksvideo.php:616
 msgctxt "Rijksvideo"
 msgid "Er is onvoldoende ingevoerd om deze video goed weer te geven."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:670
+#: ictuwp-plugin-rijksvideo.php:677
 msgid "Metadata voor video"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:680
+#: ictuwp-plugin-rijksvideo.php:687
 msgid "URL van thumbnail"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:681
+#: ictuwp-plugin-rijksvideo.php:688
 msgid ""
 "Als caption van de video wordt eerst gekeken of je een uitgelichte "
 "afbeelding hebt toegevoegd aan deze video. Als die er niet is, kun je hier "
 "de URL van het bijbehorende plaatje invoeren."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:693
-msgid "Lengte van de video (*)"
+#: ictuwp-plugin-rijksvideo.php:700
+msgid "Lengte (*)"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:694
+#: ictuwp-plugin-rijksvideo.php:701
 msgid "(verplicht) formaat: uu:mm:ss"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:704
+#: ictuwp-plugin-rijksvideo.php:711
 msgid "URL van MP4-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:705
+#: ictuwp-plugin-rijksvideo.php:712
 msgid "Apple Quicktime-bestand. Eindigt vaak op .mp4"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:712
+#: ictuwp-plugin-rijksvideo.php:719
 msgid "Bestandsgrootte van MP4-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:718
+#: ictuwp-plugin-rijksvideo.php:725
 msgid "URL van Hi-res MP4-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:719
+#: ictuwp-plugin-rijksvideo.php:726
 msgid "Versie van Quicktime-bestand in hoge resolutie."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:726
+#: ictuwp-plugin-rijksvideo.php:733
 msgid "Bestandsgrootte van hi-res MP4-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:732
+#: ictuwp-plugin-rijksvideo.php:739
 msgid "Url voor 3GP formaat"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:739
+#: ictuwp-plugin-rijksvideo.php:746
 msgid "Bestandsgrootte van 3GP-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:745
+#: ictuwp-plugin-rijksvideo.php:752
 msgid "URL van ondertitel"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:746
+#: ictuwp-plugin-rijksvideo.php:753
 msgid "Dit is meestal een bestand dat eindigt op .srt"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:753
+#: ictuwp-plugin-rijksvideo.php:760
 msgid "Volledige transcriptie"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:759
+#: ictuwp-plugin-rijksvideo.php:766
 msgid "URL van audio-track"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:760
+#: ictuwp-plugin-rijksvideo.php:767
 msgid "Dit is meestal een bestand dat eindigt op .mp3"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:767
+#: ictuwp-plugin-rijksvideo.php:774
 msgid "Bestandsgrootte van audio-track"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:775
+#: ictuwp-plugin-rijksvideo.php:781
 msgid "URL van FLV-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:776
+#: ictuwp-plugin-rijksvideo.php:782
 msgid "Eindigt op .flv"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:783
+#: ictuwp-plugin-rijksvideo.php:789
 msgid "Bestandsgrootte van FLV-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:789
+#: ictuwp-plugin-rijksvideo.php:795
 msgid "URL van WMV-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:790
+#: ictuwp-plugin-rijksvideo.php:796
 msgid "Windows Media File. Eindigt vaak op .wmv"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:797
+#: ictuwp-plugin-rijksvideo.php:803
 msgid "Bestandsgrootte van WMV-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:1282
+#: ictuwp-plugin-rijksvideo.php:1296
 msgid "Selecteer een rijksvideo om in dit bericht in te voegen."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:1284
+#: ictuwp-plugin-rijksvideo.php:1298
 msgid "Voeg rijksvideo in"
 msgstr "Voeg rijksvideo in"
 
-#: ictuwp-plugin-rijksvideo.php:1319
+#: ictuwp-plugin-rijksvideo.php:1333
 msgid "Choose a video to insert into your post / page."
 msgstr "Kies een video uit de lijst om in te voegen in je bericht."
 
-#: ictuwp-plugin-rijksvideo.php:1321
+#: ictuwp-plugin-rijksvideo.php:1335
 msgid "Choose video"
 msgstr "Kies een video"
 
-#: ictuwp-plugin-rijksvideo.php:1326
+#: ictuwp-plugin-rijksvideo.php:1340
 msgid "Select and insert video"
 msgstr "Selecteer en voeg video in"
 
-#: ictuwp-plugin-rijksvideo.php:1328
+#: ictuwp-plugin-rijksvideo.php:1342
 msgid "No videos found"
 msgstr "Geen videos gevonden"
 
