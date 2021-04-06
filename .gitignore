@@ -24,3 +24,5 @@ wp-content/plugins/hello.php
 *.codekit3
 cmb2/
 
+.idea/*
+
