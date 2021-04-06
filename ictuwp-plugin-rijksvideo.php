@@ -682,7 +682,6 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 					 * The fields
 					 */
 
-
 					$cmb2_metafields->add_field( array(
 						'name'       => __( 'URL van thumbnail', "rijksvideo-translate" ),
 						'desc'       => __( 'Als caption van de video wordt eerst gekeken of je een uitgelichte afbeelding hebt toegevoegd aan deze video. Als die er niet is, kun je hier de URL van het bijbehorende plaatje invoeren.', "rijksvideo-translate" ),
