@@ -8,8 +8,8 @@
 // @author  Paul van Buuren
 // @license GPL-2.0+
 // @plugin: rhswp-rijksvideo
-// Version: 1.0.10
-// Version desc: Vertalingen bijgewerkt. En 'RIJKSVIDEO_FOLDER' veranderd (jeetje Paul, dat moet beter).
+// Version: 1.0.12
+// Version desc: a11y: converted font-sizes to relative unit.
 // @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 
 
@@ -109,7 +109,7 @@
   overflow: hidden;
 }
 .mejs-fullscreen {
-  overflow: hidden!important;
+  overflow: hidden !important;
 }
 .mejs-container-fullscreen {
   position: fixed;
@@ -207,7 +207,7 @@
   padding: 0;
   bottom: -30px;
   left: 0;
-  height: 30px;
+  height: 2rem;
   width: 100%;
   background: #ffffff;
   color: #000000;
@@ -230,9 +230,7 @@
   padding: 0;
   width: 23px;
   height: 30px;
-  font-size: 13px;
-  line-height: 13px;
-  border: 0;
+  font-size: 1rem;
 }
 .mejs-controls .mejs-button button {
   cursor: pointer;
@@ -243,8 +241,8 @@
   margin: 5px 0 5px 3px;
   padding: 0;
   position: absolute;
-  height: 20px;
-  width: 20px;
+  height: 1.4rem;
+  width: 1.4rem;
   border: 0;
   background: transparent url('../mediaplayer/controls.svg') no-repeat;
 }
@@ -266,7 +264,6 @@
 .mejs-container .mejs-controls .mejs-time {
   color: #696969;
   display: block;
-  height: 16px;
   width: auto;
   padding: 9px 3px 7px 3px;
   overflow: hidden;
@@ -275,8 +272,7 @@
 }
 .mejs-container .mejs-controls .mejs-time a {
   color: #696969;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 1rem;
   display: block;
   float: left;
   margin: 1px 2px 0 0;
@@ -293,13 +289,13 @@
 }
 .mejs-controls div.mejs-time-rail {
   direction: ltr;
-  width: 200px;
+  width: 180px;
 }
 .mejs-controls .mejs-time-rail span,
 .mejs-controls .mejs-time-rail a {
   display: block;
   position: absolute;
-  width: 180px;
+  width: 160px;
   height: 10px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -359,7 +355,7 @@
   position: absolute;
   display: none;
   background: #eee;
-  width: 36px;
+  width: 3rem;
   height: 17px;
   border: solid 1px #333;
   top: -26px;
@@ -542,8 +538,8 @@
   position: absolute;
   bottom: 26px;
   right: -51px;
-  width: 85px;
-  height: 100px;
+  width: 8rem;
+  height: 5rem;
   background: url('../mediaplayer/background.png');
   background: rgba(50, 50, 50, 0.7);
   border: solid 1px transparent;
@@ -557,13 +553,13 @@
   margin: 0;
   padding: 0;
   display: block;
-  list-style-type: none!important;
+  list-style-type: none !important;
   overflow: hidden;
 }
 .mejs-controls .mejs-captions-button .mejs-captions-selector ul li {
   margin: 0 0 6px 0;
   padding: 0;
-  list-style-type: none!important;
+  list-style-type: none !important;
   display: block;
   color: #fff;
   overflow: hidden;
@@ -577,11 +573,10 @@
   width: 55px;
   float: left;
   padding: 4px 0 0 0;
-  line-height: 15px;
-  font-size: 10px;
+  font-size: 1rem;
 }
 .mejs-controls .mejs-captions-button .mejs-captions-translations {
-  font-size: 10px;
+  font-size: 1rem;
   margin: 0 0 5px 0;
 }
 .mejs-chapters {
@@ -600,7 +595,7 @@
   border: 0;
 }
 .mejs-chapters .mejs-chapter .mejs-chapter-block {
-  font-size: 12px;
+  font-size: 1rem;
   color: #fff;
   padding: 5px;
   display: block;
@@ -615,17 +610,15 @@
   background: #666;
 }
 .mejs-chapters .mejs-chapter .mejs-chapter-block .ch-title {
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: bold;
   display: block;
   white-space: nowrap;
   text-overflow: ellipsis;
   margin: 0 0 3px 0;
-  line-height: 12px;
 }
 .mejs-chapters .mejs-chapter .mejs-chapter-block .ch-timespan {
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 1rem;
   margin: 3px 0 4px 0;
   display: block;
   white-space: nowrap;
@@ -636,17 +629,12 @@
   bottom: 0;
   left: 0;
   text-align: center;
-  line-height: 20px;
-  font-size: 16px;
+  font-size: 1rem;
   color: #fff;
 }
 .mejs-captions-layer a {
   color: #fff;
   text-decoration: underline;
-}
-.mejs-captions-layer[lang=ar] {
-  font-size: 20px;
-  font-weight: normal;
 }
 .mejs-captions-position {
   position: absolute;
@@ -707,7 +695,7 @@
   background: #333;
 }
 .mejs-contextmenu .mejs-contextmenu-item {
-  font-size: 12px;
+  font-size: 1rem;
   padding: 4px 6px;
   cursor: pointer;
   color: #333;
@@ -742,13 +730,13 @@
   margin: 0;
   padding: 0;
   display: block;
-  list-style-type: none!important;
+  list-style-type: none !important;
   overflow: hidden;
 }
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li {
   margin: 0 0 6px 0;
   padding: 0;
-  list-style-type: none!important;
+  list-style-type: none !important;
   display: block;
   color: #fff;
   overflow: hidden;
@@ -762,7 +750,6 @@
   width: 100px;
   float: left;
   padding: 4px 0 0 0;
-  line-height: 15px;
   font-size: 10px;
 }
 .mejs-postroll-layer {
@@ -792,14 +779,13 @@
   cursor: pointer;
 }
 div.mejs-speed-button {
-  width: 46px!important;
+  width: 46px !important;
   position: relative;
 }
 .mejs-controls .mejs-button.mejs-speed-button button {
   background: transparent;
   width: 36px;
-  font-size: 11px;
-  line-height: normal;
+  font-size: 1rem;
   color: #fff;
 }
 .mejs-controls .mejs-speed-button .mejs-speed-selector {
@@ -828,13 +814,13 @@ div.mejs-speed-button {
   margin: 0;
   padding: 0;
   display: block;
-  list-style-type: none!important;
+  list-style-type: none !important;
   overflow: hidden;
 }
 .mejs-controls .mejs-speed-button .mejs-speed-selector ul li {
   margin: 0 0 6px 0;
   padding: 0 10px;
-  list-style-type: none!important;
+  list-style-type: none !important;
   display: block;
   color: #fff;
   overflow: hidden;
@@ -849,8 +835,7 @@ div.mejs-speed-button {
   width: 60px;
   float: left;
   padding: 4px 0 0 0;
-  line-height: 15px;
-  font-size: 11.5px;
+  font-size: 1rem;
   color: white;
   margin-left: 5px;
   cursor: pointer;
@@ -861,8 +846,7 @@ div.mejs-speed-button {
 }
 .mejs-controls .mejs-button.mejs-jump-forward-button button {
   background: transparent;
-  font-size: 9px;
-  line-height: normal;
+  font-size: 0.8rem;
   color: #fff;
 }
 .mejs-controls .mejs-button.mejs-skip-back-button {
@@ -871,8 +855,7 @@ div.mejs-speed-button {
 }
 .mejs-controls .mejs-button.mejs-skip-back-button button {
   background: transparent;
-  font-size: 9px;
-  line-height: normal;
+  font-size: 0.8rem;
   color: #fff;
 }
 /*   *****************************************************
@@ -1009,14 +992,3 @@ div.mejs-speed-button {
 .block-audio-video li.toggle.open h2 a {
   background-position: 98% -95px !important;
 }
-/*
-
-  [aria-expanded="false"] {
-    border: 3px solid red !important;
-  }
-  [aria-expanded="true"] {
-    border: 3px solid green !important;
-  }
-
-*/
-/*# sourceMappingURL=rijksvideo.css.map */

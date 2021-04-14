@@ -8,8 +8,8 @@
 // @author  Paul van Buuren
 // @license GPL-2.0+
 // @plugin: rhswp-rijksvideo
-// Version: 1.0.10
-// Version desc: Vertalingen bijgewerkt. En 'RIJKSVIDEO_FOLDER' veranderd (jeetje Paul, dat moet beter).
+// Version: 1.0.11
+// Version desc: HTML check.
 // @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 
 
@@ -109,7 +109,7 @@
   overflow: hidden;
 }
 .mejs-fullscreen {
-  overflow: hidden!important;
+  overflow: hidden !important;
 }
 .mejs-container-fullscreen {
   position: fixed;
@@ -557,13 +557,13 @@
   margin: 0;
   padding: 0;
   display: block;
-  list-style-type: none!important;
+  list-style-type: none !important;
   overflow: hidden;
 }
 .mejs-controls .mejs-captions-button .mejs-captions-selector ul li {
   margin: 0 0 6px 0;
   padding: 0;
-  list-style-type: none!important;
+  list-style-type: none !important;
   display: block;
   color: #fff;
   overflow: hidden;
@@ -742,13 +742,13 @@
   margin: 0;
   padding: 0;
   display: block;
-  list-style-type: none!important;
+  list-style-type: none !important;
   overflow: hidden;
 }
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li {
   margin: 0 0 6px 0;
   padding: 0;
-  list-style-type: none!important;
+  list-style-type: none !important;
   display: block;
   color: #fff;
   overflow: hidden;
@@ -792,7 +792,7 @@
   cursor: pointer;
 }
 div.mejs-speed-button {
-  width: 46px!important;
+  width: 46px !important;
   position: relative;
 }
 .mejs-controls .mejs-button.mejs-speed-button button {
@@ -828,13 +828,13 @@ div.mejs-speed-button {
   margin: 0;
   padding: 0;
   display: block;
-  list-style-type: none!important;
+  list-style-type: none !important;
   overflow: hidden;
 }
 .mejs-controls .mejs-speed-button .mejs-speed-selector ul li {
   margin: 0 0 6px 0;
   padding: 0 10px;
-  list-style-type: none!important;
+  list-style-type: none !important;
   display: block;
   color: #fff;
   overflow: hidden;
@@ -1009,4 +1009,3 @@ div.mejs-speed-button {
 .block-audio-video li.toggle.open h2 a {
   background-position: 98% -95px !important;
 }
-/*# sourceMappingURL=video-gebruiker-centraal.css.map */

@@ -1,1 +1,3 @@
-body{border:10px solid red!important;background:red!important}
+body.admin {
+  border: 1px solid black;
+}
