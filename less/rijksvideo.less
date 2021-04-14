@@ -248,7 +248,7 @@
     padding: 0;
     bottom: -30px;
     left: 0;
-    height: 30px;
+    height: 2rem;
     width: 100%;
     background: @wit;
     color: @txt;
@@ -275,9 +275,7 @@
     padding: 0;
     width: 23px;
     height: 30px;
-    font-size: 13px;
-    line-height: 13px;
-    border: 0;
+    font-size: 1rem;
   }
 
   .mejs-controls .mejs-button button {
@@ -289,8 +287,8 @@
     margin: 5px 0 5px 3px;
     padding: 0;
     position: absolute;
-    height: 20px;
-    width: 20px;
+    height: 1.4rem;
+    width: 1.4rem;
     border: 0;
     background: transparent url('../mediaplayer/controls.svg') no-repeat;
   }
@@ -313,7 +311,6 @@
   .mejs-container .mejs-controls .mejs-time {
     color: #696969;
     display: block;
-    height: 16px;
     width: auto;
     padding: 9px 3px 7px 3px;
     overflow: hidden;
@@ -323,8 +320,7 @@
 
   .mejs-container .mejs-controls .mejs-time a {
     color: #696969;
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 1rem;
     display: block;
     float: left;
     margin: 1px 2px 0 0;
@@ -345,13 +341,13 @@
 
   .mejs-controls div.mejs-time-rail {
     direction: ltr;
-    width: 200px;
+    width: 180px;
   }
 
   .mejs-controls .mejs-time-rail span, .mejs-controls .mejs-time-rail a {
     display: block;
     position: absolute;
-    width: 180px;
+    width: 160px;
     height: 10px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -417,7 +413,7 @@
     position: absolute;
     display: none;
     background: #eee;
-    width: 36px;
+    width: 3rem;
     height: 17px;
     border: solid 1px #333;
     top: -26px;
@@ -626,8 +622,8 @@
     position: absolute;
     bottom: 26px;
     right: -51px;
-    width: 85px;
-    height: 100px;
+    width: 8rem;
+    height: 5rem;
     background: url('../mediaplayer/background.png');
     background: rgba(50, 50, 50, 0.7);
     border: solid 1px transparent;
@@ -665,12 +661,11 @@
     width: 55px;
     float: left;
     padding: 4px 0 0 0;
-    line-height: 15px;
-    font-size: 10px;
+    font-size: 1rem;
   }
 
   .mejs-controls .mejs-captions-button .mejs-captions-translations {
-    font-size: 10px;
+    font-size: 1rem;
     margin: 0 0 5px 0;
   }
 
@@ -692,7 +687,7 @@
   }
 
   .mejs-chapters .mejs-chapter .mejs-chapter-block {
-    font-size: 12px;
+    font-size: 1rem;
     color: #fff;
     padding: 5px;
     display: block;
@@ -710,18 +705,16 @@
   }
 
   .mejs-chapters .mejs-chapter .mejs-chapter-block .ch-title {
-    font-size: 12px;
+    font-size: 1rem;
     font-weight: bold;
     display: block;
     white-space: nowrap;
     text-overflow: ellipsis;
     margin: 0 0 3px 0;
-    line-height: 12px;
   }
 
   .mejs-chapters .mejs-chapter .mejs-chapter-block .ch-timespan {
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 1rem;
     margin: 3px 0 4px 0;
     display: block;
     white-space: nowrap;
@@ -733,19 +726,13 @@
     bottom: 0;
     left: 0;
     text-align: center;
-    line-height: 20px;
-    font-size: 16px;
+    font-size: 1rem;
     color: #fff;
   }
 
   .mejs-captions-layer a {
     color: #fff;
     text-decoration: underline;
-  }
-
-  .mejs-captions-layer[lang=ar] {
-    font-size: 20px;
-    font-weight: normal;
   }
 
   .mejs-captions-position {
@@ -820,7 +807,7 @@
   }
 
   .mejs-contextmenu .mejs-contextmenu-item {
-    font-size: 12px;
+    font-size: 1rem;
     padding: 4px 6px;
     cursor: pointer;
     color: #333;
@@ -883,7 +870,6 @@
     width: 100px;
     float: left;
     padding: 4px 0 0 0;
-    line-height: 15px;
     font-size: 10px;
   }
 
@@ -924,8 +910,7 @@
   .mejs-controls .mejs-button.mejs-speed-button button {
     background: transparent;
     width: 36px;
-    font-size: 11px;
-    line-height: normal;
+    font-size: 1rem;
     color: #fff;
   }
 
@@ -982,8 +967,7 @@
     width: 60px;
     float: left;
     padding: 4px 0 0 0;
-    line-height: 15px;
-    font-size: 11.5px;
+    font-size: 1rem;
     color: white;
     margin-left: 5px;
     cursor: pointer;
@@ -996,8 +980,7 @@
 
   .mejs-controls .mejs-button.mejs-jump-forward-button button {
     background: transparent;
-    font-size: 9px;
-    line-height: normal;
+    font-size: .8rem;
     color: #fff;
   }
 
@@ -1008,8 +991,7 @@
 
   .mejs-controls .mejs-button.mejs-skip-back-button button {
     background: transparent;
-    font-size: 9px;
-    line-height: normal;
+    font-size: .8rem;
     color: #fff;
   }
 
@@ -1157,16 +1139,6 @@
       background-position: 98% -95px !important;
     }
   }
-  /*
-
-    [aria-expanded="false"] {
-      border: 3px solid red !important;
-    }
-    [aria-expanded="true"] {
-      border: 3px solid green !important;
-    }
-
-  */
 
 }
 
