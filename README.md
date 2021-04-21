@@ -23,4 +23,4 @@ Paul van Buuren (paul@wbvb.nl)
 
 
 ## To do
-* Shared code opschonen: shared.php bevat functies voor zowel gebruiker-centraal als voor optimaal-digitaal
+* Styling voor Gebruiker Centraal ook langslopen en absolute eenheden voor fonts omzetten naar relatieve
