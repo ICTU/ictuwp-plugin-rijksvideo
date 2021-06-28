@@ -345,6 +345,10 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 				wp_enqueue_style( 'rhswp-mediaelementplayer', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelementplayer.css', array(), RIJKSVIDEO_VERSION, $infooter );
 
 				$theme_options = get_option( 'gc2020_theme_options' );
+
+				var_dump( $theme_options );
+				die( 'aargh' );
+
 				if ( $theme_options ) {
 					// dit is blijkbaar de een of andere GC-site
 					wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/video-gebruiker-centraal.css', array(), RIJKSVIDEO_VERSION, $infooter );
