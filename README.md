@@ -5,9 +5,10 @@ ICTU - Digitale Overheid WP - rijksvideoplugin
 Paul van Buuren (paul@wbvb.nl)
 
 ## Current version
-* 1.0.12 - a11y: converted font-sizes to relative unit.
+* 1.0.13 - detect theme for 'gebruikercentraal.nl'.
 
 ## Version history
+* 1.0.13 - detect theme for 'gebruikercentraal.nl'.
 * 1.0.12 - a11y: converted font-sizes to relative unit.
 * 1.0.11 - HTML check.
 * 1.0.10 - Vertalingen bijgewerkt. En 'RIJKSVIDEO_FOLDER' veranderd (jeetje Paul, dat moet beter).
