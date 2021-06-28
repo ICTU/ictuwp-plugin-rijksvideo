@@ -346,10 +346,14 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
 				$gcstyle       = false;
 				$theme_options = get_option( 'gc2020_theme_options' );
+				$gctheme       = wp_get_theme();
 
 				if ( $theme_options ) {
 					$gcstyle = true;
-				} elseif ( strpos( wp_get_theme(), 'gebruikercentraal' ) ) {
+				} elseif ( strpos( $gctheme->get( 'Name' ), 'ictuwp-theme-gc2020' ) ) {
+					// het nieuwe GC theme is actief, maar blijkbaar zonder options
+					$gcstyle = true;
+				} elseif ( strpos( $gctheme->get( 'Name' ), 'gebruikercentraal' ) ) {
 					// het oude GC theme is actief
 					$gcstyle = true;
 				}
