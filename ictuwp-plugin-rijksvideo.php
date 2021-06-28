@@ -344,12 +344,17 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 				wp_enqueue_script( 'rhswp_video_action_js', RIJKSVIDEO_ASSETS_URL . 'js/createPlayer.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
 				wp_enqueue_style( 'rhswp-mediaelementplayer', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelementplayer.css', array(), RIJKSVIDEO_VERSION, $infooter );
 
+				$gcstyle       = false;
 				$theme_options = get_option( 'gc2020_theme_options' );
 
-				var_dump( $theme_options );
-				die( 'aargh' );
-
 				if ( $theme_options ) {
+					$gcstyle = true;
+				} elseif ( str_contains( wp_get_theme(), 'gebruikercentraal' ) ) {
+					// het oude GC theme is actief
+					$gcstyle = true;
+				}
+
+				if ( $gcstyle ) {
 					// dit is blijkbaar de een of andere GC-site
 					wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/video-gebruiker-centraal.css', array(), RIJKSVIDEO_VERSION, $infooter );
 					wp_enqueue_script( 'rhswp_video_collapsible', RIJKSVIDEO_ASSETS_URL . 'js/gc-collapsible-min.js', '', RIJKSVIDEO_VERSION, $infooter );
