@@ -349,7 +349,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
 				if ( $theme_options ) {
 					$gcstyle = true;
-				} elseif ( str_contains( wp_get_theme(), 'gebruikercentraal' ) ) {
+				} elseif ( strpos( wp_get_theme(), 'gebruikercentraal' ) ) {
 					// het oude GC theme is actief
 					$gcstyle = true;
 				}
