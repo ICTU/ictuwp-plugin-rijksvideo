@@ -26,3 +26,5 @@ cmb2/
 
 .idea/*
 
+mediaelement/build/mediaelementplayer-min.js
+mediaelement/build/mediaelement-and-player-min.js

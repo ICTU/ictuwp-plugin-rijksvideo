@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.13
-// * Version description: detect theme for 'gebruikercentraal.nl'.
+// * Version:             1.0.14
+// * Version description: Several accessibility patches: removed tabindex attribute and keyboard shortcuts.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -31,7 +31,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.13';
+		public $version = '1.0.14';
 
 
 		/**
@@ -346,10 +346,14 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
 				$gcstyle       = false;
 				$theme_options = get_option( 'gc2020_theme_options' );
+				$gctheme       = wp_get_theme();
 
 				if ( $theme_options ) {
 					$gcstyle = true;
-				} elseif ( strpos( wp_get_theme(), 'gebruikercentraal' ) ) {
+				} elseif ( strpos( $gctheme->get( 'Name' ), 'ictuwp-theme-gc2020' ) ) {
+					// het nieuwe GC theme is actief, maar blijkbaar zonder options
+					$gcstyle = true;
+				} elseif ( strpos( $gctheme->get( 'Name' ), 'gebruikercentraal' ) ) {
 					// het oude GC theme is actief
 					$gcstyle = true;
 				}
