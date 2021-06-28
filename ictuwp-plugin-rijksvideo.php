@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.12
-// * Version description: a11y: converted font-sizes to relative unit.
+// * Version:             1.0.13
+// * Version description: detect theme for 'gebruikercentraal.nl'.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -31,7 +31,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.12';
+		public $version = '1.0.13';
 
 
 		/**
@@ -344,8 +344,17 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 				wp_enqueue_script( 'rhswp_video_action_js', RIJKSVIDEO_ASSETS_URL . 'js/createPlayer.js', array( 'jquery' ), RIJKSVIDEO_VERSION, $infooter );
 				wp_enqueue_style( 'rhswp-mediaelementplayer', RIJKSVIDEO_MEDIAELEMENT_URL . 'build/mediaelementplayer.css', array(), RIJKSVIDEO_VERSION, $infooter );
 
+				$gcstyle       = false;
 				$theme_options = get_option( 'gc2020_theme_options' );
+
 				if ( $theme_options ) {
+					$gcstyle = true;
+				} elseif ( str_contains( wp_get_theme(), 'gebruikercentraal' ) ) {
+					// het oude GC theme is actief
+					$gcstyle = true;
+				}
+
+				if ( $gcstyle ) {
 					// dit is blijkbaar de een of andere GC-site
 					wp_enqueue_style( 'rhswp-frontend', RIJKSVIDEO_ASSETS_URL . 'css/video-gebruiker-centraal.css', array(), RIJKSVIDEO_VERSION, $infooter );
 					wp_enqueue_script( 'rhswp_video_collapsible', RIJKSVIDEO_ASSETS_URL . 'js/gc-collapsible-min.js', '', RIJKSVIDEO_VERSION, $infooter );
