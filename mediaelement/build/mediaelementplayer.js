@@ -128,111 +128,55 @@ if (typeof jQuery != 'undefined') {
 		pauseOtherPlayers: true,
 		// array of keyboard actions such as play pause
 		keyActions: [
-				{
-						keys: [
-								32, // SPACE
-								179 // GOOGLE play/pause button
-								 ],
-						action: function(player, media, key, event) {
+			{
+				keys: [
+					179 // GOOGLE play/pause button
+				],
+				action: function(player, media, key, event) {
 
-							if (!mejs.MediaFeatures.isFirefox) {
-								if (media.paused || media.ended) {
-									media.play();
-								} else {
-									media.pause();
-								}
-							}
+					if (!mejs.MediaFeatures.isFirefox) {
+						if (media.paused || media.ended) {
+							media.play();
+						} else {
+							media.pause();
 						}
-				},
-				{
-						keys: [38], // UP
-						action: function(player, media, key, event) {
-								player.container.find('.mejs-volume-slider').css('display','block');
-								if (player.isVideo) {
-										player.showControls();
-										player.startControlsTimer();
-								}
-
-								var newVolume = Math.min(media.volume + 0.1, 1);
-								media.setVolume(newVolume);
-						}
-				},
-				{
-						keys: [40], // DOWN
-						action: function(player, media, key, event) {
-								player.container.find('.mejs-volume-slider').css('display','block');
-								if (player.isVideo) {
-										player.showControls();
-										player.startControlsTimer();
-								}
-
-								var newVolume = Math.max(media.volume - 0.1, 0);
-								media.setVolume(newVolume);
-						}
-				},
-				{
-						keys: [
-								37, // LEFT
-								227 // Google TV rewind
-						],
-						action: function(player, media, key, event) {
-								if (!isNaN(media.duration) && media.duration > 0) {
-										if (player.isVideo) {
-												player.showControls();
-												player.startControlsTimer();
-										}
-
-										// 5%
-										var newTime = Math.max(media.currentTime - player.options.defaultSeekBackwardInterval(media), 0);
-										media.setCurrentTime(newTime);
-								}
-						}
-				},
-				{
-						keys: [
-								39, // RIGHT
-								228 // Google TV forward
-						],
-						action: function(player, media, key, event) {
-								if (!isNaN(media.duration) && media.duration > 0) {
-										if (player.isVideo) {
-												player.showControls();
-												player.startControlsTimer();
-										}
-
-										// 5%
-										var newTime = Math.min(media.currentTime + player.options.defaultSeekForwardInterval(media), media.duration);
-										media.setCurrentTime(newTime);
-								}
-						}
-				},
-				{
-						keys: [70], // F
-						action: function(player, media, key, event) {
-								if (typeof player.enterFullScreen != 'undefined') {
-										if (player.isFullScreen) {
-												player.exitFullScreen();
-										} else {
-												player.enterFullScreen();
-										}
-								}
-						}
-				},
-				{
-						keys: [77], // M
-						action: function(player, media, key, event) {
-								player.container.find('.mejs-volume-slider').css('display','block');
-								if (player.isVideo) {
-										player.showControls();
-										player.startControlsTimer();
-								}
-								if (player.media.muted) {
-										player.setMuted(false);
-								} else {
-										player.setMuted(true);
-								}
-						}
+					}
 				}
+			},
+			{
+				keys: [
+					227 // Google TV rewind
+				],
+				action: function(player, media, key, event) {
+					if (!isNaN(media.duration) && media.duration > 0) {
+						if (player.isVideo) {
+							player.showControls();
+							player.startControlsTimer();
+						}
+
+						// 5%
+						var newTime = Math.max(media.currentTime - player.options.defaultSeekBackwardInterval(media), 0);
+						media.setCurrentTime(newTime);
+					}
+				}
+			},
+			{
+				keys: [
+					228 // Google TV forward
+				],
+				action: function(player, media, key, event) {
+					if (!isNaN(media.duration) && media.duration > 0) {
+						if (player.isVideo) {
+							player.showControls();
+							player.startControlsTimer();
+						}
+
+						// 5%
+						var newTime = Math.min(media.currentTime + player.options.defaultSeekForwardInterval(media), media.duration);
+						media.setCurrentTime(newTime);
+					}
+				}
+			}
 		]
 	};
 
@@ -356,7 +300,7 @@ if (typeof jQuery != 'undefined') {
 				// build container
 				t.container =
 					$('<div id="' + t.id + '" class="mejs-container ' + (mejs.MediaFeatures.svgAsImg ? 'svg' : 'no-svg') +
-					  '" tabindex="0" role="application">'+
+						'">'+
 						'<div class="mejs-inner">'+
 							'<div class="mejs-mediaelement"></div>'+
 							'<div class="mejs-layers"></div>'+

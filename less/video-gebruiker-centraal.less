@@ -8,8 +8,8 @@
 // @author  Paul van Buuren
 // @license GPL-2.0+
 // @plugin: rhswp-rijksvideo
-// Version: 1.0.11
-// Version desc: HTML check.
+// Version: 1.0.14
+// Version desc: Several accessibility patches: removed tabindex attribute and keyboard shortcuts.
 // @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 
 
@@ -116,10 +116,6 @@
 
   .mejs-container.mejs-audio {
     margin-bottom: 0;
-  }
-
-  .mejs-container:focus {
-    outline: 0;
   }
 
   .me-plugin {
@@ -305,9 +301,6 @@
   }
   .no-svg .mejs-controls .mejs-button button {
     background-image: url('../mediaplayer/controls.png');
-  }
-  .mejs-controls .mejs-button button:focus {
-    outline: dotted 1px #999;
   }
 
   .mejs-container .mejs-controls .mejs-time {
@@ -626,12 +619,12 @@
     position: absolute;
     bottom: 26px;
     right: -51px;
-    width: 85px;
+    width: 100px;
     height: 100px;
     background: url('../mediaplayer/background.png');
     background: rgba(50, 50, 50, 0.7);
     border: solid 1px transparent;
-    padding: 10px 10px 0 10px;
+    padding: 6px 6px 0 6px;
     overflow: hidden;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -658,11 +651,11 @@
   .mejs-controls .mejs-captions-button .mejs-captions-selector ul li input {
     clear: both;
     float: left;
-    margin: 3px 3px 0 5px;
+    margin: 3px 3px 0 0;
   }
 
   .mejs-controls .mejs-captions-button .mejs-captions-selector ul li label {
-    width: 55px;
+    max-width: 55px;
     float: left;
     padding: 4px 0 0 0;
     line-height: 15px;
@@ -876,7 +869,7 @@
   .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li input {
     clear: both;
     float: left;
-    margin: 3px 3px 0 5px;
+    margin: 3px 3px 0 0;
   }
 
   .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li label {
@@ -974,7 +967,7 @@
   .mejs-controls .mejs-speed-button .mejs-speed-selector ul li input {
     clear: both;
     float: left;
-    margin: 3px 3px 0 5px;
+    margin: 3px 3px 0 0;
     display: none;
   }
 
