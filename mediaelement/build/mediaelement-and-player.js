@@ -2326,57 +2326,89 @@ if (typeof jQuery != 'undefined') {
 		// when this player starts, it will pause other players
 		pauseOtherPlayers: true,
 		// array of keyboard actions such as play pause
-		keyActions: [
-				{
-						keys: [
-								179 // GOOGLE play/pause button
-								 ],
-						action: function(player, media, key, event) {
+        keyActions: [
+            {
+                keys: [
+                    32, // SPACE
+                    179 // GOOGLE play/pause button
+                ],
+                action: function (player, media, key, event) {
 
-							if (!mejs.MediaFeatures.isFirefox) {
-								if (media.paused || media.ended) {
-									media.play();
-								} else {
-									media.pause();
-								}
-							}
-						}
-				},
-				{
-						keys: [
-								227 // Google TV rewind
-						],
-						action: function(player, media, key, event) {
-								if (!isNaN(media.duration) && media.duration > 0) {
-										if (player.isVideo) {
-												player.showControls();
-												player.startControlsTimer();
-										}
+                    if (!mejs.MediaFeatures.isFirefox) {
+                        if (media.paused || media.ended) {
+                            media.play();
+                        } else {
+                            media.pause();
+                        }
+                    }
+                }
+            },
+            {
+                keys: [38], // UP
+                action: function (player, media, key, event) {
+                    player.container.find('.mejs-volume-slider').css('display', 'block');
+                    if (player.isVideo) {
+                        player.showControls();
+                        player.startControlsTimer();
+                    }
 
-										// 5%
-										var newTime = Math.max(media.currentTime - player.options.defaultSeekBackwardInterval(media), 0);
-										media.setCurrentTime(newTime);
-								}
-						}
-				},
-				{
-						keys: [
-								228 // Google TV forward
-						],
-						action: function(player, media, key, event) {
-								if (!isNaN(media.duration) && media.duration > 0) {
-										if (player.isVideo) {
-												player.showControls();
-												player.startControlsTimer();
-										}
+                    var newVolume = Math.min(media.volume + 0.1, 1);
+                    media.setVolume(newVolume);
+                }
+            },
+            {
+                keys: [40], // DOWN
+                action: function (player, media, key, event) {
+                    player.container.find('.mejs-volume-slider').css('display', 'block');
+                    if (player.isVideo) {
+                        player.showControls();
+                        player.startControlsTimer();
+                    }
 
-										// 5%
-										var newTime = Math.min(media.currentTime + player.options.defaultSeekForwardInterval(media), media.duration);
-										media.setCurrentTime(newTime);
-								}
-						}
-				}
-		]
+                    var newVolume = Math.max(media.volume - 0.1, 0);
+                    media.setVolume(newVolume);
+                }
+            },
+
+            {
+                keys: [
+                    37, // LEFT
+                    227 // Google TV rewind
+                ],
+                action: function (player, media, key, event) {
+                    if (!isNaN(media.duration) && media.duration > 0) {
+                        if (player.isVideo) {
+                            player.showControls();
+                            player.startControlsTimer();
+                        }
+
+                        // 5%
+                        var newTime = Math.max(media.currentTime - player.options.defaultSeekBackwardInterval(media), 0);
+                        media.setCurrentTime(newTime);
+                    }
+                }
+            },
+            {
+                keys: [
+                    39, // RIGHT
+                    228 // Google TV forward
+
+                ],
+                action: function (player, media, key, event) {
+                    if (!isNaN(media.duration) && media.duration > 0) {
+                        if (player.isVideo) {
+                            player.showControls();
+                            player.startControlsTimer();
+                        }
+
+                        // 5%
+                        var newTime = Math.min(media.currentTime + player.options.defaultSeekForwardInterval(media), media.duration);
+                        media.setCurrentTime(newTime);
+                    }
+                }
+            }
+        ]
+
 	};
 
 	mejs.mepIndex = 0;
