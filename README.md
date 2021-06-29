@@ -5,9 +5,10 @@ ICTU - Digitale Overheid WP - rijksvideoplugin
 Paul van Buuren (paul@wbvb.nl)
 
 ## Current version
-* 1.0.15 - Better focus styles for interactive elements in player.
+* 1.0.16 - Restored keyboard actions for arrow keys, space bar.
 
 ## Version history
+* 1.0.16 - Restored keyboard actions for arrow keys, space bar.
 * 1.0.15 - Better focus styles for interactive elements in player.
 * 1.0.14 - Several accessibility patches: removed tabindex attribute and keyboard shortcuts.
 * 1.0.13 - detect theme for 'gebruikercentraal.nl'.
