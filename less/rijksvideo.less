@@ -1,53 +1,14 @@
-/*!
-
-//**
-// Rijksvideo - rijksvideo.less
-// ----------------------------------------------------------------------------------
-// CSS for front-end
-// ----------------------------------------------------------------------------------
-// @author  Paul van Buuren
-// @license GPL-2.0+
-// @plugin: rhswp-rijksvideo
-// Version: 1.0.16
-// Version desc: Restored keyboard actions for arrow keys, space bar.
-// @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
-
-
-<!--                                                            -->
-<!-- ========================================================   -->
-<!--                                                            -->
-<!--                  .:::::::::::::::}}}}}}}                   -->
-<!--                  .:::::::::::::::}}}}}}}                   -->
-<!--                  .:::::::::::::::}}}}}}}                   -->
-<!--              ````.:::::::::::::::::}}}}}``````             -->
-<!--        ``.------------------::::::::::::::::}}}::.`        -->
-<!--      `.---------------------::::::::::::::::}}}}}}}:`      -->
-<!--     `-----------------------::::::::::::::::}}}}}}}}}.     -->
-<!--     .-----------------------::::::::::::::::}}}}}}}}}}     -->
-<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
-<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
-<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
-<!--     -----------------::-----:::::::}::::::::}}}}}}}}}}     -->
-<!--     ---------------:hmmd+---:::::smmmy::::::}}}}}}}}}}     -->
-<!--     ---------------+MMMMy---:::::NMMMN}:::::}}}}}}}}}}     -->
-<!--     ----------------oyhs:---:::::}yhy+::::::}}}}}}}}}}     -->
-<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
-<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
-<!--     ------------------oso}}:::}}+sy}::::::::}}}}}}}}}}     -->
-<!--     ------------------}oyhhdhhdhys+:::::::::}}}}}}}}}}     -->
-<!--     -----------------------:::::::::::::::::}}}}}}}}}}     -->
-<!--     ------------------------::::::::::::::::}}}}}}}}}}     -->
-<!--     `-----------------------::::::::::::::::}}}}}}}}}.     -->
-<!--      `.---------------------::::::::::::::::}}}}}}}:`      -->
-<!--        `..-----------------::::::::::::::::}}}}::-`        -->
-<!--             ``::::::::::::::::}}}}}}}}}}}}}}-`             -->
-<!--              `::::::::::::::::}}}}}}}}}}}}}}.              -->
-<!--              `::::::::::::::::}}}}}}}}}}}}}}.              -->
-<!--                                                            -->
-<!-- ========================================================   -->
-<!--                                                            -->
-	
- 
+/*
+ * Rijksvideo - rijksvideo.less
+ * ----------------------------------------------------------------------------------
+ * CSS for front-end
+ * ----------------------------------------------------------------------------------
+ * @author  Paul van Buuren
+ * @license GPL-2.0+
+ * @plugin: rhswp-rijksvideo
+ * Version: 1.0.17
+ * Version desc: Rijksplayer: corrected links to background.png; better play button styling.
+ * @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
  */
 
 @wit: #ffffff;
@@ -201,16 +162,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 100px;
-    height: 100px;
+    width: 71px;
+    height: 71px;
     margin: -50px 0 0 -50px;
     background: url('../mediaplayer/bigplay.svg') no-repeat;
+    background-color: #01689b;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px #666;
   }
   .no-svg .mejs-overlay-button {
     background-image: url('../mediaplayer/bigplay.png');
   }
   .mejs-overlay:hover .mejs-overlay-button {
     background-position: 0 -100px;
+    box-shadow: 4px 4px 5px #333;
   }
 
   .mejs-overlay-loading {
@@ -305,10 +270,12 @@
     color: #696969;
     display: block;
     width: auto;
-    padding: 9px 3px 7px 3px;
+    padding: 0 3px;
+    line-height: 2;
     overflow: hidden;
     text-align: center;
     box-sizing: content-box;
+    height: auto;
   }
 
   .mejs-container .mejs-controls .mejs-time a {
@@ -625,37 +592,45 @@
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      display: block;
+      list-style-type: none !important;
+      overflow: hidden;
+
+      li {
+        margin: 0 0 6px 0;
+        padding: 0;
+        list-style-type: none !important;
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+
+        input {
+          clear: both;
+          float: left;
+          margin: 3px 3px 0 0;
+        }
+
+        label {
+          max-width: 55px;
+          float: left;
+          padding: 4px 0 0 0;
+          font-size: 1rem;
+          line-height: 1.4;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 
-  .mejs-controls .mejs-captions-button .mejs-captions-selector ul {
-    margin: 0;
-    padding: 0;
-    display: block;
-    list-style-type: none !important;
-    overflow: hidden;
-  }
 
-  .mejs-controls .mejs-captions-button .mejs-captions-selector ul li {
-    margin: 0 0 6px 0;
-    padding: 0;
-    list-style-type: none !important;
-    display: block;
-    color: #fff;
-    overflow: hidden;
-  }
-
-  .mejs-controls .mejs-captions-button .mejs-captions-selector ul li input {
-    clear: both;
-    float: left;
-    margin: 3px 3px 0 0;
-  }
-
-  .mejs-controls .mejs-captions-button .mejs-captions-selector ul li label {
-    max-width: 55px;
-    float: left;
-    padding: 4px 0 0 0;
-    font-size: 1rem;
-  }
 
   .mejs-controls .mejs-captions-button .mejs-captions-translations {
     font-size: 1rem;
