@@ -6,8 +6,8 @@
  * @author  Paul van Buuren
  * @license GPL-2.0+
  * @plugin: rhswp-rijksvideo
- * Version: 1.0.17
- * Version desc: Rijksplayer: corrected links to background.png; better play button styling.
+ * Version: 1.0.18
+ * Version desc: Rijksplayer: toggle ondertitel via knop in plaats van via keuzelijstje.
  * @link    https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
  */
 
@@ -165,13 +165,13 @@
     width: 71px;
     height: 71px;
     margin: -50px 0 0 -50px;
-    background: url('../mediaplayer/bigplay.svg') no-repeat;
+    background: url('../mediaplayer/bigplay-square.svg') no-repeat;
     background-color: #01689b;
     border-radius: 15px;
     box-shadow: 2px 2px 5px #666;
   }
   .no-svg .mejs-overlay-button {
-    background-image: url('../mediaplayer/bigplay.png');
+    background-image: url('../mediaplayer/bigplay-square.png');
   }
   .mejs-overlay:hover .mejs-overlay-button {
     background-position: 0 -100px;
@@ -629,8 +629,6 @@
       }
     }
   }
-
-
 
   .mejs-controls .mejs-captions-button .mejs-captions-translations {
     font-size: 1rem;
