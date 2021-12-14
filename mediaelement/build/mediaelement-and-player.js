@@ -5194,7 +5194,7 @@ if (typeof jQuery != 'undefined') {
         hideCaptionsButtonWhenEmpty: true,
 
         // If true and we only have one track, change captions to popup
-        toggleCaptionsButtonWhenOnlyOne: false,
+        toggleCaptionsButtonWhenOnlyOne: true,
 
         // #id or .class
         slidesSelector: ''
@@ -5258,11 +5258,13 @@ if (typeof jQuery != 'undefined') {
                 if (kind === 'subtitles' || kind === 'captions') {
                     subtitleCount++;
                 }
+                console.log("Tellen van soorten tracks. Kind: " + kind + ", teller is: " + subtitleCount);
             }
 
             // if only one language then just make the button a toggle
             if (t.options.toggleCaptionsButtonWhenOnlyOne && subtitleCount == 1) {
                 // click
+                console.log('ALLEEN KLIKKEN click functie voor ondertitel');
                 player.captionsButton.on('click', function () {
                     if (player.selectedTrack === null) {
                         lang = player.tracks[0].srclang;
@@ -5273,6 +5275,7 @@ if (typeof jQuery != 'undefined') {
                 });
             } else {
                 // hover or keyboard focus
+                console.log('hover functie voor ondertitel');
                 player.captionsButton.on('mouseenter focusin', function () {
                     $(this).find('.mejs-captions-selector').removeClass('mejs-offscreen');
                 })
@@ -5286,7 +5289,6 @@ if (typeof jQuery != 'undefined') {
                 player.captionsButton.on('mouseleave focusout', function () {
                     $(this).find(".mejs-captions-selector").addClass("mejs-offscreen");
                 });
-
             }
 
             if (!player.options.alwaysShowControls) {
@@ -5367,7 +5369,7 @@ if (typeof jQuery != 'undefined') {
         },
 
         setTrack: function (lang) {
-
+console.log('ondertitel: ' + lang);
             var t = this,
                 i;
 
