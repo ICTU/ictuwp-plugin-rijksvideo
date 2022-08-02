@@ -445,49 +445,36 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 				$videoplayer_width  = '500';
 				$videoplayer_height = '412';
 			}
-			$video_id = 'movie-' . $postid;
-
-			$videoplayer_aria_id = 'mep_7';
-			$videoplayer_date    = get_the_date();
-
+			$video_id                       = 'movie-' . $postid;
+			$videoplayer_aria_id            = 'mep_7';
+			$videoplayer_date               = get_the_date();
+			$uniqueid                       = $this->getuniqueid( $postid );
 			$videoplayer_title              = _x( 'Video Player', 'Rijksvideo', "rijksvideo-translate" );
 			$videoplayer_video_txt          = _x( 'Video', 'Rijksvideo', "rijksvideo-translate" );
 			$videoplayer_audio_txt          = _x( 'Audio', 'Rijksvideo', "rijksvideo-translate" );
 			$videoplayer_subtitle_txt       = _x( 'Caption', 'Rijksvideo', "rijksvideo-translate" );
 			$videoplayer_subtitles          = _x( 'Ondertitels', 'Rijksvideo', "rijksvideo-translate" );
 			$videoplayer_subtitles_language = _x( 'nl', 'Rijksvideo: voor welke taal heb je ondertitels geupload?', "rijksvideo-translate" );
-
-
-			$videoplayer_play             = _x( 'Afspelen', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_mute_label       = _x( 'Geluid uit', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_fullscreen_open  = _x( 'Schermvullende weergave openen', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_fullscreen_close = _x( 'Schermvullende weergave sluiten', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_volume_label     = _x( 'Gebruik op- of neer-pijltjestoetsen om het volume harder of zachter te zetten', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_subtitle_on      = _x( 'Ondertiteling aan', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_download_label   = sprintf( _x( 'Downloads %s bij %s %s', 'Titel boven downloads', "rijksvideo-translate" ), '<span class="visuallyhidden">', $videotitle, '</span>' );
-
-
-			$videoplayer_noplugin_label = _x( 'Helaas kan deze video niet worden afgespeeld. Een mogelijk oplossing is de meest recente versie van uw browser te installeren.', 'Rijksvideo', "rijksvideo-translate" );
-
-			$videoplayer_mp4_label = _x( 'MP4-bestand', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_mp4_label_hr = _x( 'MP4-bestand hoge resolutie', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_mp4_abbr  = _x( 'mp4', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_mp4_hr    = _x( ' (hoge resolutie)', 'Rijksvideo', "rijksvideo-translate" );
-
-			$videoplayer_wmv_label = _x( 'Video voor Windows Media Player', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_wmv_abbr  = _x( 'wmv', 'Rijksvideo', "rijksvideo-translate" );
-
+			$videoplayer_play               = _x( 'Afspelen', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_mute_label         = _x( 'Geluid uit', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_fullscreen_open    = _x( 'Schermvullende weergave openen', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_fullscreen_close   = _x( 'Schermvullende weergave sluiten', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_volume_label       = _x( 'Gebruik op- of neer-pijltjestoetsen om het volume harder of zachter te zetten', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_subtitle_on        = _x( 'Ondertiteling aan', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_download_label     = sprintf( _x( 'Downloads %s bij %s %s', 'Titel boven downloads', "rijksvideo-translate" ), '<span class="visuallyhidden">', $videotitle, '</span>' );
+			$videoplayer_noplugin_label     = _x( 'Helaas kan deze video niet worden afgespeeld. Een mogelijk oplossing is de meest recente versie van uw browser te installeren.', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_mp4_label          = _x( 'MP4-bestand', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_mp4_label_hr       = _x( 'MP4-bestand hoge resolutie', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_mp4_abbr           = _x( 'mp4', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_mp4_hr             = _x( ' (hoge resolutie)', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_wmv_label          = _x( 'Video voor Windows Media Player', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_wmv_abbr           = _x( 'wmv', 'Rijksvideo', "rijksvideo-translate" );
 			$videoplayer_mobileformat_label = _x( 'Video voor mobiel gebruik', 'Rijksvideo', "rijksvideo-translate" );
 			$videoplayer_mobileformat_abbr  = _x( '3gp', 'Rijksvideo', "rijksvideo-translate" );
-
-			$videoplayer_audioformat_label = _x( 'Audiospoor', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_audioformat_abbr  = _x( 'mp3', 'Rijksvideo', "rijksvideo-translate" );
-
-			$videoplayer_subtitle_label = _x( 'Ondertitelingsbestand', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_subtitle_abbr  = _x( 'srt', 'Rijksvideo', "rijksvideo-translate" );
-
-
-			$uniqueid = $this->getuniqueid( $postid );
+			$videoplayer_audioformat_label  = _x( 'Audiospoor', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_audioformat_abbr   = _x( 'mp3', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_subtitle_label     = _x( 'Ondertitelingsbestand', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_subtitle_abbr      = _x( 'srt', 'Rijksvideo', "rijksvideo-translate" );
 
 			$rhswp_video_duur = $this->get_stored_values( $postid, RHSWP_CPT_VIDEO_PREFIX . 'video_time', '-' );
 
