@@ -7,7 +7,7 @@
 
 
 # clear the log file
-> '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/development/wp-content/debug.log'
+sh '/Users/paul/shellscripts/clearlogs.sh';
 
 # copy to temp dir
 rsync -r -a --delete '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/development/wp-content/plugins/ictuwp-plugin-rijksvideo/' '/Users/paul/shared-paul-files/Webs/temp/'
@@ -25,45 +25,8 @@ find . -name "*.DS_Store" -type f -delete
 find . -name "*.map" -type f -delete
 
 
-
-
-# --------------------------------------------------------------------------------------------------------------------------------
-# Vertalingen --------------------------------------------------------------------------------------------------------------------
-# --------------------------------------------------------------------------------------------------------------------------------
-
-rsync -r -a -v --delete '/Users/paul/shared-paul-files/Webs/temp/languages/' '/Users/paul/shared-paul-files/Webs/temp-lang/'
-
-# remove the .pot
-rm '/Users/paul/shared-paul-files/Webs/temp-lang/rijksvideo-translate.pot'
-rm '/Users/paul/shared-paul-files/Webs/temp-lang/index.php'
-
-# rename the translations
-mv '/Users/paul/shared-paul-files/Webs/temp-lang/en_US.po' '/Users/paul/shared-paul-files/Webs/temp-lang/rijksvideo-translate-en_US.po'
-mv '/Users/paul/shared-paul-files/Webs/temp-lang/en_US.mo' '/Users/paul/shared-paul-files/Webs/temp-lang/rijksvideo-translate-en_US.mo'
-
-mv '/Users/paul/shared-paul-files/Webs/temp-lang/en_GB.po' '/Users/paul/shared-paul-files/Webs/temp-lang/rijksvideo-translate-en_GB.po'
-mv '/Users/paul/shared-paul-files/Webs/temp-lang/en_GB.mo' '/Users/paul/shared-paul-files/Webs/temp-lang/rijksvideo-translate-en_GB.mo'
-
-mv '/Users/paul/shared-paul-files/Webs/temp-lang/nl_NL.po' '/Users/paul/shared-paul-files/Webs/temp-lang/rijksvideo-translate-nl_NL.po'
-mv '/Users/paul/shared-paul-files/Webs/temp-lang/nl_NL.mo' '/Users/paul/shared-paul-files/Webs/temp-lang/rijksvideo-translate-nl_NL.mo'
-
-# copy files to /wp-content/languages/themes
-rsync -ah '/Users/paul/shared-paul-files/Webs/temp-lang/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/development/wp-content/languages/plugins/'
-rsync -ah '/Users/paul/shared-paul-files/Webs/temp-lang/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/accept/www/wp-content/languages/plugins/'
-rsync -ah '/Users/paul/shared-paul-files/Webs/temp-lang/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/live/www/wp-content/languages/plugins/'
-
-# remove temp dir
-rm -rf '/Users/paul/shared-paul-files/Webs/temp-lang/'
-
-# ------------------
-
-
-
-# kopietje naar Sentia accept
-rsync -r -a --delete '/Users/paul/shared-paul-files/Webs/temp/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/accept/www/wp-content/plugins/ictuwp-plugin-rijksvideo/'
-
-# en een kopietje naar Sentia live
-rsync -r -a --delete '/Users/paul/shared-paul-files/Webs/temp/' '/Users/paul/shared-paul-files/Webs/ICTU/Gebruiker Centraal/sentia/live/www/wp-content/plugins/ictuwp-plugin-rijksvideo/'
+# kopietje naar local DO
+rsync -r -a --delete '/Users/paul/shared-paul-files/Webs/temp/' '/Users/paul/shared-paul-files/Webs/ICTU/vagrant-digitaleoverheid/www/digitaleoverheid/public_html/wp-content/plugins/ictuwp-plugin-rijksvideo/'
 
 # remove temp dir
 rm -rf '/Users/paul/shared-paul-files/Webs/temp/'
