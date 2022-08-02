@@ -469,9 +469,10 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
 			$videoplayer_noplugin_label = _x( 'Helaas kan deze video niet worden afgespeeld. Een mogelijk oplossing is de meest recente versie van uw browser te installeren.', 'Rijksvideo', "rijksvideo-translate" );
 
-			$videoplayer_quicktime_label = _x( 'Video voor Apple Quicktime Player', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_quicktime_abbr  = _x( 'mp4', 'Rijksvideo', "rijksvideo-translate" );
-			$videoplayer_quicktime_hr    = _x( ' (hoge resolutie)', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_mp4_label = _x( 'MP4-bestand', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_mp4_label_hr = _x( 'MP4-bestand hoge resolutie', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_mp4_abbr  = _x( 'mp4', 'Rijksvideo', "rijksvideo-translate" );
+			$videoplayer_mp4_hr    = _x( ' (hoge resolutie)', 'Rijksvideo', "rijksvideo-translate" );
 
 			$videoplayer_wmv_label = _x( 'Video voor Windows Media Player', 'Rijksvideo', "rijksvideo-translate" );
 			$videoplayer_wmv_abbr  = _x( 'wmv', 'Rijksvideo', "rijksvideo-translate" );
@@ -576,10 +577,10 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 			<ul aria-labelledby="videoplayer_download_label' . $uniqueid . '">';
 
 				if ( $rhswp_video_url_mp4 ) {
-					$returnstring .= '<li class="download"><a href="' . $rhswp_video_url_mp4 . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
+					$returnstring .= '<li class="download"><a href="' . $rhswp_video_url_mp4 . '">' . $videoplayer_mp4_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mp4_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
 				}
 				if ( $rhswp_video_mp4_hr_url ) {
-					$returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_hr_url . '">' . $videoplayer_quicktime_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_quicktime_abbr . $videoplayer_quicktime_hr . ', ' . $rhswp_video_mp4_hr_filesize . '</span></a></li>';
+					$returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_hr_url . '">' . $videoplayer_mp4_label_hr . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mp4_abbr . $videoplayer_mp4_hr . ', ' . $rhswp_video_mp4_hr_filesize . '</span></a></li>';
 				}
 				if ( $rhswp_video_url_wmv ) {
 					$returnstring .= '<li class="download"><a href="' . $rhswp_video_url_wmv . '">' . $videoplayer_wmv_label . '<span class="meta wmv">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_wmv_abbr . ', ' . $rhswp_video_filesize_wmv . '</span></a></li>';
@@ -722,7 +723,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
 					$cmb2_metafields->add_field( array(
 						'name'      => __( 'URL van MP4-bestand', "rijksvideo-translate" ),
-						'desc'      => __( 'Apple Quicktime-bestand. Eindigt vaak op .mp4', "rijksvideo-translate" ),
+						'desc'      => __( 'H.264-bestand; eindigt op .mp4', "rijksvideo-translate" ),
 						'id'        => RHSWP_CPT_VIDEO_PREFIX . 'mp4_url',
 						'type'      => 'text_url',
 						'protocols' => array( 'http', 'https', '//' ), // Array of allowed protocols
@@ -736,7 +737,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
 					$cmb2_metafields->add_field( array(
 						'name'      => __( 'URL van Hi-res MP4-bestand', "rijksvideo-translate" ),
-						'desc'      => __( 'Versie van Quicktime-bestand in hoge resolutie.', "rijksvideo-translate" ),
+						'desc'      => __( 'Versie van H.264-bestand in hoge resolutie.', "rijksvideo-translate" ),
 						'id'        => RHSWP_CPT_VIDEO_PREFIX . 'mp4_url_hires',
 						'type'      => 'text_url',
 						'protocols' => array( 'http', 'https', '//' ), // Array of allowed protocols
