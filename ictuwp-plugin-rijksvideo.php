@@ -209,6 +209,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 		 */
 		private function setup_filters() {
 
+//			media_buttons_context
 			add_filter( 'media_buttons_context', array( $this, 'admin_insert_rijksvideo_button' ) );
 
 			// content filter
