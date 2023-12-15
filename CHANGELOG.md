@@ -1,6 +1,7 @@
 # Changelog
 
 ## Version history
+* 1.0.19 - Added English translations.
 * 1.0.18 - Rijksplayer: toggle ondertitel via knop in plaats van via keuzelijstje.
 * 1.0.17 - Rijksplayer: corrected links to background.png; better play button styling.
 * 1.0.16 - Restored keyboard actions for arrow keys, space bar.

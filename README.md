@@ -5,7 +5,7 @@ ICTU - Digitale Overheid WP - rijksvideoplugin
 Paul van Buuren (paul@wbvb.nl)
 
 ## Current version
-* 1.0.18 - Rijksplayer: toggle ondertitel via knop in plaats van via keuzelijstje.
+* 1.0.19 - Added English translations.
 
 ## To do
 * correct deprecated function media_buttons_context
