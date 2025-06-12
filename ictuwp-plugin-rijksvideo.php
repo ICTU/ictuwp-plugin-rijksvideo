@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.19
-// * Version description: Added English translations.
+// * Version:             1.0.20
+// * Version description: Small PHP bugfix.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -31,7 +31,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.19';
+		public $version = '1.0.20';
 
 
 		/**
@@ -584,7 +584,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 				$returnstring .= '
 			</ul>
 			</div><!-- div class="collapsible"  hidden> -->' .
-								 '</div><!-- .downloads -->' . "\n"; // .downloads
+				                 '</div><!-- .downloads -->' . "\n"; // .downloads
 
 
 				if ( $rhswp_video_transcriptvlak ) {
@@ -643,8 +643,12 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 		public function getuniqueid( $video_id ) {
 
 			global $post;
-
-			return '_video' . $video_id . '_post' . $post->ID;
+			if ( is_object( $post ) ) {
+				return '_video' . $video_id . '_post' . $post->ID;
+			} else {
+				$random_bytes = random_bytes( 5 );
+				return '_video' . $video_id . '_post' . bin2hex( $random_bytes );
+			}
 
 		}
 
@@ -1293,9 +1297,9 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 					'post-edit.php'
 				) ) ) && ( in_array( $posttype, $allowed_post_types ) ) ) {
 				$context .= '<a href="#TB_inline?&inlineId=choose-video-selector-screen" class="thickbox button" title="' .
-							__( "Selecteer een rijksvideo om in dit bericht in te voegen.", "rijksvideo-translate" ) .
-							'"><span class="wp-media-buttons-icon" style="background: url(' . RIJKSVIDEO_ASSETS_URL . 'images/icon-video.png); background-repeat: no-repeat; background-size: 16px 16px; background-position: center center;"></span> ' .
-							__( "Voeg rijksvideo in", "rijksvideo-translate" ) . '</a>';
+				            __( "Selecteer een rijksvideo om in dit bericht in te voegen.", "rijksvideo-translate" ) .
+				            '"><span class="wp-media-buttons-icon" style="background: url(' . RIJKSVIDEO_ASSETS_URL . 'images/icon-video.png); background-repeat: no-repeat; background-size: 16px 16px; background-position: center center;"></span> ' .
+				            __( "Voeg rijksvideo in", "rijksvideo-translate" ) . '</a>';
 			}
 
 			return $context;
@@ -1315,18 +1319,18 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 				$rijksvideos = $this->get_all_videos( 'title' );
 				?>
 
-				<script type="text/javascript">
-					jQuery(document).ready(function () {
-						jQuery('#insert_video').on('click', function () {
-							var id = jQuery('#rijksvideo-select option:selected').val();
-							window.send_to_editor('[<?php echo RHSWP_CPT_RIJKSVIDEO ?> id=' + id + ']');
-							tb_remove();
-						})
-					});
-				</script>
+                <script type="text/javascript">
+                    jQuery(document).ready(function () {
+                        jQuery('#insert_video').on('click', function () {
+                            var id = jQuery('#rijksvideo-select option:selected').val();
+                            window.send_to_editor('[<?php echo RHSWP_CPT_RIJKSVIDEO ?> id=' + id + ']');
+                            tb_remove();
+                        })
+                    });
+                </script>
 
-				<div id="choose-video-selector-screen" style="display: none;">
-					<div class="wrap">
+                <div id="choose-video-selector-screen" style="display: none;">
+                    <div class="wrap">
 						<?php
 
 						if ( count( $rijksvideos ) ) {
@@ -1342,8 +1346,8 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 							_e( "No videos found", "rijksvideo-translate" );
 						}
 						?>
-					</div>
-				</div>
+                    </div>
+                </div>
 
 				<?php
 			}
