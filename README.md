@@ -5,7 +5,7 @@ ICTU - Digitale Overheid WP - rijksvideoplugin
 Paul van Buuren (paul@wbvb.nl)
 
 ## Current version
-* 1.0.19 - Added English translations.
+* 1.0.20 - Small PHP bugfix.
 
 ## To do
 * correct deprecated function media_buttons_context
