@@ -5,7 +5,7 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.20
+// * Version:             1.0.21
 // * Version description: Small PHP bugfix.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
@@ -532,13 +532,27 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 			if ( $rhswp_video_url_video_thumb && ( ( $rhswp_video_url_mp4 ) || ( $rhswp_video_url_wmv ) || ( $rhswp_video_url_flv ) ) ) {
 				// wel of geen arialabel, that is the question
 				// omdat de HTML-validator erover klaagt, vanaf nu geen aria-label meer.
-				// $arialabel = ' aria-label="' . wp_strip_all_tags( sprintf( _x( 'Video getiteld: \'%s\'', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) ) . '"';
-				$arialabel = '';
+				$video_title = wp_strip_all_tags( sprintf(  $videotitle ) );
+        $aria_label = wp_strip_all_tags( sprintf( _x( 'Video getiteld: \'%s\'', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) );
 
+        $video_attributes = [
+            'id' => $video_id,
+            'title' => $video_title,
+            'aria-label' => $aria_label,
+            'width' => $videoplayer_width,
+            'height' => $videoplayer_height,
+            'poster' => esc_url($rhswp_video_url_video_thumb),
+            'data-noplugintxt' => $videoplayer_noplugin_label
+        ];
 
-				$returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '"' . $arialabel . '>';
+        $attributes_string = '';
+        foreach ($video_attributes as $attr => $value) {
+            $attributes_string .= sprintf(' %s="%s"', $attr, esc_attr($value));
+        }
 
-				$returnstring .= '<video id="' . $video_id . '" width="' . $videoplayer_width . '" height="' . $videoplayer_height . '" poster="' . esc_url( $rhswp_video_url_video_thumb ) . '" data-noplugintxt="' . $videoplayer_noplugin_label . '">';
+				$returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '">';
+
+        $returnstring .= '<video' . $attributes_string . '>';
 
 				if ( $rhswp_video_url_mp4 ) {
 					$returnstring .= '<source type="video/mp4" src="' . esc_url( $rhswp_video_url_mp4 ) . '">';
