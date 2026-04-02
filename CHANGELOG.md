@@ -1,6 +1,7 @@
 # Changelog
 
 ## Version history
+* 1.0.21 - Check if constants for RHSWP_CPT_RIJKSVIDEO and RIJKSVIDEO_CT defined.
 * 1.0.20 - Small PHP bugfix.
 * 1.0.19 - Added English translations.
 * 1.0.18 - Rijksplayer: toggle ondertitel via knop in plaats van via keuzelijstje.
