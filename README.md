@@ -5,7 +5,10 @@ ICTU - Digitale Overheid WP - rijksvideoplugin
 Paul van Buuren (paul@wbvb.nl)
 
 ## Current version
-* 1.0.21 - Check if constants for RHSWP_CPT_RIJKSVIDEO and RIJKSVIDEO_CT defined.
+* 1.0.21 - Added title attribute and aria-label for accessibility.
+
+## Previous version
+* 1.0.20 - Small PHP bugfix.
 
 ## To do
 * correct deprecated function media_buttons_context
