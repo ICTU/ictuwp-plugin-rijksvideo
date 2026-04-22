@@ -285,6 +285,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
             extract( shortcode_atts( array(
                     'id'          => false,
+                    'preview'     => false,
                     'restrict_to' => false
             ), $atts, 'rijksvideo' ) );
 
@@ -304,7 +305,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
             // lets go
             $this->register_frontend_style_script();
 
-            return $this->rhswp_makevideo( $id );
+            return $this->rhswp_makevideo( $id, $preview );
 
         }
 
@@ -437,7 +438,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
         /**
          * Output the HTML
          */
-        public function rhswp_makevideo( $postid ) {
+        public function rhswp_makevideo( $postid, $is_preview = false ) {
 
             $videotitle = get_the_title( $postid );
 
@@ -537,8 +538,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
             $returnstring .= "\n\n\n";
 
             if ( $rhswp_video_url_video_thumb && ( ( $rhswp_video_url_mp4 ) || ( $rhswp_video_url_wmv ) || ( $rhswp_video_url_flv ) ) ) {
-                // wel of geen arialabel, that is the question
-                // omdat de HTML-validator erover klaagt, vanaf nu geen aria-label meer.
+
                 $video_title = wp_strip_all_tags( sprintf( $videotitle ) );
                 $aria_label  = wp_strip_all_tags( sprintf( _x( 'Video getiteld: \'%s\'', 'Rijksvideo', "rijksvideo-translate" ), $videotitle ) );
 
@@ -559,70 +559,69 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
                 $returnstring .= '<div class="block-audio-video" id="block-' . $video_id . '">';
 
-                $returnstring .= '<video' . $attributes_string . '>';
+                if ( $is_preview ) {
+                    $returnstring .= '<div class="preview" style="background-image: url(\'' . $rhswp_video_url_video_thumb . '\')">&nbsp;</div>';
+                } else {
 
-                if ( $rhswp_video_url_mp4 ) {
-                    $returnstring .= '<source type="video/mp4" src="' . esc_url( $rhswp_video_url_mp4 ) . '">';
+                    $returnstring .= '<video' . $attributes_string . '>';
+
+                    if ( $rhswp_video_url_mp4 ) {
+                        $returnstring .= '<source type="video/mp4" src="' . esc_url( $rhswp_video_url_mp4 ) . '">';
+                    }
+                    if ( $rhswp_video_url_wmv ) {
+                        $returnstring .= '<source type="video/wmv" src="' . esc_url( $rhswp_video_url_wmv ) . '">';
+                    }
+                    if ( $rhswp_video_url_flv ) {
+                        $returnstring .= '<source type="video/x-flv" src="' . esc_url( $rhswp_video_url_flv ) . '">';
+                    }
+                    if ( $rhswp_video_url_transcript ) {
+                        $returnstring .= '<track kind="subtitles" src="' . esc_url( $rhswp_video_url_transcript ) . '" label="' . $videoplayer_subtitles . '" srclang="' . $videoplayer_subtitles_language . '">';
+                    }
+
+                    $returnstring .= '</video>' . "\n";
+
+                    $returnstring .= '<div class="downloads">';
+                    $returnstring .= '<h2 id="videoplayer_download_label' . $uniqueid . '" class="collapsetoggle"><button aria-expanded="false">' . $videoplayer_download_label . '</button></h2>';
+                    $returnstring .= '<div class="collapsible"  hidden>';
+                    $returnstring .= '<ul aria-labelledby="videoplayer_download_label' . $uniqueid . '">';
+
+                    if ( $rhswp_video_url_mp4 ) {
+                        $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_mp4 . '">' . $videoplayer_mp4_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mp4_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
+                    }
+                    if ( $rhswp_video_mp4_hr_url ) {
+                        $returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_hr_url . '">' . $videoplayer_mp4_label_hr . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mp4_abbr . $videoplayer_mp4_hr . ', ' . $rhswp_video_mp4_hr_filesize . '</span></a></li>';
+                    }
+                    if ( $rhswp_video_url_wmv ) {
+                        $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_wmv . '">' . $videoplayer_wmv_label . '<span class="meta wmv">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_wmv_abbr . ', ' . $rhswp_video_filesize_wmv . '</span></a></li>';
+                    }
+                    if ( $rhswp_video_3gp_url ) {
+                        $returnstring .= '<li class="download"><a href="' . $rhswp_video_3gp_url . '">' . $videoplayer_mobileformat_label . '<span class="meta 3gp">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mobileformat_abbr . ', ' . $rhswp_video_3gp_filesize . '</span></a></li>';
+                    }
+                    if ( $rhswp_video_audio_url ) {
+                        $returnstring .= '<li class="download"><a href="' . $rhswp_video_audio_url . '">' . $videoplayer_audioformat_label . '<span class="meta mp3">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_audioformat_abbr . ', ' . $rhswp_video_mp3_filesize . ' </span></a></li>';
+                    }
+                    if ( $rhswp_video_url_transcript ) {
+                        $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_transcript . '">' . $videoplayer_subtitle_label . '<span class="meta srt">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_subtitle_abbr . ' </span></a></li>';
+                    }
+
+                    $returnstring .= '</ul>';
+                    $returnstring .= '</div><!-- div class="collapsible"  hidden> -->';
+                    $returnstring .= '</div><!-- .downloads -->' . "\n"; // .downloads
+
+
+                    if ( $rhswp_video_transcriptvlak ) {
+                        $rhswp_video_transcriptvlak = wpautop( $rhswp_video_transcriptvlak, 'br' );
+                        $uitgeschreventekst_label   = sprintf( _x( 'Uitgeschreven tekst %s bij %s %s', 'Titel boven uitgeschreven tekst', "rijksvideo-translate" ), '<span class="visuallyhidden">', $videotitle, '</span>' );
+
+                        $returnstring .= '<h2 id="videoplayer_captions' . $uniqueid . '" class="collapsetoggle">';
+                        $returnstring .= '<button aria-expanded="false">' . $uitgeschreventekst_label . '</button>';
+                        $returnstring .= '</h2>';
+                        $returnstring .= '<div class="collapsible"  hidden>';
+                        $returnstring .= '<div aria-labelledby="videoplayer_captions' . $uniqueid . '">' . $rhswp_video_transcriptvlak . '</div>';
+                        $returnstring .= '</div>' . "\n";
+                    }
+
                 }
-                if ( $rhswp_video_url_wmv ) {
-                    $returnstring .= '<source type="video/wmv" src="' . esc_url( $rhswp_video_url_wmv ) . '">';
-                }
-                if ( $rhswp_video_url_flv ) {
-                    $returnstring .= '<source type="video/x-flv" src="' . esc_url( $rhswp_video_url_flv ) . '">';
-                }
-                if ( $rhswp_video_url_transcript ) {
-                    $returnstring .= '<track kind="subtitles" src="' . esc_url( $rhswp_video_url_transcript ) . '" label="' . $videoplayer_subtitles . '" srclang="' . $videoplayer_subtitles_language . '">';
-                }
-
-                $returnstring .= '</video>' . "\n";
-
-
-                $returnstring .= '<div class="downloads">
-
-			<h2 id="videoplayer_download_label' . $uniqueid . '" class="collapsetoggle"><button aria-expanded="false">' . $videoplayer_download_label . '</button></h2>
-			<div class="collapsible"  hidden>
-			<ul aria-labelledby="videoplayer_download_label' . $uniqueid . '">';
-
-                if ( $rhswp_video_url_mp4 ) {
-                    $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_mp4 . '">' . $videoplayer_mp4_label . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mp4_abbr . ', ' . $rhswp_video_mp4_filesize . '</span></a></li>';
-                }
-                if ( $rhswp_video_mp4_hr_url ) {
-                    $returnstring .= '<li class="download"><a href="' . $rhswp_video_mp4_hr_url . '">' . $videoplayer_mp4_label_hr . '<span class="meta mp4">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mp4_abbr . $videoplayer_mp4_hr . ', ' . $rhswp_video_mp4_hr_filesize . '</span></a></li>';
-                }
-                if ( $rhswp_video_url_wmv ) {
-                    $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_wmv . '">' . $videoplayer_wmv_label . '<span class="meta wmv">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_wmv_abbr . ', ' . $rhswp_video_filesize_wmv . '</span></a></li>';
-                }
-                if ( $rhswp_video_3gp_url ) {
-                    $returnstring .= '<li class="download"><a href="' . $rhswp_video_3gp_url . '">' . $videoplayer_mobileformat_label . '<span class="meta 3gp">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_mobileformat_abbr . ', ' . $rhswp_video_3gp_filesize . '</span></a></li>';
-                }
-                if ( $rhswp_video_audio_url ) {
-                    $returnstring .= '<li class="download"><a href="' . $rhswp_video_audio_url . '">' . $videoplayer_audioformat_label . '<span class="meta mp3">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_audioformat_abbr . ', ' . $rhswp_video_mp3_filesize . ' </span></a></li>';
-                }
-                if ( $rhswp_video_url_transcript ) {
-                    $returnstring .= '<li class="download"><a href="' . $rhswp_video_url_transcript . '">' . $videoplayer_subtitle_label . '<span class="meta srt">' . $videoplayer_video_txt . ', ' . $videoplayer_date . ', ' . $rhswp_video_duur . ' ' . $videoplayer_subtitle_abbr . ' </span></a></li>';
-                }
-
-                $returnstring .= '
-			</ul>
-			</div><!-- div class="collapsible"  hidden> -->' .
-                                 '</div><!-- .downloads -->' . "\n"; // .downloads
-
-
-                if ( $rhswp_video_transcriptvlak ) {
-                    $rhswp_video_transcriptvlak = wpautop( $rhswp_video_transcriptvlak, 'br' );
-
-                    $uitgeschreventekst_label = sprintf( _x( 'Uitgeschreven tekst %s bij %s %s', 'Titel boven uitgeschreven tekst', "rijksvideo-translate" ), '<span class="visuallyhidden">', $videotitle, '</span>' );
-
-
-                    $returnstring .= '
-				<h2 id="videoplayer_captions' . $uniqueid . '" class="collapsetoggle">
-				<button aria-expanded="false">' . $uitgeschreventekst_label . '</button>
-				</h2>
-				<div class="collapsible"  hidden>
-					<div aria-labelledby="videoplayer_captions' . $uniqueid . '">' . $rhswp_video_transcriptvlak . '</div>
-				</div>' . "\n";
-                }
-
 
                 $returnstring .= '</div><!-- .block-audio-video -->' . "\n"; // class="block-audio-video"
 
