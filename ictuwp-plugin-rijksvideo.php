@@ -6,7 +6,7 @@
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
 // * Version:             1.0.21
-// * Version description: Small PHP bugfix.
+// * Version description: Check if constants for RHSWP_CPT_RIJKSVIDEO and RIJKSVIDEO_CT defined.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -31,7 +31,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 		/**
 		 * @var string
 		 */
-		public $version = '1.0.20';
+		public $version = '1.0.21';
 
 
 		/**
@@ -79,8 +79,13 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 			define( 'RIJKSVIDEO_ASSETS_URL', trailingslashit( RIJKSVIDEO_BASE_URL . 'assets' ) );
 			define( 'RIJKSVIDEO_MEDIAELEMENT_URL', trailingslashit( RIJKSVIDEO_BASE_URL . 'mediaelement' ) );
 			define( 'RIJKSVIDEO_PATH', plugin_dir_path( __FILE__ ) );
-			define( 'RHSWP_CPT_RIJKSVIDEO', "rijksvideo" );
-			define( 'RIJKSVIDEO_CT', "rijksvideo_custom_taxonomy" );
+
+            if ( ! defined( 'RHSWP_CPT_RIJKSVIDEO' ) ) {
+                define( 'RHSWP_CPT_RIJKSVIDEO', "rijksvideo" );
+            }
+            if ( ! defined( 'RIJKSVIDEO_CT' ) ) {
+                define( 'RIJKSVIDEO_CT', "rijksvideo_custom_taxonomy" );
+            }
 
 			define( 'RHSWP_CPT_VIDEO_PREFIX', RHSWP_CPT_RIJKSVIDEO . '_pf_' ); // prefix for rijksvideo metadata fields
 //      define( 'RHSWP_RV_DO_DEBUG',      true );
