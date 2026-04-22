@@ -20,7 +20,7 @@ function rijksvideo_register_acf_block() {
 
 	acf_register_block_type( [
 		'name'            => 'rijksvideo',
-		'title'           => __( 'rijksvideo', "rijksvideo-translate" ),
+		'title'           => __( 'Rijksvideo block', "rijksvideo-translate" ),
 		'description'     => __( 'Embed a rijksvideo video player.', "rijksvideo-translate" ),
 		'category'        => 'media',
 		'icon'            => 'video-alt3',
