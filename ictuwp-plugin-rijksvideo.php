@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.0.21
-// * Version description: Check if constants for RHSWP_CPT_RIJKSVIDEO and RIJKSVIDEO_CT defined.
+// * Version:             1.1.2
+// * Version description: Add possibility to add as Gutenberg block.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -28,10 +28,10 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 	 */
 	class RijksvideoPlugin_v1 {
 
-		/**
-		 * @var string
-		 */
-		public $version = '1.0.21';
+        /**
+         * @var string
+         */
+        public $version = '1.1.2';
 
 
 		/**
@@ -73,12 +73,12 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
 			$protocol = strtolower( substr( $_SERVER["SERVER_PROTOCOL"], 0, strpos( $_SERVER["SERVER_PROTOCOL"], '/' ) ) ) . '://';
 
-			define( 'RIJKSVIDEO_VERSION', $this->version );
-			define( 'RIJKSVIDEO_FOLDER', 'ictuwp-plugin-rijksvideo' );
-			define( 'RIJKSVIDEO_BASE_URL', trailingslashit( plugins_url( RIJKSVIDEO_FOLDER ) ) );
-			define( 'RIJKSVIDEO_ASSETS_URL', trailingslashit( RIJKSVIDEO_BASE_URL . 'assets' ) );
-			define( 'RIJKSVIDEO_MEDIAELEMENT_URL', trailingslashit( RIJKSVIDEO_BASE_URL . 'mediaelement' ) );
-			define( 'RIJKSVIDEO_PATH', plugin_dir_path( __FILE__ ) );
+            define( 'RIJKSVIDEO_VERSION', $this->version );
+            define( 'RIJKSVIDEO_FOLDER', 'ictuwp-plugin-rijksvideo' );
+            define( 'RIJKSVIDEO_BASE_URL', trailingslashit( plugins_url( RIJKSVIDEO_FOLDER ) ) );
+            define( 'RIJKSVIDEO_ASSETS_URL', trailingslashit( RIJKSVIDEO_BASE_URL . 'assets' ) );
+            define( 'RIJKSVIDEO_MEDIAELEMENT_URL', trailingslashit( RIJKSVIDEO_BASE_URL . 'mediaelement' ) );
+            define( 'RIJKSVIDEO_PATH', plugin_dir_path( __FILE__ ) );
 
             if ( ! defined( 'RHSWP_CPT_RIJKSVIDEO' ) ) {
                 define( 'RHSWP_CPT_RIJKSVIDEO', "rijksvideo" );
@@ -124,6 +124,8 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 					}
 				}
 			}
+
+            require_once dirname( __FILE__ ) . '/rijksvideo.gutenberg-block.php';
 
 
 			$autoload_is_disabled = defined( 'RIJKSVIDEO_AUTOLOAD_CLASSES' ) && RIJKSVIDEO_AUTOLOAD_CLASSES === false;
@@ -661,6 +663,14 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
 		public function getuniqueid( $video_id ) {
 
+            global $post;
+            if ( is_object( $post ) ) {
+                return '_video' . $video_id . '_post' . $post->ID;
+            } else {
+                $random_bytes = random_bytes( 5 );
+
+                return '_video' . $video_id . '_post' . bin2hex( $random_bytes );
+            }
 			global $post;
 			if ( is_object( $post ) ) {
 				return '_video' . $video_id . '_post' . $post->ID;
