@@ -5,7 +5,7 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.1.2
+// * Version:             1.1.1
 // * Version description: Add possibility to add as Gutenberg block.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
@@ -31,7 +31,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
         /**
          * @var string
          */
-        public $version = '1.1.2';
+        public $version = '1.1.1';
 
 
         /**
@@ -299,7 +299,16 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
             // check the video is published and the ID is correct
             if ( ! $rijksvideo || $rijksvideo->post_status != 'publish' || $rijksvideo->post_type != RHSWP_CPT_RIJKSVIDEO ) {
-                return "<!-- video {$atts['id']} not found -->";
+                if ( $preview ) {
+                    $videotitle = get_the_title( $id );
+                    if ( $videotitle) {
+                        return '<p class="error">' . sprintf( _x( 'The video with ID "%s" and title "%s" is not (yet) published.', '404 error', "rijksvideo-translate" ), $id, $videotitle ) . '</p>';
+                    }else {
+                        return '<p class="error">' . sprintf( _x( 'No video found with ID "%s".', '404 error', "rijksvideo-translate" ), $id ) . '</p>';
+                    }
+                } else {
+                    return "<!-- video {$atts['id']} not found -->";
+                }
             }
 
             // lets go

@@ -7,13 +7,19 @@
     margin-bottom: 2rem;
 }
 
+.rijksvideo-block-preview .error {
+    font-weight: bold;
+    color: red;
+}
+
+
 .block-audio-video {
     display: block;
 }
 
 .block-audio-video .preview {
     width: 750px;
-    height: 455px;
+    height: 453px;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 1em;

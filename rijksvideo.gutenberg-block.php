@@ -107,7 +107,7 @@ function rijksvideo_render_block( $block, $content = '', $is_preview = false ) {
 	}
 
 
-	// In preview mode show the shortcode visually
+	// In preview mode only show an image of the video
 	if ( $is_preview ) {
 		$shortcode = '[' . RHSWP_CPT_RIJKSVIDEO . ' id="' . $post_id . '" preview="true"]';
 		echo '<div class="rijksvideo-block-preview">';
