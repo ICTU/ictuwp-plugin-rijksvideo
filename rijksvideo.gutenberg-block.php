@@ -51,10 +51,10 @@ function rijksvideo_register_acf_fields() {
 		'fields'                => array(
 			array(
 				'key'           => 'field_69e8ae4c3479d',
-				'label'         => __( 'Select rijksvideo', "rijksvideo-translate" ),
+				'label'         => __( 'Select a video', "rijksvideo-translate" ),
 				'name'          => 'rijksvideo_post',
 				'type'          => 'post_object',
-				'instructions'  => __( 'Select a published rijksvideo to display.', "rijksvideo-translate" ),
+				'instructions'  => __( 'Only published videos can be embedded.', "rijksvideo-translate" ),
 				'required'      => 1,
 				'post_type'     => [ RHSWP_CPT_RIJKSVIDEO ],
 				'post_status'   => [ 'publish' ],
@@ -98,7 +98,7 @@ function rijksvideo_render_block( $block, $content = '', $is_preview = false ) {
 
 	if ( ! $post_id ) {
 		if ( $is_preview ) {
-			echo '<p class="rjm-block-preview rijksvideo-block-preview">' .
+			echo '<p class="rijksvideo-block-preview">' .
 			     esc_html__( 'Please select a rijksvideo.', "rijksvideo-translate" ) .
 			     '</p>';
 		}
@@ -110,7 +110,7 @@ function rijksvideo_render_block( $block, $content = '', $is_preview = false ) {
 	// In preview mode show the shortcode visually
 	if ( $is_preview ) {
 		$shortcode = '[' . RHSWP_CPT_RIJKSVIDEO . ' id="' . $post_id . '" preview="true"]';
-		echo '<div class="rjm-block-preview rijksvideo-block-preview">';
+		echo '<div class="rijksvideo-block-preview">';
 		echo do_shortcode( $shortcode );
 		echo '</div>';
 

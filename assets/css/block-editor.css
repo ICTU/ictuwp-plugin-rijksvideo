@@ -1,7 +1,5 @@
 /* ── Rijksvideo Block – Editor preview styles ── */
-
-/* ── Rijksjemoeder Block – Editor preview styles ── */
-.rjm-block-preview {
+.rijksvideo-block-preview {
     display: flex;
     align-items: center;
     gap: .5rem;
