@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ICTU / Rijksvideo digitaleoverheid.nl\n"
-"POT-Creation-Date: 2026-04-22 19:59+0200\n"
+"POT-Creation-Date: 2026-04-23 17:42+0200\n"
 "PO-Revision-Date: 2020-02-25 13:18+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -44,309 +44,309 @@ msgstr ""
 msgid "Rijksvideo documentatie"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:431
+#: ictuwp-plugin-rijksvideo.php:418
 msgid "URL"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:432
+#: ictuwp-plugin-rijksvideo.php:419
 msgid "Caption"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:433
+#: ictuwp-plugin-rijksvideo.php:420
 msgid "New Window"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:434
+#: ictuwp-plugin-rijksvideo.php:421
 msgid "Weet je het zeker?"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:468
+#: ictuwp-plugin-rijksvideo.php:455
 msgctxt "Rijksvideo"
 msgid "Video Player"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:469
+#: ictuwp-plugin-rijksvideo.php:456
 msgctxt "Rijksvideo"
 msgid "Video"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:470
+#: ictuwp-plugin-rijksvideo.php:457
 msgctxt "Rijksvideo"
 msgid "Audio"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:471
+#: ictuwp-plugin-rijksvideo.php:458
 msgctxt "Rijksvideo"
 msgid "Caption"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:472
+#: ictuwp-plugin-rijksvideo.php:459
 msgctxt "Rijksvideo"
 msgid "Ondertitels"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:473
+#: ictuwp-plugin-rijksvideo.php:460
 msgctxt "Rijksvideo: voor welke taal heb je ondertitels geupload?"
 msgid "nl"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:474
+#: ictuwp-plugin-rijksvideo.php:461
 msgctxt "Rijksvideo"
 msgid "Afspelen"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:475
+#: ictuwp-plugin-rijksvideo.php:462
 msgctxt "Rijksvideo"
 msgid "Geluid uit"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:476
+#: ictuwp-plugin-rijksvideo.php:463
 msgctxt "Rijksvideo"
 msgid "Schermvullende weergave openen"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:477
+#: ictuwp-plugin-rijksvideo.php:464
 msgctxt "Rijksvideo"
 msgid "Schermvullende weergave sluiten"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:478
+#: ictuwp-plugin-rijksvideo.php:465
 msgctxt "Rijksvideo"
 msgid ""
 "Gebruik op- of neer-pijltjestoetsen om het volume harder of zachter te zetten"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:479
+#: ictuwp-plugin-rijksvideo.php:466
 msgctxt "Rijksvideo"
 msgid "Ondertiteling aan"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:480
+#: ictuwp-plugin-rijksvideo.php:467
 #, php-format
 msgctxt "Titel boven downloads"
 msgid "Downloads %s bij %s %s"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:481
+#: ictuwp-plugin-rijksvideo.php:468
 msgctxt "Rijksvideo"
 msgid ""
 "Helaas kan deze video niet worden afgespeeld. Een mogelijk oplossing is de "
 "meest recente versie van uw browser te installeren."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:482
+#: ictuwp-plugin-rijksvideo.php:469
 msgctxt "Rijksvideo"
 msgid "MP4-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:483
+#: ictuwp-plugin-rijksvideo.php:470
 msgctxt "Rijksvideo"
 msgid "MP4-bestand hoge resolutie"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:484
+#: ictuwp-plugin-rijksvideo.php:471
 msgctxt "Rijksvideo"
 msgid "mp4"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:485
+#: ictuwp-plugin-rijksvideo.php:472
 msgctxt "Rijksvideo"
 msgid " (hoge resolutie)"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:486
+#: ictuwp-plugin-rijksvideo.php:473
 msgctxt "Rijksvideo"
 msgid "Video voor Windows Media Player"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:487
+#: ictuwp-plugin-rijksvideo.php:474
 msgctxt "Rijksvideo"
 msgid "wmv"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:488
+#: ictuwp-plugin-rijksvideo.php:475
 msgctxt "Rijksvideo"
 msgid "Video voor mobiel gebruik"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:489
+#: ictuwp-plugin-rijksvideo.php:476
 msgctxt "Rijksvideo"
 msgid "3gp"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:490
+#: ictuwp-plugin-rijksvideo.php:477
 msgctxt "Rijksvideo"
 msgid "Audiospoor"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:491
+#: ictuwp-plugin-rijksvideo.php:478
 msgctxt "Rijksvideo"
 msgid "mp3"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:492
+#: ictuwp-plugin-rijksvideo.php:479
 msgctxt "Rijksvideo"
 msgid "Ondertitelingsbestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:493
+#: ictuwp-plugin-rijksvideo.php:480
 msgctxt "Rijksvideo"
 msgid "srt"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:552
+#: ictuwp-plugin-rijksvideo.php:539
 #, php-format
 msgctxt "Rijksvideo"
 msgid "Video getiteld: '%s'"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:623
+#: ictuwp-plugin-rijksvideo.php:610
 #, php-format
 msgctxt "Titel boven uitgeschreven tekst"
 msgid "Uitgeschreven tekst %s bij %s %s"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:641
+#: ictuwp-plugin-rijksvideo.php:628
 msgctxt "Rijksvideo"
 msgid ""
 "Er is geen plaatje gevonden voor deze video. Je kunt een uitgelichte "
 "afbeelding gebruiken of een extern beeld-bestand."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:643
+#: ictuwp-plugin-rijksvideo.php:630
 msgctxt "Rijksvideo"
 msgid "Er is geen video-stream gevonden voor deze video."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:645
+#: ictuwp-plugin-rijksvideo.php:632
 msgctxt "Rijksvideo"
 msgid "Er is onvoldoende ingevoerd om deze video goed weer te geven."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:719
+#: ictuwp-plugin-rijksvideo.php:706
 msgid "Metadata voor video"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:729
+#: ictuwp-plugin-rijksvideo.php:716
 msgid "URL van thumbnail"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:730
+#: ictuwp-plugin-rijksvideo.php:717
 msgid ""
 "Als caption van de video wordt eerst gekeken of je een uitgelichte "
 "afbeelding hebt toegevoegd aan deze video. Als die er niet is, kun je hier "
 "de URL van het bijbehorende plaatje invoeren."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:742
+#: ictuwp-plugin-rijksvideo.php:729
 msgid "Lengte (*)"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:743
+#: ictuwp-plugin-rijksvideo.php:730
 msgid "(verplicht) formaat: uu:mm:ss"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:753
+#: ictuwp-plugin-rijksvideo.php:740
 msgid "URL van MP4-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:754
+#: ictuwp-plugin-rijksvideo.php:741
 msgid "H.264-bestand; eindigt op .mp4"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:761
+#: ictuwp-plugin-rijksvideo.php:748
 msgid "Bestandsgrootte van MP4-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:767
+#: ictuwp-plugin-rijksvideo.php:754
 msgid "URL van Hi-res MP4-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:768
+#: ictuwp-plugin-rijksvideo.php:755
 msgid "Versie van H.264-bestand in hoge resolutie."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:775
+#: ictuwp-plugin-rijksvideo.php:762
 msgid "Bestandsgrootte van hi-res MP4-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:781
+#: ictuwp-plugin-rijksvideo.php:768
 msgid "Url voor 3GP formaat"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:788
+#: ictuwp-plugin-rijksvideo.php:775
 msgid "Bestandsgrootte van 3GP-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:794
+#: ictuwp-plugin-rijksvideo.php:781
 msgid "URL van ondertitel"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:795
+#: ictuwp-plugin-rijksvideo.php:782
 msgid "Dit is meestal een bestand dat eindigt op .srt"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:802
+#: ictuwp-plugin-rijksvideo.php:789
 msgid "Volledige transcriptie"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:808
+#: ictuwp-plugin-rijksvideo.php:795
 msgid "URL van audio-track"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:809
+#: ictuwp-plugin-rijksvideo.php:796
 msgid "Dit is meestal een bestand dat eindigt op .mp3"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:816
+#: ictuwp-plugin-rijksvideo.php:803
 msgid "Bestandsgrootte van audio-track"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:823
+#: ictuwp-plugin-rijksvideo.php:810
 msgid "URL van FLV-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:824
+#: ictuwp-plugin-rijksvideo.php:811
 msgid "Eindigt op .flv"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:831
+#: ictuwp-plugin-rijksvideo.php:818
 msgid "Bestandsgrootte van FLV-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:837
+#: ictuwp-plugin-rijksvideo.php:824
 msgid "URL van WMV-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:838
+#: ictuwp-plugin-rijksvideo.php:825
 msgid "Windows Media File. Eindigt vaak op .wmv"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:845
+#: ictuwp-plugin-rijksvideo.php:832
 msgid "Bestandsgrootte van WMV-bestand"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:1338
+#: ictuwp-plugin-rijksvideo.php:1325
 msgid "Selecteer een rijksvideo om in dit bericht in te voegen."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:1340
+#: ictuwp-plugin-rijksvideo.php:1327
 msgid "Voeg rijksvideo in"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:1375
+#: ictuwp-plugin-rijksvideo.php:1362
 msgid "Choose a video to insert into your post / page."
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:1377
+#: ictuwp-plugin-rijksvideo.php:1364
 msgid "Choose video"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:1382
+#: ictuwp-plugin-rijksvideo.php:1369
 msgid "Select and insert video"
 msgstr ""
 
-#: ictuwp-plugin-rijksvideo.php:1384
+#: ictuwp-plugin-rijksvideo.php:1371
 msgid "No videos found"
 msgstr ""
 
@@ -354,23 +354,23 @@ msgstr ""
 msgid "Deze velden zijn verplicht:\\n"
 msgstr ""
 
-#: rijksvideo.gutenberg-block.php:23
-msgid "Rijksvideo block"
+#: rijksvideo.gutenberg-block.php:24
+msgid "RHS video block"
 msgstr ""
 
-#: rijksvideo.gutenberg-block.php:24
+#: rijksvideo.gutenberg-block.php:25
 msgid "Embed a rijksvideo video player."
 msgstr ""
 
-#: rijksvideo.gutenberg-block.php:54
+#: rijksvideo.gutenberg-block.php:55
 msgid "Select a video"
 msgstr ""
 
-#: rijksvideo.gutenberg-block.php:57
+#: rijksvideo.gutenberg-block.php:58
 msgid "Only published videos can be embedded."
 msgstr ""
 
-#: rijksvideo.gutenberg-block.php:102
+#: rijksvideo.gutenberg-block.php:103
 msgid "Please select a rijksvideo."
 msgstr ""
 

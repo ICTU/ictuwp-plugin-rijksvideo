@@ -5,8 +5,8 @@
 // * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
-// * Version:             1.1.1
-// * Version description: Add possibility to add as Gutenberg block.
+// * Version:             1.1.2
+// * Version description: Small bug fixes: styling, translations, name.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
@@ -31,7 +31,7 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
         /**
          * @var string
          */
-        public $version = '1.1.1';
+        public $version = '1.1.2';
 
 
         /**
@@ -389,18 +389,6 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
 
         /**
-         * Register admin-side styles
-         */
-        public function register_admin_styles() {
-
-            wp_enqueue_style( 'rijksvideo-admin-styles', RIJKSVIDEO_ASSETS_URL . 'css/admin.css', false, RIJKSVIDEO_VERSION );
-
-            do_action( 'rijksvideo_register_admin_styles' );
-
-        }
-
-
-        /**
          * Register admin JavaScript
          */
         public function register_admin_scripts() {
@@ -410,7 +398,6 @@ if ( ! class_exists( 'RijksvideoPlugin_v1' ) ) :
 
             // plugin dependencies
             wp_enqueue_script( 'jquery-ui-core', array( 'jquery' ) );
-//        wp_enqueue_script( 'jquery-ui-sortable', array( 'jquery', 'jquery-ui-core' ) );
 
             wp_dequeue_script( 'link' ); // WP Posts Filter Fix (Advanced Settings not toggling)
             wp_dequeue_script( 'ai1ec_requirejs' ); // All In One Events Calendar Fix (Advanced Settings not toggling)
