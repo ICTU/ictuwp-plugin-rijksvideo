@@ -5,7 +5,7 @@ ICTU - Digitale Overheid WP - rijksvideoplugin
 Paul van Buuren (paul@wbvb.nl)
 
 ## Current version
-* 1.1.3 - Added title attribute and aria-label for accessibility.
+* 1.1.4.a - Added title attribute and aria-label for accessibility.
 
 ## Previous version
 * 1.0.20 - Small PHP bugfix.

@@ -2,8 +2,8 @@
 /**
  * Gutenberg block for rijksvideo
  * Description: Gutenberg block to embed a rijksvideo video player via ACF and shortcode.
- * Version: 1.1.3
- * Version description: Removed stale, unsafe jQuery file.
+ * Version: 1.1.4.a
+ * Version description: Bugfixes: 404 for stylesheets.
  * Author: Paul van Buuren
  * Text Domain: rijksvideo-translate
  */
@@ -19,6 +19,8 @@ function rijksvideo_register_acf_block() {
 		return;
 	}
 
+	$dirulr = plugin_dir_url( __FILE__ ) . 'assets/css/block-editor-rijksvideo.css';
+
 	acf_register_block_type( [
 		'name'            => 'rijksvideo',
 		'title'           => __( 'RHS video block', "rijksvideo-translate" ),
@@ -27,7 +29,7 @@ function rijksvideo_register_acf_block() {
 		'icon'            => 'video-alt3',
 		'keywords'        => [ 'rijksvideo', 'video', 'player', 'rhs' ],
 		'render_callback' => 'rijksvideo_render_block',
-		'enqueue_style'   => plugin_dir_url( __FILE__ ) . 'assets/css/block-editor-rijksvideo.css',
+		'enqueue_style'   => $dirulr,
 		'supports'        => [
 			'align'  => false,
 			'anchor' => true,
