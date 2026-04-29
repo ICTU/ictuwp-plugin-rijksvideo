@@ -1,6 +1,7 @@
 # Changelog
 
 ## Version history
+* 1.1.3 - Removed stale, unsafe jquery file.
 * 1.1.2 - Small bug fixes: styling, translations, name.
 * 1.1.1 - Added option to add video as a gutenberg block.
 * 1.0.21 - Check if constants for RHSWP_CPT_RIJKSVIDEO and RIJKSVIDEO_CT defined.
