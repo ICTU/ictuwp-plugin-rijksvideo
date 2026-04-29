@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ICTU / Rijksvideo digitaleoverheid.nl\n"
-"POT-Creation-Date: 2026-04-23 17:42+0200\n"
-"PO-Revision-Date: 2026-04-23 17:47+0200\n"
+"Project-Id-Version: ICTU / WP / DO - Rijksvideo\n"
+"POT-Creation-Date: 2026-04-29 12:03+0200\n"
+"PO-Revision-Date: 2026-04-29 12:03+0200\n"
 "Last-Translator: Paul van Buuren <poedit@wbvb.nl>\n"
 "Language-Team: \n"
 "Language: nl_NL\n"
@@ -375,7 +375,7 @@ msgid "Please select a rijksvideo."
 msgstr "Selecteer en voeg een video in."
 
 #. Plugin Name of the plugin/theme
-msgid "ICTU / Rijksvideo digitaleoverheid.nl"
+msgid "ICTU / WP / DO - Rijksvideo"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

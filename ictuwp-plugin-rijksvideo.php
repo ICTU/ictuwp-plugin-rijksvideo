@@ -2,7 +2,7 @@
 /*
 // * Rijksvideo.
 // *
-// * Plugin Name:         ICTU / Rijksvideo digitaleoverheid.nl
+// * Plugin Name:         ICTU / WP / DO - Rijksvideo
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
 // * Version:             1.1.3
