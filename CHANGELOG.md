@@ -1,7 +1,7 @@
 # Changelog
 
 ## Version history
-* 1.1.4.a - Bugfixes: 404 for stylesheets.
+* 1.1.4 - Bugfixes: 404 for stylesheets.
 * 1.1.3 - Removed stale, unsafe jQuery file.
 * 1.1.2 - Small bug fixes: styling, translations, name.
 * 1.1.1 - Added option to add video as a gutenberg block.

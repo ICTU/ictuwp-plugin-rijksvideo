@@ -2,7 +2,7 @@
 /**
  * Gutenberg block for rijksvideo
  * Description: Gutenberg block to embed a rijksvideo video player via ACF and shortcode.
- * Version: 1.1.4.a
+ * Version: 1.1.4
  * Version description: Bugfixes: 404 for stylesheets.
  * Author: Paul van Buuren
  * Text Domain: rijksvideo-translate
