@@ -1,6 +1,8 @@
 # Changelog
 
 ## Version history
+* 1.1.2 - Small bug fixes: styling, translations, name.
+* 1.1.1 - Added option to add video as a gutenberg block.
 * 1.0.21 - Check if constants for RHSWP_CPT_RIJKSVIDEO and RIJKSVIDEO_CT defined.
 * 1.0.20 - Small PHP bugfix.
 * 1.0.19 - Added English translations.
