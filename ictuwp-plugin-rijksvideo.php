@@ -6,7 +6,7 @@
 // * Plugin URI:          https://github.com/ICTU/digitale-overheid-wordpress-plugin-rijksvideoplugin/
 // * Description:         De mogelijkheid om video's in te voegen met diverse media-formats en ondertitels
 // * Version:             1.1.3
-// * Version description: Removed stale, unsafe jquery file.
+// * Version description: Removed stale, unsafe jQuery file.
 // * Author:              Paul van Buuren
 // * Author URI:          https://wbvb.nl
 // * License:             GPL-2.0+
